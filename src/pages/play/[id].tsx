@@ -20,7 +20,7 @@ export default function Play(props) {
 						Displayed when the trigger element is hovered by the mouse or when it receives keyboard focus.
 					</li>
 					<li>Focus remains on the trigger element while the tooltip is displayed.</li>
-					<li>Dismissed with the Escape key or by a blur/mouseleave event.</li>
+					<li>Dismissed with the <code>Escape</code> key or by a blur/mouseleave event.</li>
 				</ul>
 			</article>
 			<article>

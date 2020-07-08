@@ -72,7 +72,7 @@ header {
     font-size: 24px;
     cursor: pointer;
     color: var(--color-black);
-    font-weight: 600;
+    font-weight: 700;
   }
 
   .highlight {
@@ -111,9 +111,21 @@ main {
   padding: 32px;
 }
 
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 article {
   max-width: 560px;
   margin: 0 auto;
+  animation: fadeIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 
   svg {
     width: 100%;
@@ -127,11 +139,7 @@ article {
     margin-bottom: 32px;
   }
 
-  h1 {
-    margin-bottom: 16px;
-  }
-
-  h2 {
+  h1, h2, h3 {
     margin-bottom: 16px;
   }
 
