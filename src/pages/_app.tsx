@@ -17,13 +17,13 @@ export default function App({ Component, pageProps }) {
 				description="Recipes for common UI components"
 				openGraph={{
 					type: 'website',
-					url: 'https://metrix.now.sh',
+					url: 'https://uiplaybook.dev',
 					title: 'UI Playbook',
-					description: 'UI playbook is a documented site of components',
+					description: 'UI Playbook is a documented collection of common UI components',
 					images: [
 						{
-							url: '/static/og.png',
-							alt: 'Metrix',
+							url: '/static/playbook.png',
+							alt: 'UI Playbook',
 						},
 					],
 				}}
