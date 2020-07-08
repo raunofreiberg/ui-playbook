@@ -9,7 +9,6 @@
     "lint": "eslint --ext .tsx src"
   },
   "dependencies": {
-    "@zeit/next-sass": "^1.0.1",
     "babel-eslint": "^10.1.0",
     "classnames": "^2.2.6",
     "eslint": "^7.4.0",
@@ -20,10 +19,10 @@
     "lint-staged": "^10.2.11",
     "next": "9.4.4",
     "next-seo": "^4.7.1",
-    "node-sass": "^4.14.1",
     "prettier": "^2.0.5",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "sass": "^1.26.10",
     "url-loader": "^4.1.0"
   },
   "devDependencies": {

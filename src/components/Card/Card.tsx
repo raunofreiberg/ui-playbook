@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import Link from 'next/link';
 import { Icon } from '..';
-import styles from './Card.scss';
+import styles from './Card.module.scss';
 
 interface CardProps {
 	name: string;

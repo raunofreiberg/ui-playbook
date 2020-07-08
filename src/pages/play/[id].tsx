@@ -1,7 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { Icon } from '../../components';
-import './Play.scss';
 
 export default function Play(props) {
 	const {

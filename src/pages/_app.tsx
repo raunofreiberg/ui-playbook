@@ -3,7 +3,7 @@ import { DefaultSeo } from 'next-seo';
 import Link from 'next/link';
 import Head from 'next/head';
 import { Icon } from '../components';
-import styles from './base.scss';
+import './base.scss';
 
 export default function App({ Component, pageProps }) {
 	return (
@@ -31,7 +31,7 @@ export default function App({ Component, pageProps }) {
 			<header>
 				<Link href="/">
 					<p>
-						<span className={styles.highlight}>UI</span> Playbook
+						<span className="highlight">UI</span> Playbook
 					</p>
 				</Link>
 				<a

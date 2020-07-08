@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card } from '../components';
-import styles from './index.scss';
+import styles from './index.module.scss';
 
 const components = [
 	{
