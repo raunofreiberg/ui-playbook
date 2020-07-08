@@ -1,0 +1,55 @@
+article {
+  max-width: 560px;
+  margin: 0 auto;
+
+  svg {
+    width: 100%;
+  }
+
+  strong {
+    color: black;
+  }
+
+  :global {
+    animation: var(--animation-fade-in);
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: 32px;
+  }
+
+  h1 {
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    margin-bottom: 16px;
+  }
+
+  p {
+    margin-bottom: 16px;
+  }
+
+  ul {
+    list-style-type: '• ';
+    padding-left: 18px;
+
+    li {
+      color: var(--color-paragraph);
+      line-height: 24px;
+
+      &:not(:last-of-type) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+
+  code {
+    font-size: 12px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: rgba(100, 105, 255, 0.05);
+    color: var(--color-primary);
+    border-radius: 3px;
+  }
+}

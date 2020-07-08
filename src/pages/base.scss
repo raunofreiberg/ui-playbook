@@ -1,0 +1,112 @@
+@font-face {
+  font-family: 'GT-Walsheim';
+  font-weight: 400;
+  font-style: normal;
+  font-display: fallback;
+  src: url('/static/fonts/GT-Walsheim-Regular.woff2');
+}
+
+@font-face {
+  font-family: 'GT-Walsheim';
+  font-weight: 600;
+  font-style: normal;
+  font-display: fallback;
+  src: url('/static/fonts/GT-Walsheim-Medium.woff2');
+}
+
+@font-face {
+  font-family: 'GT-Walsheim';
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+  src: url('/static/fonts/GT-Walsheim-Bold.woff2');
+}
+
+@font-face {
+  font-family: 'GT-Walsheim';
+  font-weight: 800;
+  font-style: normal;
+  font-display: fallback;
+  src: url('/static/fonts/GT-Walsheim-Black.woff2');
+}
+
+:root {
+  --color-primary: #6469FF;
+  --color-black: #222328;
+  --color-paragraph: rgb(102, 110, 117);
+  --color-base-100: #E6EBF4;
+}
+
+*,
+*::before,
+*::after {
+  outline-color: var(--color-primary);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'GT-Walsheim' !important;
+  margin: 0;
+  padding: 0;
+  background-color: #F9FAFE;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  color: var(--color-black);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  box-shadow: inset 0 -1px 0 0 #e6ebf4, 0 4px 8px 0 rgba(189, 192, 207, .08);
+  height: 64px;
+  padding: 0 32px;
+  z-index: 1;
+
+  p {
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--color-black);
+    font-weight: 600;
+  }
+
+  .highlight {
+    background: var(--color-primary);
+    padding: 2px 7px;
+    border-radius: 3px;
+    color: white;
+    font-weight: 700;
+  }
+
+  a {
+    display: flex;
+
+    &:hover, &:focus {
+      svg path {
+        fill: var(--color-primary);
+      }
+    }
+  }
+}
+
+a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+p {
+  color: var(--color-paragraph);
+  line-height: 24px;
+}
+
+main {
+  min-height: calc(100vh - 64px);
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 32px;
+}
