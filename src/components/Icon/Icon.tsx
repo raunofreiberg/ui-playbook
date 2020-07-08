@@ -2,7 +2,7 @@ import React from 'react';
 
 const ICONS = {
 	tooltip: (
-		<svg width="283" height="100" viewBox="0 0 283 100" style={{ marginTop: -28 }}>
+		<svg width="283" height="100" viewBox="0 0 283 100">
 			<defs>
 				<clipPath id="clip-path">
 					<rect id="Rectangle_2" data-name="Rectangle 2" width="32" height="32" />
