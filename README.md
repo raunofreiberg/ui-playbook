@@ -16,8 +16,6 @@ While kick-starting my first design system, most of the time I would reference o
 
 UI Playbook is an attempt to spec common UI components based on learnings regarding the aforementioned things. This may or may not prove itself to be helpful to others, and I might be missing certain aspects — so I invite you to improve this and hopefully the next person tasked with building a component library will find this _somewhat_ useful! ✌️
 
-## Plays
-
-Here is a list of currently available plays for components
+## Plays 📖
 
 - [Tooltip](https://uiplaybook.dev/play/tooltip)
