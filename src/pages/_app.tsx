@@ -22,7 +22,6 @@ export default function App({ Component, pageProps }) {
 					<meta name="twitter:site" content="@raunofreiberg" />
 					<meta name="twitter:creator" content="@raunofreiberg" />
 					<meta name="twitter:card" content="summary_large_image" />
-					<meta name="twitter:image" content="/static/playbook.png" />
 				</Head>
 				<DefaultSeo
 					title="UI Playbook"
@@ -34,7 +33,7 @@ export default function App({ Component, pageProps }) {
 						description: 'The documented collection of common UI components.',
 						images: [
 							{
-								url: '/static/playbook.png',
+								url: 'https://uiplaybook.dev/static/playbook.png',
 								alt: 'UI Playbook',
 							},
 						],
