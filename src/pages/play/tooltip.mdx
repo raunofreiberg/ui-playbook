@@ -23,7 +23,7 @@ Tooltip is a non-interactive overlay that briefly explains the function of the t
 
 ## Best practices
 
-- Do not use a tooltip for information vital to task completion. The action of the element it isattached to should make sense on its own.
+- Do not use a tooltip for information vital to task completion. The action of the element it is attached to should make sense on its own.
 - Make sure to provide a short and succinct label for the tooltip.
 - Avoid interactive content such as buttons and links inside the tooltip. As an alternative, consider Popover.
 - Displaying the tooltip too quickly on mouseover can result in accidental activations and creates a jarring user experience.
@@ -38,11 +38,29 @@ It is advisable to add a short delay (~100ms) before displaying it.
 
 ## Implementation
 
-- To avoid parent containers possibly clipping the tooltip, it is advisable to render the tooltip in a React Portal with fixed positioning.
-- By default, disabled elements like `<button>` do not trigger mouse events. This is an unfortunate misinterpretation of the spec by the browsers.
-As a workaround, we recommend using [Pointer Events](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events) (which follow the spec more closely)
-for disabled trigger elements.
+- To avoid parent containers possibly clipping the tooltip and its content, render the tooltip outside the DOM hierarchy of its parent component.
+For React, a common mechanism for is a [Portal](https://reactjs.org/docs/portals.html)
+- By default, [disabled elements like `<button>` do not trigger mouse events.](https://jakearchibald.com/2017/events-and-disabled-form-fields/)
+This is an unfortunate misinterpretation of the spec by the browsers. As a workaround, we recommend using [Pointer Events](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events)
+(which follow the spec more closely) for disabled trigger elements.
+- You may want to wrap
 
+
+</article>
+
+<article>
+
+## Examples
+
+A few tooltip implementation examples from various design systems:
+
+### [Modulz — Radix (React)](https://radix.modulz.app/docs/tooltip/)
+
+<Tooltip label="You do not have permission to delete this user." side="top" align="center">
+  <span style={{display: 'inline-block'}}>
+    <Button size={1} disabled>Delete user</Button>
+  </span>
+</Tooltip>
 
 </article>
 
