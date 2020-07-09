@@ -61,15 +61,23 @@ As an alternative, wrapping the disabled element in a `<span>` can also work sin
 
 ## Examples
 
-A few tooltip implementation examples from various design systems:
+### [Reach UI (React)](https://reach.tech/tooltip/)
+
+We recommend using Reach UI's tooltip as a base for your React based implementation.
+
+<ReachTooltip label="Save">
+  <button>💾</button>
+</ReachTooltip>
+
+<hr />
 
 ### [Modulz — Radix (React)](https://radix.modulz.app/docs/tooltip/)
 
-<Tooltip label="You do not have permission to delete this user." side="top" align="center">
+<RadixTooltip label="You do not have permission to delete this user." side="top" align="center">
   <span style={{display: 'inline-block'}}>
     <Button size={1} disabled>Delete user</Button>
   </span>
-</Tooltip>
+</RadixTooltip>
 
 </article>
 

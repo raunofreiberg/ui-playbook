@@ -1,16 +1,18 @@
+import '@reach/tooltip/styles.css';
+import './base.scss';
 import React from 'react';
 import { DefaultSeo } from 'next-seo';
 import Link from 'next/link';
 import Head from 'next/head';
 import { MDXProvider } from '@mdx-js/react';
-import { RadixProvider, Tooltip, Button } from '@modulz/radix';
+import { RadixProvider, Tooltip as RadixTooltip, Button } from '@modulz/radix';
+import ReachTooltip from '@reach/tooltip';
 import { Icon } from '../components';
-import './base.scss';
 
 export default function App({ Component, pageProps }) {
 	return (
 		<RadixProvider>
-			<MDXProvider components={{ Icon, Tooltip, Button }}>
+			<MDXProvider components={{ Icon, RadixTooltip, ReachTooltip, Button }}>
 				<Head>
 					<meta name="keywords" content="ui playbook" />
 					<link rel="shortcut icon" href="/static/favicon.ico" />
