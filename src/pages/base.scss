@@ -77,6 +77,9 @@ header {
   padding: 0 32px;
   z-index: 1;
 
+  svg {
+    cursor: pointer;
+  }
 
   a {
     display: flex;
