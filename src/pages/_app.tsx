@@ -30,10 +30,10 @@ export default function App({ Component, pageProps }) {
 						type: 'website',
 						url: 'https://uiplaybook.dev',
 						title: 'UI Playbook',
-						description: 'UI Playbook is a documented collection of common UI components',
+						description: 'The documented collection of common UI components.',
 						images: [
 							{
-								url: '/static/playbook.png',
+								url: 'static/playbook.png',
 								alt: 'UI Playbook',
 							},
 						],
