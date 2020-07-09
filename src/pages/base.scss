@@ -58,6 +58,18 @@ body {
   background-color: #F9FAFE;
 }
 
+blockquote {
+  border-radius: 3px 6px 6px 3px;
+  border-left: 3px solid #FFB963;
+  background: rgba(#F8E8DD, 0.5);
+  padding: 16px;
+  margin: 32px 0;
+
+  > p {
+    margin: 0 !important;
+  }
+}
+
 h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   color: var(--color-black);
