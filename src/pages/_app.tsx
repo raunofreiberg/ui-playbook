@@ -12,6 +12,9 @@ export default function App({ Component, pageProps }) {
 			<Head>
 				<meta name="keywords" content="ui playbook" />
 				<link rel="shortcut icon" href="/static/favicon.ico" />
+				<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
+				<meta name="msapplication-TileColor" content="#6469FF" />
+				<meta name="theme-color" content="#6469FF" />
 			</Head>
 			<DefaultSeo
 				title="UI Playbook"
