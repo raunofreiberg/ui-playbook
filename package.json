@@ -6,9 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --ext .tsx src"
+    "lint": "eslint --ext .tsx,.mdx src"
   },
   "dependencies": {
+    "@mdx-js/loader": "^1.6.6",
+    "@mdx-js/react": "^1.6.6",
+    "@next/mdx": "^9.4.4",
     "babel-eslint": "^10.1.0",
     "classnames": "^2.2.6",
     "eslint": "^7.4.0",
@@ -31,7 +34,7 @@
     "typescript": "^3.9.6"
   },
   "lint-staged": {
-    "*.{tsx},*.{ts}": [
+    "*.{tsx},*.{ts},*.{mdx}": [
       "eslint --fix"
     ]
   },

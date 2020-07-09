@@ -37,6 +37,11 @@
   --color-base-100: #E6EBF4;
 }
 
+::selection {
+  background-color: var(--color-primary);
+  color: white;
+}
+
 *,
 *::before,
 *::after {
@@ -58,6 +63,10 @@ h1, h2, h3, h4, h5, h6, p {
   color: var(--color-black);
 }
 
+h1 {
+  font-size: 32px;
+}
+
 header {
   display: flex;
   align-items: center;
@@ -68,20 +77,6 @@ header {
   padding: 0 32px;
   z-index: 1;
 
-  p {
-    font-size: 24px;
-    cursor: pointer;
-    color: var(--color-black);
-    font-weight: 700;
-  }
-
-  .highlight {
-    background: var(--color-primary);
-    padding: 2px 7px;
-    border-radius: 3px;
-    color: white;
-    font-weight: 700;
-  }
 
   a {
     display: flex;

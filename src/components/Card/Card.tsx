@@ -29,7 +29,7 @@ export default function Card({ name, teaser = false }: CardProps) {
 	}
 
 	return (
-		<Link href="play/[id]" as={`play/${name}`}>
+		<Link href={`play/${name}`}>
 			<a className={styles.link}>
 				<li className={styles.wrapper}>
 					<div className={styles.heading}>

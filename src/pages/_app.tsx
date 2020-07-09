@@ -2,12 +2,13 @@ import React from 'react';
 import { DefaultSeo } from 'next-seo';
 import Link from 'next/link';
 import Head from 'next/head';
+import { MDXProvider } from '@mdx-js/react';
 import { Icon } from '../components';
 import './base.scss';
 
 export default function App({ Component, pageProps }) {
 	return (
-		<>
+		<MDXProvider components={{ Icon }}>
 			<Head>
 				<meta name="keywords" content="ui playbook" />
 				<link rel="shortcut icon" href="/static/favicon.ico" />
@@ -30,9 +31,7 @@ export default function App({ Component, pageProps }) {
 			/>
 			<header>
 				<Link href="/">
-					<p>
-						<span className="highlight">UI</span> Playbook
-					</p>
+					<Icon icon="logo" />
 				</Link>
 				<a
 					href="https://github.com/raunofreiberg/ui-playbook"
@@ -46,6 +45,6 @@ export default function App({ Component, pageProps }) {
 			<main>
 				<Component {...pageProps} />
 			</main>
-		</>
+		</MDXProvider>
 	);
 }

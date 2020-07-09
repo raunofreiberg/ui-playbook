@@ -1,0 +1,72 @@
+<article>
+
+# Tooltip
+
+Tooltip is a non-interactive overlay that briefly explains the function of the trigger element.
+
+<Icon icon="tooltip" />
+
+</article>
+
+<article>
+
+## Functionality
+
+- Displayed when the trigger element is hovered by the mouse or when it receives keyboard focus.
+- Focus remains on the trigger element while the tooltip is displayed.
+- Dismissed with the `Escape` key or by a blur/mouseleave event.
+
+
+</article>
+
+<article>
+
+## Best practices
+
+- Do not use a tooltip for information vital to task completion. The action of the element it isattached to should make sense on its own.
+- Make sure to provide a short and succinct label for the tooltip.
+- Avoid interactive content such as buttons and links inside the tooltip. As an alternative, consider Popover.
+- Displaying the tooltip too quickly on mouseover can result in accidental activations and creates a jarring user experience.
+It is advisable to add a short delay (~100ms) before displaying it.
+- Once a tooltip is visible, interaction with any other tooltip should display immediately without the delay.
+- The tooltip can have preferred positioning options, but should adjust itself dynamically based on collisions and available space.
+
+
+</article>
+
+<article>
+
+## Implementation
+
+- To avoid parent containers possibly clipping the tooltip, it is advisable to render the tooltip in a React Portal with fixed positioning.
+- By default, disabled elements like `<button>` do not trigger mouse events. This is an unfortunate misinterpretation of the spec by the browsers.
+As a workaround, we recommend using [Pointer Events](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events) (which follow the spec more closely)
+for disabled trigger elements.
+
+
+</article>
+
+<article>
+
+## Accessibility
+
+The accessibility requirements for this component are defined by the [WAI-ARIA Practices 1.1 for Tooltip:](https://www.w3.org/TR/wai-aria-practices-1.1/#tooltip)
+
+- [Keyboard Interaction](https://www.w3.org/TR/wai-aria-practices-1.1/#keyboard-interaction-21)
+- [WAI-ARIA Roles, States, and Properties](https://www.w3.org/TR/wai-aria-practices-1.1/#wai-aria-roles-states-and-properties-22)
+
+</article>
+
+<article>
+
+## Resources
+
+- [WAI-ARIA Practices 1.1 - Tooltip](https://www.w3.org/TR/wai-aria-practices-1.1/#tooltip)
+- [Reach UI - Tooltip](https://reach.tech/tooltip/)
+- [Shopify Polaris - Tooltip](https://polaris.shopify.com/components/overlays/tooltip)
+- [Tooltips: How to use this small but mighty UI pattern correctly](https://www.appcues.com/blog/tooltips)
+- [Events and disabled form fields](https://jakearchibald.com/2017/events-and-disabled-form-fields/)
+- [Timing Guidelines for Exposing Hidden Content](https://www.nngroup.com/articles/timing-exposing-content/)
+
+</article>
+
