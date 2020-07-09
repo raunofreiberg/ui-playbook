@@ -38,13 +38,20 @@ It is advisable to add a short delay (~100ms) before displaying it.
 
 ## Implementation
 
-- To avoid parent containers possibly clipping the tooltip and its content, render the tooltip outside the DOM hierarchy of its parent component.
-For React, a common mechanism for is a [Portal](https://reactjs.org/docs/portals.html)
-- By default, [disabled elements like `<button>` do not trigger mouse events.](https://jakearchibald.com/2017/events-and-disabled-form-fields/)
+### Positioning
+
+To avoid parent containers possibly clipping the tooltip and its content, render the tooltip outside the DOM hierarchy of its parent component.
+
+For React, a common mechanism for this is a [Portal](https://reactjs.org/docs/portals.html).
+
+### Disabled elements
+
+By default, [disabled elements like `<button>` do not trigger mouse events.](https://jakearchibald.com/2017/events-and-disabled-form-fields/)
+
 This is an unfortunate misinterpretation of the spec by the browsers. As a workaround, we recommend using [Pointer Events](https://developer.mozilla.org/en-US/docs/Web/API/Pointer_events)
 (which follow the spec more closely) for disabled trigger elements.
-- You may want to wrap
 
+As an alternative, wrapping the disabled element in a `<span>` can also work since all of the mouse events would then be placed on it instead.
 
 </article>
 
