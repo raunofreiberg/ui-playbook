@@ -33,7 +33,7 @@ export default function App({ Component, pageProps }) {
 						description: 'The documented collection of common UI components.',
 						images: [
 							{
-								url: 'static/playbook.png',
+								url: 'https://uiplaybook.dev/static/playbook.png',
 								alt: 'UI Playbook',
 							},
 						],
