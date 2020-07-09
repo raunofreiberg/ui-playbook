@@ -175,7 +175,27 @@ const ICONS = {
 			</g>
 		</svg>
 	),
-	select: <svg></svg>,
+	select: (
+		<svg width="279" height="40" viewBox="0 0 279 40">
+			<g id="Group_1" transform="translate(-150 -135)">
+				<rect
+					id="Rectangle_1"
+					data-name="Rectangle 1"
+					width="279"
+					height="40"
+					rx="4"
+					transform="translate(150 135)"
+					fill="#e6ebf4"
+				/>
+				<path
+					id="chevron"
+					d="M3.841,0,0,3.841l.9.9L3.841,1.812,6.78,4.744l.9-.9Z"
+					transform="translate(412.55 157.41) rotate(180)"
+					fill="#222328"
+				/>
+			</g>
+		</svg>
+	),
 };
 
 interface IconProps {

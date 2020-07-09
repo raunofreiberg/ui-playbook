@@ -29,7 +29,7 @@ export default function Home() {
 					value={query}
 					onChange={(e) => setQuery(e.target.value)}
 				/>
-				<span>yes, there's a search for 2 components ✌️</span>
+				<span>yes, there's a search for 3 components ✌️</span>
 			</div>
 			<ul className={styles.plays}>
 				{components

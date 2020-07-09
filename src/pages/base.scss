@@ -155,7 +155,7 @@ article {
   }
 
   strong {
-    color: black;
+    color: var(--color-black);
   }
 
   &:not(:last-of-type) {
@@ -196,4 +196,8 @@ hr {
   max-width: 80px;
   border: none;
   margin: 32px 0;
+}
+
+pre {
+  margin: 0;
 }

@@ -7,12 +7,43 @@ import Head from 'next/head';
 import { MDXProvider } from '@mdx-js/react';
 import { RadixProvider, Tooltip as RadixTooltip, Button } from '@modulz/radix';
 import ReachTooltip from '@reach/tooltip';
+import Highlight, { defaultProps } from 'prism-react-renderer';
+import theme from 'prism-react-renderer/themes/github';
 import { Icon } from '../components';
+
+function Code({ children, className }) {
+	const language = className.replace(/language-/, '');
+	return (
+		<Highlight {...defaultProps} theme={theme} code={children.trim()} language={language}>
+			{({ className, style, tokens, getLineProps, getTokenProps }) => (
+				<pre
+					className={className}
+					style={{
+						...style,
+						overflow: 'auto',
+						marginBottom: 24,
+						border: '1px solid var(--color-base-100)',
+						borderRadius: 4,
+						padding: 16,
+					}}
+				>
+					{tokens.map((line, i) => (
+						<div key={i} {...getLineProps({ line, key: i })}>
+							{line.map((token, key) => (
+								<span key={key} {...getTokenProps({ token, key })} />
+							))}
+						</div>
+					))}
+				</pre>
+			)}
+		</Highlight>
+	);
+}
 
 export default function App({ Component, pageProps }) {
 	return (
 		<RadixProvider>
-			<MDXProvider components={{ Icon, RadixTooltip, ReachTooltip, Button, Link }}>
+			<MDXProvider components={{ Icon, RadixTooltip, ReachTooltip, Button, Link, code: Code }}>
 				<Head>
 					<meta name="keywords" content="ui, playbook, documented collection, components, guideline" />
 					<link rel="shortcut icon" href="/static/favicon.ico" />
