@@ -35,6 +35,7 @@
   --color-black: #222328;
   --color-paragraph: rgb(102, 110, 117);
   --color-base-100: #E6EBF4;
+  --bezier-swift: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 ::selection {
@@ -135,7 +136,7 @@ main {
 article {
   max-width: 560px;
   margin: 0 auto;
-  animation: fadeIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  animation: fadeIn 0.5s var(--bezier-swift) forwards;
 
   svg {
     width: 100%;

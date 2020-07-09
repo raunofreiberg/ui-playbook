@@ -13,6 +13,7 @@
   flex-direction: column;
   margin: 0 auto;
   max-width: 700px;
+  :global { animation: fadeIn 0.5s var(--bezier-swift) forwards; }
 
   h1 {
     text-align: center;
@@ -38,7 +39,7 @@
   background-color: white;
   box-shadow: 0 5px 25px -5px rgba(30, 16, 84, .1);
   -webkit-appearance: none;
-  transition: all 0.4s ease-in-out;
+  transition: box-shadow 0.4s ease-in-out;
 
   &::placeholder {
     color: #BDC0CF;
