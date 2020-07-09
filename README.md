@@ -19,3 +19,4 @@ UI Playbook is an attempt to spec common UI components based on learnings regard
 ## Plays 📖
 
 - [Tooltip](https://uiplaybook.dev/play/tooltip)
+- [Button](https://uiplaybook.dev/play/button)
