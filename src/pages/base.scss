@@ -97,7 +97,7 @@ header {
     display: flex;
 
     &:hover, &:focus {
-      svg path {
+      .github path {
         fill: var(--color-primary);
       }
     }

@@ -179,8 +179,9 @@ const ICONS = {
 
 interface IconProps {
 	icon: keyof typeof ICONS;
+	className?: string;
 }
 
-export default function Icon({ icon }: IconProps) {
-	return ICONS[icon] || null;
+export default function Icon({ icon, ...props }: IconProps) {
+	return React.cloneElement(ICONS[icon], props);
 }

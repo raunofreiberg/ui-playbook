@@ -36,7 +36,9 @@ export default function App({ Component, pageProps }) {
 				/>
 				<header>
 					<Link href="/">
-						<Icon icon="logo" />
+						<a>
+							<Icon icon="logo" />
+						</a>
 					</Link>
 					<a
 						href="https://github.com/raunofreiberg/ui-playbook"
@@ -44,7 +46,7 @@ export default function App({ Component, pageProps }) {
 						rel="noopener noreferrer"
 						aria-label="Open Github"
 					>
-						<Icon icon="github" />
+						<Icon icon="github" className="github" />
 					</a>
 				</header>
 				<main>
