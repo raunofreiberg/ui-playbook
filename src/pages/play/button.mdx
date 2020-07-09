@@ -1,0 +1,148 @@
+<article>
+
+# Button
+
+Buttons are interactive elements used to take an action, such as submitting a form or opening a dialog.
+
+<Icon icon="button" style={{ margin: '32px 0' }} />
+
+</article>
+
+<article>
+
+## Functionality
+
+As far as functionality goes, you get [a lot of stuff](https://www.w3.org/TR/wai-aria-practices/#keyboard-interaction-3) for free by using the native `<button>` element. This should be your first choice.
+
+### Hover state
+
+Indicates that the button is interactive when hovered with the mouse.
+
+### Active state
+
+Indicates that the button is pressed down.
+
+### Focus state
+
+Indicates that the focus in the document is currently on the button.
+
+> For the sake of aesthetics, it can be tempting to remove default browser focus styles with `outline: 0;` <br /><br />
+> Do not do this before adding your own custom focus styles!
+
+### Disabled state
+
+Indicates that the button is not interactive.
+
+If necessary, used in combination with a <Link href="/play/tooltip">Tooltip</Link> to provide a brief explanation on hover.
+
+### Loading state
+
+Indicates that the action taken via the button is asynchronous and will respond in a given amount of time.
+
+Visually, it is common that a spinner is shown inside the button.
+Make sure that the button itself is not expanding in width or height while in this state.
+
+### Responsive
+
+Buttons should adapt to mobile devices by expanding in height to a minimum of `48px`.
+Optionally, buttons on mobile can also become block level full width elements.
+
+</article>
+
+<article>
+
+## Best practices
+
+- Always use the native `<button>` element
+- Clearly distinguish the hierarchy of buttons with different variants
+- Write a button label that is succinct and short
+- Provide a `aria-label` for buttons that don't contain text (e.g. icon buttons)
+
+</article>
+
+<article>
+
+## Implementation
+
+### Link buttons
+
+When building your component, keep in mind that buttons can often be designed to act like a link.
+
+A common pattern in React is for the component to expose a `as` prop which changes the rendered element
+of the component, while keeping the visual the same.
+
+```jsx
+<Button as="a">Open</Button>
+```
+
+### `div` buttons
+
+Sometimes, you might be tempted to do this:
+
+```jsx
+<div onClick={onClick}>Open</div>
+```
+
+By doing so, you lose a lot of the default behaviour baked into `<button>`.
+**Avoid this at all cost and use the native element instead.**
+
+_Although_, there may be a case where you want to create a component with nested buttons:
+
+
+```jsx
+function Tag({ onSelect, onRemove }) {
+    return (
+        <button onClick={onSelect}>
+            Apple
+            <button onClick={onRemove}>x</button>
+        </button>
+    );
+}
+```
+
+This would not qualify as valid HTML, so you're gonna have to make the parent element a `div`.
+
+In which case, you should be mindful to re-implement existing behaviour according to the [WAI-ARIA spec for Button](https://www.w3.org/TR/wai-aria-practices/#button):
+
+```jsx
+function DivButton({
+    children,
+    'aria-label': ariaLabel,
+    disabled,
+    onClick,
+}) {
+    function onKeyDown(e) {
+        if (disabled) {
+            return;
+        }
+        if (e.key === 'Enter' || e.key === ' ') {
+           onClick();
+        }
+    }
+    return (
+        <div
+            tabIndex={0}
+            role="button"
+            onKeyDown={onKeyDown}
+            {...!disabled && { onClick }}
+            {...ariaLabel && { ariaLabel }}
+            aria-disabled={disabled ? 'true' : 'false'}
+        >
+            {children}
+        </div>
+    );
+}
+```
+
+Oof... that's a lot of stuff to cover. I hope you never have to do this! 😬
+
+
+</article>
+
+<article>
+
+## Resources
+
+- [WAI-ARIA Practices 1.1 - Button](https://www.w3.org/TR/wai-aria-practices/#button)
+
+</article>
