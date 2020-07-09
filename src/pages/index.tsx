@@ -9,6 +9,10 @@ const components = [
 	},
 	{
 		name: 'button',
+		teaser: false,
+	},
+	{
+		name: 'select',
 		teaser: true,
 	},
 ];

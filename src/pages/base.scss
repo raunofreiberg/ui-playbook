@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'GT-Walsheim';
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
   font-display: fallback;
   src: url('/static/fonts/GT-Walsheim-Regular.woff2');
@@ -64,7 +64,7 @@ blockquote {
   border-left: 3px solid #FFB963;
   background: rgba(#F8E8DD, 0.5);
   padding: 16px;
-  margin: 32px 0;
+  margin: 24px 0;
 
   > p {
     margin: 0 !important;
@@ -78,6 +78,18 @@ h1, h2, h3, h4, h5, h6, p {
 
 h1 {
   font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
 }
 
 header {
@@ -150,12 +162,8 @@ article {
     margin-bottom: 32px;
   }
 
-  h1, h2, h3 {
-    margin-bottom: 16px;
-  }
-
-  p {
-    margin-bottom: 16px;
+  h1, h2, h3, h4, p {
+    margin-bottom: 24px;
   }
 
   ul {

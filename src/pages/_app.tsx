@@ -12,7 +12,7 @@ import { Icon } from '../components';
 export default function App({ Component, pageProps }) {
 	return (
 		<RadixProvider>
-			<MDXProvider components={{ Icon, RadixTooltip, ReachTooltip, Button }}>
+			<MDXProvider components={{ Icon, RadixTooltip, ReachTooltip, Button, Link }}>
 				<Head>
 					<meta name="keywords" content="ui, playbook, documented collection, components, guideline" />
 					<link rel="shortcut icon" href="/static/favicon.ico" />

@@ -175,6 +175,7 @@ const ICONS = {
 			</g>
 		</svg>
 	),
+	select: <svg></svg>,
 };
 
 interface IconProps {
