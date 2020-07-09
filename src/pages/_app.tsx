@@ -19,6 +19,9 @@ export default function App({ Component, pageProps }) {
 					<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
 					<meta name="msapplication-TileColor" content="#6469FF" />
 					<meta name="theme-color" content="#6469FF" />
+					<meta name="twitter:site" content="@raunofreiberg" />
+					<meta name="twitter:creator" content="@raunofreiberg" />
+					<meta name="twitter:card" content="summary_large_image" />
 				</Head>
 				<DefaultSeo
 					title="UI Playbook"
