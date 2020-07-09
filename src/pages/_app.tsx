@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }) {
 		<RadixProvider>
 			<MDXProvider components={{ Icon, RadixTooltip, ReachTooltip, Button }}>
 				<Head>
-					<meta name="keywords" content="ui playbook" />
+					<meta name="keywords" content="ui, playbook, documented collection, components, guideline" />
 					<link rel="shortcut icon" href="/static/favicon.ico" />
 					<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
 					<meta name="msapplication-TileColor" content="#6469FF" />
@@ -25,7 +25,7 @@ export default function App({ Component, pageProps }) {
 				</Head>
 				<DefaultSeo
 					title="UI Playbook"
-					description="Recipes for common UI components"
+					description="The documented collection of common UI components"
 					openGraph={{
 						type: 'website',
 						url: 'https://uiplaybook.dev',
@@ -41,7 +41,7 @@ export default function App({ Component, pageProps }) {
 				/>
 				<header>
 					<Link href="/">
-						<a>
+						<a aria-label="Go to home page">
 							<Icon icon="logo" />
 						</a>
 					</Link>
@@ -49,7 +49,7 @@ export default function App({ Component, pageProps }) {
 						href="https://github.com/raunofreiberg/ui-playbook"
 						target="_blank"
 						rel="noopener noreferrer"
-						aria-label="Open Github"
+						aria-label="Open Github in a new tab"
 					>
 						<Icon icon="github" className="github" />
 					</a>

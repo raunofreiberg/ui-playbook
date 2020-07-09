@@ -149,7 +149,7 @@ const ICONS = {
 		</svg>
 	),
 	logo: (
-		<svg width="150" height="40" viewBox="0 0 407.188 100">
+		<svg width="130" height="40" viewBox="0 0 407.188 100">
 			<g id="Group_9" transform="translate(-68 415)">
 				<g id="Group_8" transform="translate(-622 -539)">
 					<rect
