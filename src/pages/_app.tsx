@@ -1,4 +1,4 @@
-import "@reach/listbox/styles.css";
+import '@reach/listbox/styles.css';
 import '@reach/tooltip/styles.css';
 import './base.scss';
 import React from 'react';
@@ -9,7 +9,7 @@ import { MDXProvider } from '@mdx-js/react';
 import { RadixProvider } from '@modulz/radix';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/github';
-import { Icon } from '../components';
+import { Icon, Button } from '../components';
 
 function Code({ children, className }) {
 	const language = className.replace(/language-/, '');
@@ -43,7 +43,7 @@ function Code({ children, className }) {
 export default function App({ Component, pageProps }) {
 	return (
 		<RadixProvider>
-			<MDXProvider components={{ Icon, Link, code: Code }}>
+			<MDXProvider components={{ Icon, Link, code: Code, Button }}>
 				<Head>
 					<meta name="keywords" content="ui, playbook, documented collection, components, guideline" />
 					<link rel="shortcut icon" href="/static/favicon.ico" />

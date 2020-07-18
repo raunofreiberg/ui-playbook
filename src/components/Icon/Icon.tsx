@@ -118,25 +118,6 @@ const ICONS = {
 			</g>
 		</svg>
 	),
-	button: (
-		<svg width="279" height="40" viewBox="0 0 279 40">
-			<g id="Group_7" data-name="Group 7" transform="translate(-220 -395)">
-				<rect
-					id="Rectangle_9"
-					data-name="Rectangle 9"
-					width="279"
-					height="40"
-					rx="4"
-					transform="translate(220 395)"
-				/>
-				<text id="SUBMIT" transform="translate(336 420)" fill="#fff" fontSize="14" fontWeight="600">
-					<tspan x="0" y="0">
-						SUBMIT
-					</tspan>
-				</text>
-			</g>
-		</svg>
-	),
 	github: (
 		<svg width="24" height="24" viewBox="0 0 1024 1024" fill="none">
 			<path
