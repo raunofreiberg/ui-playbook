@@ -66,18 +66,18 @@ For more context on buttons, read the [Button play](/play/button).
 
 However well you've implemented your custom select component, it is probably not the most ergonomic experience on mobile.
 
-iOS and Android ship with their own native widgets to be used for the [`<select>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select) element on the web. 
+iOS and Android ship with their own native widgets to be used for the [`<select>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select) element on the web.
 In most cases, users are more familiar with their native platform, so be mindful of this and provide a fallback.
 
 ### Use a [`mousedown`](https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event) event to open the select
 
 This can seem like an unnecessary nuance, and you might implement the opening with a [`click`](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event) event at first.
 
-Although, a [`click`](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event) event won't register before a 
-[`mouseup`](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseup_event) event has fired. 
+Although, a [`click`](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event) event won't register before a
+[`mouseup`](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseup_event) event has fired.
 Essentially, this means that the select would not open before the mouse is released.
 
-Furthermore, using a [`mousedown`](https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event) event 
+Furthermore, using a [`mousedown`](https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event) event
 makes it possible to open the dropdown, move over an option and select it immediately with a single interaction.
 
 ### Focus trap
@@ -108,7 +108,7 @@ For a React based select, you can use the [compound components pattern](https://
 
 ## Examples
 
-### [Reach UI (React)](https://reach.tech/listbox/)
+### [Reach UI — Listbox (React)](https://reach.tech/listbox/)
 
 We recommend using Reach UI's listbox as a base for your React based implementation.
 
@@ -120,7 +120,7 @@ We recommend using Reach UI's listbox as a base for your React based implementat
 
 <hr />
 
-### [Modulz — Radix (React)](https://radix.modulz.app/docs/select/)
+### [Modulz, Radix — Select (React)](https://radix.modulz.app/docs/select/)
 
 <Select>
   <Option value="option1" label="Option one" />

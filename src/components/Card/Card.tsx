@@ -9,6 +9,16 @@ interface CardProps {
 	teaser?: boolean;
 }
 
+// This is just whatever for now.
+// Eventually, we'll just have _actual_ components for all of the previews.
+function getPreview(name: string) {
+	if (name === 'snackbar') {
+		return <Snackbar />;
+	} else {
+		return <Icon icon={name as any} style={name === 'tooltip' ? { marginTop: -27 } : undefined} />;
+	}
+}
+
 export default function Card({ name, teaser = false }: CardProps) {
 	if (teaser) {
 		return (
@@ -17,9 +27,7 @@ export default function Card({ name, teaser = false }: CardProps) {
 					<div className={styles.heading}>
 						<h3>{name}</h3>
 					</div>
-					<div className={styles.body}>
-						{name === 'snackbar' ? <Snackbar /> : <Icon icon={name as any} />}
-					</div>
+					<div className={styles.body}>{getPreview(name)}</div>
 				</div>
 				<div className={cn(styles.ribbon)}>
 					<span>upcoming</span>
@@ -35,9 +43,7 @@ export default function Card({ name, teaser = false }: CardProps) {
 					<div className={styles.heading}>
 						<h3>{name}</h3>
 					</div>
-					<div className={styles.body}>
-						<Icon icon={name as any} />
-					</div>
+					<div className={styles.body}>{getPreview(name)}</div>
 				</li>
 			</a>
 		</Link>

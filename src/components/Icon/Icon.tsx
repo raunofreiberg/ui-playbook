@@ -204,10 +204,10 @@ const ICONS = {
 				fillRule="evenodd"
 			/>
 		</svg>
-	)
+	),
 };
 
-interface IconProps {
+interface IconProps extends React.HTMLAttributes<SVGElement> {
 	icon: keyof typeof ICONS;
 	className?: string;
 }
