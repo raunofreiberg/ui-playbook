@@ -1,0 +1,154 @@
+import {
+  Listbox,
+  ListboxInput,
+  ListboxButton,
+  ListboxPopover,
+  ListboxList,
+  ListboxOption,
+} from "@reach/listbox";
+import { Select, Option } from '@modulz/radix';
+
+<article>
+
+# Select
+
+Select is a dropdown that lets users choose a single option from a list of options.
+
+<Icon icon="select" style={{ margin: '32px 0' }} />
+
+> Building a fully featured and accessible custom implementation of this component can be a substantial undertaking. <br /> <br />
+> Consider using the native [`<select>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select) element whenever possible.
+
+</article>
+
+<article>
+
+## Functionality
+
+- Holds a single selected value.
+- Opens a dropdown in an overlay, interactive via mouse or keyboard.
+- Scrolls to the selected item when opened.
+- Allows searching through the options via [typeahead](https://en.wikipedia.org/wiki/Typeahead).
+- Adjusts its position dynamically based on collisions and available space.
+- Can be non-interactive with the [`disabled` HTML attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled) on the trigger button.
+
+</article>
+
+<article>
+
+## Best practices
+
+### Consider select when you have 4 or more options
+
+As interacting with the options require additional steps to be taken by the user, it may not be the preferred experience in the case of a couple of options.
+
+As an alternative, radio buttons or checkboxes can make the interface cleaner and more accessible.
+
+### Avoid select for data that is familiar to users
+
+On the other hand, making the user scroll through a large list of options that could have easily been typed can be a poor experience.
+
+For example, it is more natural to type out your day, month, and year of birth in separate text inputs, rather than finding the options respectively from a select.
+
+</article>
+
+<article>
+
+## Implementation
+
+### Use the [`<button>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) element as the trigger
+
+This should be your go-to choice when implementing the trigger button, as it provides expected semantics and accessibility feedback to screen readers.
+
+For more context on buttons, read the [Button play](/play/button).
+
+### Fall back to the [`<select>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select) element on mobile
+
+However well you've implemented your custom select component, it is probably not the most ergonomic experience on mobile.
+
+iOS and Android ship with their own native widgets to be used for the [`<select>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select) element on the web. 
+In most cases, users are more familiar with their native platform, so be mindful of this and provide a fallback.
+
+### Use a [`mousedown`](https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event) event to open the select
+
+This can seem like an unnecessary nuance, and you might implement the opening with a [`click`](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event) event at first.
+
+Although, a [`click`](https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event) event won't register before a 
+[`mouseup`](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseup_event) event has fired. 
+Essentially, this means that the select would not open before the mouse is released.
+
+Furthermore, using a [`mousedown`](https://developer.mozilla.org/en-US/docs/Web/API/Element/mousedown_event) event 
+makes it possible to open the dropdown, move over an option and select it immediately with a single interaction.
+
+### Focus trap
+
+When opening the select, the focus should move into the dropdown, preventing other elements on the page from receiving focus.
+
+### Close on outside click
+
+When the select is open, clicking on the rest of the page should close the menu.
+
+### Compound components
+
+For a React based select, you can use the [compound components pattern](https://kentcdodds.com/blog/compound-components-with-react-hooks) to express a relationship between the components in your API:
+
+```jsx
+<Select>
+    <Select.Option value="apple">Apple</Select.Option>
+    <Select.Option value="pear">Pear</Select.Option>
+    <Select.Option value="orange">Orange</Select.Option>
+<Select>
+```
+
+</article>
+
+<article>
+
+<article>
+
+## Examples
+
+### [Reach UI (React)](https://reach.tech/listbox/)
+
+We recommend using Reach UI's listbox as a base for your React based implementation.
+
+<Listbox defaultValue="option1">
+    <ListboxOption value="option1">Option one</ListboxOption>
+    <ListboxOption value="option2">Option two</ListboxOption>
+    <ListboxOption value="option3">Option three</ListboxOption>
+</Listbox>
+
+<hr />
+
+### [Modulz — Radix (React)](https://radix.modulz.app/docs/select/)
+
+<Select>
+  <Option value="option1" label="Option one" />
+  <Option value="option2" label="Option two" />
+  <Option value="option3" label="Option three" />
+</Select>
+
+</article>
+
+<article>
+
+</article>
+
+## Accessibility
+
+The accessibility requirements for this component are defined by the [WAI-ARIA Practices 1.1 for Listbox](https://www.w3.org/TR/wai-aria-practices/#Listbox):
+
+- [Keyboard Interaction](https://www.w3.org/TR/wai-aria-practices/#listbox_kbd_interaction)
+- [WAI-ARIA Roles, States, and Properties](https://www.w3.org/TR/wai-aria-practices/#listbox_roles_states_props)
+
+</article>
+
+<article>
+
+## Resources
+
+- [WAI-ARIA Practices 1.1 - Listbox](https://www.w3.org/TR/wai-aria-practices/#Listbox)
+- [Dropdowns: Design Guidelines](https://www.nngroup.com/articles/drop-down-menus/)
+- [Under the spotlight: Select](https://www.modulz.app/blog/under-the-spotlight-select)
+
+</article>

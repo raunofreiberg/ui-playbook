@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import Link from 'next/link';
-import { Icon } from '..';
+import { Icon, Snackbar } from '..';
 import styles from './Card.module.scss';
 
 interface CardProps {
@@ -18,7 +18,7 @@ export default function Card({ name, teaser = false }: CardProps) {
 						<h3>{name}</h3>
 					</div>
 					<div className={styles.body}>
-						<Icon icon={name as any} />
+						{name === 'snackbar' ? <Snackbar /> : <Icon icon={name as any} />}
 					</div>
 				</div>
 				<div className={cn(styles.ribbon)}>

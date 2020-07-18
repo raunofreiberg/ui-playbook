@@ -13,6 +13,10 @@ const components = [
 	},
 	{
 		name: 'select',
+		teaser: false,
+	},
+	{
+		name: 'snackbar',
 		teaser: true,
 	},
 ];
@@ -25,11 +29,11 @@ export default function Home() {
 				<h1>The component playbook for user interfaces</h1>
 				<input
 					className={styles.input}
-					placeholder="Find a component... 🔎️‍"
+					placeholder="Find a component...️‍"
 					value={query}
 					onChange={(e) => setQuery(e.target.value)}
 				/>
-				<span>yes, there's a search for 3 components ✌️</span>
+				<span>yes, there's a search for 4 components ✌️</span>
 			</div>
 			<ul className={styles.plays}>
 				{components

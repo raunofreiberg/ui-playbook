@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 279px;
+  height: 48px;
+  box-shadow: 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 14px;
+  border-radius: 4px;
+  background: var(--color-black);
+  padding: 8px 16px;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+  }
+}

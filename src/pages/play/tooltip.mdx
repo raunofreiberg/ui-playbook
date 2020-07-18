@@ -1,3 +1,6 @@
+import { Tooltip as RadixTooltip, Button } from '@modulz/radix';
+import ReachTooltip from '@reach/tooltip';
+
 <article>
 
 # Tooltip
@@ -17,7 +20,7 @@ Tooltip is a non-interactive overlay that briefly explains the function of the t
 - Displayed when the trigger element is hovered by the mouse or when it receives keyboard focus.
 - Focus remains on the trigger element while the tooltip is displayed.
 - Dismissed with the `Escape` key or by a blur/mouseleave event.
-
+- Has pre-defined positioning options, but should adjust itself dynamically based on collisions and available space.
 
 </article>
 
@@ -31,8 +34,6 @@ Tooltip is a non-interactive overlay that briefly explains the function of the t
 - Displaying the tooltip too quickly on mouseover can result in accidental activations and creates a jarring user experience.
 It is advisable to add a short delay (~100ms) before displaying it.
 - Once a tooltip is visible, interaction with any other tooltip should display immediately without the delay.
-- The tooltip can have preferred positioning options, but should adjust itself dynamically based on collisions and available space.
-
 
 </article>
 
@@ -85,7 +86,7 @@ We recommend using Reach UI's tooltip as a base for your React based implementat
 
 ## Accessibility
 
-The accessibility requirements for this component are defined by the [WAI-ARIA Practices 1.1 for Tooltip:](https://www.w3.org/TR/wai-aria-practices-1.1/#tooltip)
+The accessibility requirements for this component are defined by the [WAI-ARIA Practices 1.1 for Tooltip](https://www.w3.org/TR/wai-aria-practices-1.1/#tooltip):
 
 - [Keyboard Interaction](https://www.w3.org/TR/wai-aria-practices-1.1/#keyboard-interaction-21)
 - [WAI-ARIA Roles, States, and Properties](https://www.w3.org/TR/wai-aria-practices-1.1/#wai-aria-roles-states-and-properties-22)

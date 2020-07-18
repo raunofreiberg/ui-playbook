@@ -1,3 +1,4 @@
+import "@reach/listbox/styles.css";
 import '@reach/tooltip/styles.css';
 import './base.scss';
 import React from 'react';
@@ -5,8 +6,7 @@ import { DefaultSeo } from 'next-seo';
 import Link from 'next/link';
 import Head from 'next/head';
 import { MDXProvider } from '@mdx-js/react';
-import { RadixProvider, Tooltip as RadixTooltip, Button } from '@modulz/radix';
-import ReachTooltip from '@reach/tooltip';
+import { RadixProvider } from '@modulz/radix';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/github';
 import { Icon } from '../components';
@@ -43,7 +43,7 @@ function Code({ children, className }) {
 export default function App({ Component, pageProps }) {
 	return (
 		<RadixProvider>
-			<MDXProvider components={{ Icon, RadixTooltip, ReachTooltip, Button, Link, code: Code }}>
+			<MDXProvider components={{ Icon, Link, code: Code }}>
 				<Head>
 					<meta name="keywords" content="ui, playbook, documented collection, components, guideline" />
 					<link rel="shortcut icon" href="/static/favicon.ico" />
