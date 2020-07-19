@@ -53,10 +53,14 @@
 }
 
 body {
-  font-family: 'GT-Walsheim' !important;
+  font-family: 'GT-Walsheim';
   margin: 0;
   padding: 0;
   background-color: #F9FAFE;
+  background: radial-gradient(#ddd 1px, transparent 0), radial-gradient(#ddd 1px, #F9FAFE 0);
+  background-position: 0 0,25px 25px;
+  background-attachment: fixed;
+  background-size: 50px 50px;
 }
 
 blockquote {
