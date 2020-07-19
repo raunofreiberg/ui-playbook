@@ -10,6 +10,7 @@ import { RadixProvider } from '@modulz/radix';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/github';
 import { Icon } from '../components';
+import { useRouter } from 'next/router';
 
 function Code({ children, className }) {
 	const language = className.replace(/language-/, '');
@@ -41,10 +42,31 @@ function Code({ children, className }) {
 }
 
 export default function App({ Component, pageProps }) {
+	const router = useRouter();
+
+	React.useEffect(() => {
+		if (true) {
+			window.dataLayer = window.dataLayer || [];
+			// eslint-disable-next-line
+			function gtag() {
+				// eslint-disable-next-line
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+			gtag('config', 'UA-92206389-5', {
+				page_location: window.location.href,
+				page_path: window.location.pathname,
+				page_title: window.document.title,
+			});
+			window.gtag = gtag;
+		}
+	}, [router.route]);
+
 	return (
 		<RadixProvider>
 			<MDXProvider components={{ Icon, Link, code: Code }}>
 				<Head>
+					<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92206389-5" />
 					<meta name="keywords" content="ui, playbook, documented collection, components, guideline" />
 					<link rel="shortcut icon" href="/static/favicon.ico" />
 					<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
