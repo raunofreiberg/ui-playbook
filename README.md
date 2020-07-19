@@ -22,7 +22,7 @@ UI Playbook is an attempt to spec common UI components based on learnings regard
 - [Button](https://uiplaybook.dev/play/button)
 - [Select](https://uiplaybook.dev/play/select)
 
-## Development
+## Development 💻
 
 Install the dependencies:
 
