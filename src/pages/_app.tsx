@@ -45,7 +45,7 @@ export default function App({ Component, pageProps }) {
 	const router = useRouter();
 
 	React.useEffect(() => {
-		if (true) {
+		if (process.env.NODE_ENV === 'production') {
 			window.dataLayer = window.dataLayer || [];
 			// eslint-disable-next-line
 			function gtag() {
