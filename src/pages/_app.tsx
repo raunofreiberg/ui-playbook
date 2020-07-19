@@ -2,7 +2,7 @@ import '@reach/listbox/styles.css';
 import '@reach/tooltip/styles.css';
 import './base.scss';
 import React from 'react';
-import { DefaultSeo } from 'next-seo';
+import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 import Head from 'next/head';
 import { MDXProvider } from '@mdx-js/react';
@@ -41,8 +41,12 @@ function Code({ children, className }) {
 	);
 }
 
-export default function App({ Component, pageProps }) {
-	const router = useRouter();
+function capitalize(string: string) {
+	return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+export default function App({ Component, pageProps, router }) {
+	const [, componentName] = router.route.split('/play/');
 
 	React.useEffect(() => {
 		if (process.env.NODE_ENV === 'production') {
@@ -70,7 +74,7 @@ export default function App({ Component, pageProps }) {
 
 	return (
 		<RadixProvider>
-			<MDXProvider components={{ Icon, Link, code: Code, Title }}>
+			<MDXProvider components={{ Icon, Link, code: Code, Title, NextSeo }}>
 				<Head>
 					<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92206389-5" />
 					<meta name="keywords" content="ui, playbook, documented collection, components, guideline" />
@@ -82,8 +86,8 @@ export default function App({ Component, pageProps }) {
 					<meta name="twitter:creator" content="@raunofreiberg" />
 					<meta name="twitter:card" content="summary_large_image" />
 				</Head>
-				<DefaultSeo
-					title="UI Playbook"
+				<NextSeo
+					title={componentName ? `UI Playbook — ${capitalize(componentName)}` : 'UI Playbook'}
 					description="The documented collection of UI components."
 					openGraph={{
 						type: 'website',

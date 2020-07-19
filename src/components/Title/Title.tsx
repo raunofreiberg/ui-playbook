@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from './Title.module.scss';
 import { Icon } from '..';
+import styles from './Title.module.scss';
 
 interface TitleProps {
-	children?: string;
+	children: string;
 }
 
 export default function Title({ children }: TitleProps) {
