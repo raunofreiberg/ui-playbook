@@ -56,12 +56,12 @@ export default function App({ Component, pageProps }) {
 				</Head>
 				<DefaultSeo
 					title="UI Playbook"
-					description="The documented collection of common UI components"
+					description="The documented collection of UI components."
 					openGraph={{
 						type: 'website',
 						url: 'https://uiplaybook.dev',
 						title: 'UI Playbook',
-						description: 'The documented collection of common UI components.',
+						description: 'The documented collection of UI components.',
 						images: [
 							{
 								url: 'https://uiplaybook.dev/static/playbook.png',
