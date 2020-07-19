@@ -26,7 +26,7 @@ export default function Home() {
 	return (
 		<>
 			<div className={styles.inputWrapper}>
-				<h1>The component playbook for user interfaces</h1>
+				<h1>The documented collection of UI components</h1>
 				<input
 					className={styles.input}
 					placeholder="Find a component...️‍"
