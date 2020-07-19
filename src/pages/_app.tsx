@@ -46,18 +46,24 @@ export default function App({ Component, pageProps }) {
 
 	React.useEffect(() => {
 		if (process.env.NODE_ENV === 'production') {
+			// @ts-ignore
 			window.dataLayer = window.dataLayer || [];
-			// eslint-disable-next-line
+			// @ts-ignore
+			// eslint-disable-next-line no-inner-declarations
 			function gtag() {
-				// eslint-disable-next-line
+				// @ts-ignore
+				// eslint-disable-next-line no-undef
 				dataLayer.push(arguments);
 			}
+			// @ts-ignore
 			gtag('js', new Date());
+			// @ts-ignore
 			gtag('config', 'UA-92206389-5', {
 				page_location: window.location.href,
 				page_path: window.location.pathname,
 				page_title: window.document.title,
 			});
+			// @ts-ignore
 			window.gtag = gtag;
 		}
 	}, [router.route]);
