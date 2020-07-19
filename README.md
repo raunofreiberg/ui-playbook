@@ -21,3 +21,17 @@ UI Playbook is an attempt to spec common UI components based on learnings regard
 - [Tooltip](https://uiplaybook.dev/play/tooltip)
 - [Button](https://uiplaybook.dev/play/button)
 - [Select](https://uiplaybook.dev/play/select)
+
+## Development
+
+Install the dependencies:
+
+`yarn` or `npm install`
+
+Run locally:
+
+`yarn dev` or `npm run dev`
+
+Build production:
+
+`yarn build` or `npm run build`
