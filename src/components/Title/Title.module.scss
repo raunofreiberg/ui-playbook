@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+
+  h1 {
+    margin-bottom: 0;
+  }
+}
+
+.edit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  color: var(--color-black);
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-property: transform, background;
+
+  &:hover, &:focus {
+    background: var(--color-base-100);
+    transform: scale(1.05);
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    color: var(--color-black);
+  }
+}

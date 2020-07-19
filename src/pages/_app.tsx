@@ -9,7 +9,7 @@ import { MDXProvider } from '@mdx-js/react';
 import { RadixProvider } from '@modulz/radix';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/github';
-import { Icon } from '../components';
+import { Icon, Title } from '../components';
 import { useRouter } from 'next/router';
 
 function Code({ children, className }) {
@@ -70,7 +70,7 @@ export default function App({ Component, pageProps }) {
 
 	return (
 		<RadixProvider>
-			<MDXProvider components={{ Icon, Link, code: Code }}>
+			<MDXProvider components={{ Icon, Link, code: Code, Title }}>
 				<Head>
 					<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92206389-5" />
 					<meta name="keywords" content="ui, playbook, documented collection, components, guideline" />

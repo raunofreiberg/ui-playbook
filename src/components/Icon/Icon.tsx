@@ -186,6 +186,14 @@ const ICONS = {
 			/>
 		</svg>
 	),
+	edit: (
+		<svg viewBox="0 0 24 24">
+			<path
+				d="M4 16.667V20h3.333l9.83-9.83-3.333-3.333L4 16.667zm15.74-9.074a.885.885 0 0 0 0-1.253l-2.08-2.08a.885.885 0 0 0-1.253 0l-1.626 1.626 3.333 3.333 1.626-1.626z"
+				fill="currentColor"
+			/>
+		</svg>
+	),
 };
 
 interface IconProps extends React.HTMLAttributes<SVGElement> {
