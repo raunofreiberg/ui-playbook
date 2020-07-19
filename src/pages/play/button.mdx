@@ -95,12 +95,12 @@ _Although_, there may be a case where you want to create a component with nested
 
 ```jsx
 function Tag({ onSelect, onRemove }) {
-    return (
-        <button onClick={onSelect}>
-            Apple
-            <button onClick={onRemove}>x</button>
-        </button>
-    );
+  return (
+      <button onClick={onSelect}>
+          Apple
+          <button onClick={onRemove}>x</button>
+      </button>
+  );
 }
 ```
 
@@ -110,31 +110,31 @@ In which case, you should be mindful to re-implement existing behaviour accordin
 
 ```jsx
 function DivButton({
-    children,
-    'aria-label': ariaLabel,
-    disabled,
-    onClick,
+  children,
+  'aria-label': ariaLabel,
+  disabled,
+  onClick,
 }) {
-    function onKeyDown(e) {
-        if (disabled) {
-            return;
-        }
-        if (e.key === 'Enter' || e.key === ' ') {
-           onClick();
-        }
-    }
-    return (
-        <div
-            tabIndex={0}
-            role="button"
-            onKeyDown={onKeyDown}
-            {...!disabled && { onClick }}
-            {...ariaLabel && { ariaLabel }}
-            aria-disabled={disabled ? 'true' : 'false'}
-        >
-            {children}
-        </div>
-    );
+  function onKeyDown(e) {
+      if (disabled) {
+          return;
+      }
+      if (e.key === 'Enter' || e.key === ' ') {
+         onClick();
+      }
+  }
+  return (
+      <div
+          tabIndex={0}
+          role="button"
+          onKeyDown={onKeyDown}
+          {...!disabled && { onClick }}
+          {...ariaLabel && { ariaLabel }}
+          aria-disabled={disabled ? 'true' : 'false'}
+      >
+          {children}
+      </div>
+  );
 }
 ```
 
