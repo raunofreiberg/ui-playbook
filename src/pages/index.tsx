@@ -37,7 +37,7 @@ export default function Home() {
 			</div>
 			<ul className={styles.plays}>
 				{components
-					.filter((component) => component.name.includes(query))
+					.filter((component) => component.name.toLowerCase().includes(query.toLowerCase()))
 					.map((component) => (
 						<Card key={component.name} {...component} />
 					))}
