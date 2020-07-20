@@ -1,6 +1,6 @@
 <div align="center">
 
-![image](/public/static/playbook.png)
+![image](/public/static/github.png)
 
 ## UI Playbook
 

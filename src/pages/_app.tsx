@@ -96,7 +96,7 @@ export default function App({ Component, pageProps, router }) {
 						description: 'The documented collection of UI components.',
 						images: [
 							{
-								url: 'https://uiplaybook.dev/static/playbook.png',
+								url: 'https://uiplaybook.dev/static/og.png',
 								alt: 'UI Playbook',
 							},
 						],
