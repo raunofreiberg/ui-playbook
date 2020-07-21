@@ -21,9 +21,9 @@ Notifications are informational messages that give feedback on the outcome of an
 ## Functionality
 
 - Appear temporarily towards the bottom of the screen.
-- Appear as a result of user input or general occurrences in the application.
+- Appear as a result of user action or general occurrences (e.g. network error) in the application.
 - Do not interrupt the user experience or require an action to be taken to disappear.
-- Automatically dismissed after a specified duration.
+- Dismissed automatically after a specified duration or via user interaction.
 
 </article>
 
@@ -55,7 +55,7 @@ Usually, notifications are dismissed automatically after <strong>4 seconds</stro
 
 This should give the user enough time to understand the message, provided it is short and straightforward.
 
-For actionable notifications, the duration can be extended to <strong>10 seconds</strong> to give the user enough time to interact with it.
+For actionable notifications, the duration can be extended up to <strong>10 seconds</strong> to give the user enough time to interact with it.
 
 Depending on the context, the duration may vary. Consider exposing an option to modify the duration as needed.
 
@@ -135,6 +135,12 @@ It is crucial to make sure that the message of the notification is accessible to
 
 Notifications should have a `role` attribute set to either [`alert`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_alert_role) or [`status`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_status_role).
 If a screen reader is currently reading something, using `alert` will wait for it to finish, whereas `status` would interrupt the announcement and read immediately. In most cases, you would use `status`.
+
+For example, `status` is suitable for notifications that don't prompt the user's attention — like "Changes saved".
+
+Whereas `alert` should be used for notifications where the user's immediate attention is required — like "Network error".
+
+
 
 </article>
 

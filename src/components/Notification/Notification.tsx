@@ -24,16 +24,17 @@ export default function Notification({
 
 export function NotificationContainer({ children }) {
 	const [expanded, setExpanded] = React.useState(false);
-
 	return (
 		<div className={styles.stacked} onMouseEnter={() => setExpanded(true)} onMouseLeave={() => setExpanded(false)}>
 			{React.Children.map(children, (child, index) => {
+				const lastIndex = children.length - 1;
+				const isLast = index === lastIndex;
 				return React.cloneElement(child, {
 					style: {
 						transform: expanded
 							? 'translateY(0px) scale(1)'
-							: `translateY(${(children.length - 1 - index) * 40}px) scale(${
-									index === children.length - 1 ? 1 : 1 - (children.length - 1 - index) * 0.08
+							: `translateY(${(lastIndex - index) * 40}px) scale(${
+									isLast ? 1 : 1 - (lastIndex - index) * 0.08
 							  })`,
 					},
 				});
