@@ -1,0 +1,150 @@
+import { Notification, NotificationContainer } from '../../components';
+
+<article>
+
+<Title>
+  Notification
+</Title>
+
+Notifications are informational messages that give feedback on the outcome of an action or general occurrences in the application.
+
+<div className="center">
+  <Notification style={{ margin: '32px 0' }} />
+</div>
+
+> If you're looking for a more intrusive type of notification, consider using the [AlertDialog](https://www.w3.org/TR/wai-aria-practices-1.2/#alertdialog) which interrupts the user's workflow and requires an immediate action to be taken.
+
+</article>
+
+<article>
+
+## Functionality
+
+- Appear temporarily towards the bottom of the screen.
+- Appear as a result of user input or general occurrences in the application.
+- Do not interrupt the user experience or require an action to be taken to disappear.
+- Automatically dismissed after a specified duration.
+
+</article>
+
+<article>
+
+## Best practices
+
+### Provide a short and affirmative message
+
+The message of notifications should be easy to understand at a glance. <br />
+A general rule of thumb would be to follow the pattern of noun + verb.
+
+For example, prefer "User deleted" over "The user has been deleted".
+
+### Actionable notifications
+
+In most cases, notifications are purely informative with no immediate action to be taken.
+However, it is totally valid to provide an action.
+
+For example, you could allow users to amend choices by displaying an "Undo" action.
+
+<Notification onAction={() => {}} actionLabel="Undo" style={{ margin: '24px 0' }}>
+  User deleted
+</Notification>
+
+### Automatic dismissal duration
+
+Usually, notifications are dismissed automatically after <strong>4 seconds</strong>.
+
+This should give the user enough time to understand the message, provided it is short and straightforward.
+
+For actionable notifications, the duration can be extended to <strong>10 seconds</strong> to give the user enough time to interact with it.
+
+Depending on the context, the duration may vary. Consider exposing an option to modify the duration as needed.
+
+### Pause automatic dismissal timer on hover
+
+This can be a useful feature to give the user time to digest the message or come to a decision before the dismissal.
+
+Once the mouse leaves the notification, the timer is restarted and will dismiss automatically after it runs to completion.
+
+### Positioning
+
+Notifications usually appear towards the bottom left of the screen which in most cases is the least disruptive area and does not contain interactive elements.
+
+If multiple notifications are displayed, they should stack on top of each other with the latest one on top, and expand on hover.
+
+<NotificationContainer>
+  <Notification>Notification message 1</Notification>
+  <Notification>Notification message 2</Notification>
+  <Notification>Notification message 3</Notification>
+</NotificationContainer>
+
+Alternatively, they can be displayed alongside each other without the stacking and hover interaction.
+
+### Naming
+
+You might have encountered varying naming conventions for this component:
+
+- Snackbar
+- Toast
+- Alert
+- Notification
+
+At first, Alert can seem like the most obvious choice.
+Although, alerts are generally meant to appear in context, alongside other UI elements.
+Moreover, the [WAI-ARIA Practices for Alert](https://www.w3.org/TR/wai-aria-practices/#alert) do not recommend alerts that disappear automatically.
+
+We believe that component names should be self-descriptive, and communicate how the component should _behave_, rather than look, so we recommend using <strong>Notification</strong>.
+
+</article>
+
+<article>
+
+## Implementation
+
+### Dispatching notifications
+
+Initially, you might implement a notification component and expose it as-is.
+
+However, since notifications appear globally, placing them declaratively in the hierarchy of elements does not always make sense.
+Besides, no one wants to implement a global store for notifications themselves!
+
+Hence, along with the component itself, consider exposing a global container component with an imperative API to dispatch notifications:
+
+```jsx
+import { NotificationContainer, notification } from 'ui-playbook';
+
+// Place the container in the root of the application.
+function App() {
+  return (
+    <NotificationContainer />
+  );
+}
+
+// Dispatch notifications from anywhere!
+notification.dispatch('Notification message');
+```
+
+</article>
+
+<article>
+
+## Accessibility
+
+### Announce the message to screen readers
+
+It is crucial to make sure that the message of the notification is accessible to assistive technologies.
+
+Notifications should have a `role` attribute set to either [`alert`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_alert_role) or [`status`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_status_role).
+If a screen reader is currently reading something, using `alert` will wait for it to finish, whereas `status` would interrupt the announcement and read immediately. In most cases, you would use `status`.
+
+</article>
+
+<article>
+
+## Resources
+
+- [Shopify Polaris — Toast](https://polaris.shopify.com/components/feedback-indicators/toast)
+- [Indicators, Validations, and Notifications: Pick the Correct Communication Option](https://www.nngroup.com/articles/indicators-validations-notifications/)
+- [Vercel Design — Toast](https://vercel.com/design/toast)
+- [MDN: ARIA Live Regions](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions)
+
+</article>

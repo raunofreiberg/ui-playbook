@@ -1,0 +1,43 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 279px;
+  height: 48px;
+  box-shadow: 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 14px;
+  border-radius: 4px;
+  background: var(--color-black);
+  padding: 8px 16px;
+  font-weight: 500;
+  user-select: none;
+  cursor: default;
+
+  svg {
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
+  }
+}
+
+.action {
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.stacked {
+  display: inline-block;
+  margin: 24px 0;
+
+  > .wrapper {
+    box-shadow: 0 1px 18px 0 rgba(115, 112, 112, 0.49), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s var(--bezier-snappy);
+
+    &:not(:first-of-type) {
+      margin-top: 8px;
+    }
+  }
+}

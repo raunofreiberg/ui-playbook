@@ -1,0 +1,20 @@
+.wrapper {
+  background: var(--color-base-100);
+  border: 0;
+  border-radius: 4px;
+  height: 48px;
+  padding: 8px 16px;
+  min-width: 279px;
+  font-family: var(--font-primary);
+  color: var(--color-black);
+  font-size: 14px;
+
+  &::placeholder {
+    color: var(--color-black);
+  }
+
+  &:read-only {
+    outline: 0;
+    pointer-events: none;
+  }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import Link from 'next/link';
-import { Icon, Snackbar, Button } from '..';
+import { Icon, Notification, Button, TextField } from '..';
 import styles from './Card.module.scss';
 
 interface CardProps {
@@ -13,10 +13,12 @@ interface CardProps {
 // Eventually, we'll just have _actual_ components for all of the previews.
 function getPreview(name: string) {
 	switch (name) {
-		case 'snackbar':
-			return <Snackbar />;
+		case 'notification':
+			return <Notification />;
 		case 'button':
 			return <Button />;
+		case 'TextField':
+			return <TextField placeholder="Placeholder" readOnly />;
 		default:
 			return <Icon icon={name as any} style={name === 'tooltip' ? { marginTop: -27 } : undefined} />;
 	}
