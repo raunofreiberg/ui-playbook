@@ -36,6 +36,8 @@
   --color-paragraph: rgb(102, 110, 117);
   --color-base-100: #E6EBF4;
   --bezier-swift: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --bezier-snappy: cubic-bezier(.2, .8, .4, 1);
+  --font-primary: 'GT-Walsheim';
 }
 
 ::selection {
@@ -53,7 +55,7 @@
 }
 
 body {
-  font-family: 'GT-Walsheim';
+  font-family: var(--font-primary);
   margin: 0;
   padding: 0;
   background-color: #F9FAFE;
@@ -200,4 +202,10 @@ hr {
 
 pre {
   margin: 0;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

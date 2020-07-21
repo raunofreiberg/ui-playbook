@@ -8,7 +8,7 @@ import { Button } from '../../components';
 
 Buttons are interactive elements used to take an action, such as submitting a form or opening a dialog.
 
-<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+<div className="center">
     <Button style={{ margin: '32px 0'}} />
 </div>
 
@@ -62,7 +62,7 @@ Optionally, buttons on mobile can also become block level full width elements.
 - Always use the native `<button>` element.
 - Clearly distinguish the hierarchy of buttons with different variants.
 - Write a button label that is succinct and short.
-- Provide a `aria-label` for buttons that don't contain text (e.g. icon buttons).
+- Provide a [`aria-label`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) for buttons that don't contain text (e.g. icon buttons).
 
 </article>
 
@@ -149,7 +149,7 @@ Oof... that's a lot of stuff to cover. I hope you never have to do this! 😬
 
 ## Accessibility
 
-The accessibility requirements for this component are defined by the [WAI-ARIA Practices 1.1 for Button](https://www.w3.org/TR/wai-aria-practices/#button):
+The accessibility requirements for this component are defined by the [WAI-ARIA Practices for Button](https://www.w3.org/TR/wai-aria-practices/#button):
 
 - [Keyboard Interaction](https://www.w3.org/TR/wai-aria-practices/#keyboard-interaction-3)
 - [WAI-ARIA Roles, States, and Properties](https://www.w3.org/TR/wai-aria-practices/#wai-aria-roles-states-and-properties-3)
@@ -160,6 +160,6 @@ The accessibility requirements for this component are defined by the [WAI-ARIA P
 
 ## Resources
 
-- [WAI-ARIA Practices 1.1 - Button](https://www.w3.org/TR/wai-aria-practices/#button)
+- [WAI-ARIA Practices — Button](https://www.w3.org/TR/wai-aria-practices/#button)
 
 </article>

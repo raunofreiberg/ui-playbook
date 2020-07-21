@@ -16,7 +16,11 @@ const components = [
 		teaser: false,
 	},
 	{
-		name: 'snackbar',
+		name: 'notification',
+		teaser: false,
+	},
+	{
+		name: 'TextField',
 		teaser: true,
 	},
 ];

@@ -46,6 +46,7 @@ function capitalize(string: string) {
 
 export default function App({ Component, pageProps, router }) {
 	const [, componentName] = router.route.split('/play/');
+	const title = componentName ? `UI Playbook — ${capitalize(componentName)}` : 'UI Playbook';
 
 	React.useEffect(() => {
 		if (process.env.NODE_ENV === 'production') {
@@ -86,12 +87,12 @@ export default function App({ Component, pageProps, router }) {
 					<meta name="twitter:card" content="summary_large_image" />
 				</Head>
 				<NextSeo
-					title={componentName ? `UI Playbook — ${capitalize(componentName)}` : 'UI Playbook'}
+					title={title}
 					description="The documented collection of UI components."
 					openGraph={{
 						type: 'website',
 						url: 'https://uiplaybook.dev',
-						title: 'UI Playbook',
+						title,
 						description: 'The documented collection of UI components.',
 						images: [
 							{
