@@ -25,16 +25,7 @@ export default function Notification({
 export function NotificationContainer({ children }) {
 	const [expanded, setExpanded] = React.useState(false);
 	return (
-		<div
-			className={styles.stacked}
-			onMouseEnter={() => setExpanded(true)}
-			onMouseLeave={() => setExpanded(false)}
-			onPointerDown={(e) => {
-				if (e.pointerType === 'touch' || e.pointerType === 'pen') {
-					setExpanded(!expanded);
-				}
-			}}
-		>
+		<div className={styles.stacked} onMouseEnter={() => setExpanded(true)} onMouseLeave={() => setExpanded(false)}>
 			{React.Children.map(children, (child, index) => {
 				const lastIndex = children.length - 1;
 				return React.cloneElement(child, {

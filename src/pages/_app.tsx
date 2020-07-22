@@ -118,7 +118,7 @@ export default function App({ Component, pageProps, router }) {
 						<Icon icon="github" className="github" />
 					</a>
 				</header>
-				<main className={isPlayRoute && 'play'}>
+				<main className={isPlayRoute ? 'play' : undefined}>
 					<Component {...pageProps} />
 					<Footer compact={isPlayRoute} />
 				</main>

@@ -195,14 +195,14 @@ article {
     color: var(--color-primary);
     border-radius: 3px;
   }
-}
 
-hr {
-  height: 1px;
-  background-color: var(--color-base-100);
-  max-width: 80px;
-  border: none;
-  margin: 32px 0;
+  hr {
+    height: 1px;
+    background-color: var(--color-base-100);
+    max-width: 80px;
+    border: none;
+    margin: 32px 0;
+  }
 }
 
 pre {
