@@ -1,5 +1,13 @@
 # Contributing
 
+## Improving existing components
+
+A great way to start contributing is to extend (or correct) the existing components with additional examples or information.
+
+You can do so by either cloning the repository, and developing locally, or by editing markdown directly in GitHub. Every page has a edit button for this purpose:
+
+![image](https://user-images.githubusercontent.com/23662329/88210127-5dbdd180-cc5c-11ea-80fa-b814a4adc782.png)
+
 ## New component proposals
 
 If you believe that there's a component missing from UI Playbook, feel free to submit a proposal for a new one.
@@ -14,7 +22,6 @@ You can do so by submitting a new issue and following the issue template, which 
 - Examples (render a few well implemented examples of the component from various design systems)
 - Accessibility (cover relevant accessibility requirements and links to WAI-ARIA docs for the component design pattern, if applicable)
 - Resources (any resources used to put the play together)
-
 
 ## Development
 
