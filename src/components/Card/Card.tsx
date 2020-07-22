@@ -18,7 +18,7 @@ function getPreview(name: string) {
 		case 'button':
 			return <Button />;
 		case 'TextField':
-			return <TextField placeholder="Placeholder" readOnly />;
+			return <TextField placeholder="Placeholder" readOnly tabIndex={-1} />;
 		default:
 			return <Icon icon={name as any} style={name === 'tooltip' ? { marginTop: -27 } : undefined} />;
 	}
