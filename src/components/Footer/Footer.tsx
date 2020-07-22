@@ -40,7 +40,7 @@ export default function Footer({ compact = false }: { compact: boolean }) {
 						value={email}
 						onChange={(e) => setEmail(e.target.value)}
 					/>
-					<Button onClick={subscribe} type="submit">
+					<Button type="submit" onClick={subscribe}>
 						Submit
 					</Button>
 				</form>
