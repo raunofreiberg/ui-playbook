@@ -10,6 +10,9 @@ You can do so by either cloning the repository, and [developing locally](#develo
 
 ## Propose new plays
 
+> Before submitting a new issue, make sure to look at the issues board to see if a similar one already exists.
+> For example, currently there's an issue open for [additional plays](https://github.com/raunofreiberg/ui-playbook/issues/17).
+
 If you believe that there's a component missing from UI Playbook, feel free to submit a proposal for a new one.
 Don't worry if the proposal isn't perfect — we can work out the details in collaboration! The idea is to submit a draft that could be iterated upon.
 
