@@ -4,3 +4,4 @@ export { default as Notification, NotificationContainer } from './Notification/N
 export { default as Button } from './Button/Button';
 export { default as Title } from './Title/Title';
 export { default as TextField } from './TextField/TextField';
+export { default as Footer } from './Footer/Footer';

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from '../components';
 import styles from './index.module.scss';
+import inputStyles from '../components/TextField/TextField.module.scss';
 
 const components = [
 	{
@@ -32,7 +33,7 @@ export default function Home() {
 			<div className={styles.inputWrapper}>
 				<h1>The documented collection of UI components</h1>
 				<input
-					className={styles.input}
+					className={inputStyles.input}
 					placeholder="Find a component...️‍"
 					value={query}
 					onChange={(e) => setQuery(e.target.value)}

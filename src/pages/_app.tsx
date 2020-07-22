@@ -9,7 +9,7 @@ import { MDXProvider } from '@mdx-js/react';
 import { RadixProvider } from '@modulz/radix';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/github';
-import { Icon, Title } from '../components';
+import { Icon, Title, Footer } from '../components';
 
 function Code({ children, className }) {
 	const language = className.replace(/language-/, '');
@@ -119,6 +119,7 @@ export default function App({ Component, pageProps, router }) {
 				</header>
 				<main>
 					<Component {...pageProps} />
+					<Footer compact={router.route.includes('play')} />
 				</main>
 			</MDXProvider>
 		</RadixProvider>

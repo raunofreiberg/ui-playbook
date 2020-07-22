@@ -130,6 +130,8 @@ p {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
   min-height: calc(100vh - 64px);
   max-width: 1024px;
   margin: 0 auto;
@@ -148,6 +150,7 @@ main {
 }
 
 article {
+  width: 100%;
   max-width: 560px;
   margin: 0 auto;
   animation: fadeIn 0.5s var(--bezier-swift) forwards;
@@ -209,3 +212,4 @@ pre {
   align-items: center;
   justify-content: center;
 }
+
