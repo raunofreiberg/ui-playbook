@@ -23,16 +23,7 @@ UI Playbook is an attempt to spec common UI components based on learnings regard
 - [Select](https://uiplaybook.dev/play/select)
 - [Notification](https://uiplaybook.dev/play/notification)
 
-## Development 💻
+## Contributing 
 
-Install the dependencies:
+Wish to submit a new component for UI Playbook? Read our [contributing guide](./CONTRIBUTING.md) for some ideas on how to do so.
 
-`yarn` or `npm install`
-
-Run locally:
-
-`yarn dev` or `npm run dev`
-
-Build production:
-
-`yarn build` or `npm run build`
