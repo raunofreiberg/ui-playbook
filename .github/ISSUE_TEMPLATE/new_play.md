@@ -29,7 +29,7 @@ assignees: ''
 
 ### Accessibility
 
-<!-- ✍️--> Cover relevant accessibility requirements. If a [WAI-ARIA](https://www.w3.org/TR/wai-aria-practices/#aria_ex) design pattern exists for this component, provide links to the relevant sections.
+<!-- ✍️--> Cover relevant accessibility requirements. If a WAI-ARIA design pattern exists for this component, provide links to the relevant sections.
 
 ### Resources
 
