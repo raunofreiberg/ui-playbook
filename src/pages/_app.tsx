@@ -47,6 +47,7 @@ function capitalize(string: string) {
 export default function App({ Component, pageProps, router }) {
 	const [, componentName] = router.route.split('/play/');
 	const title = componentName ? `UI Playbook — ${capitalize(componentName)}` : 'UI Playbook';
+	const isPlayRoute = router.route.includes('play');
 
 	React.useEffect(() => {
 		if (process.env.NODE_ENV === 'production') {
@@ -117,9 +118,9 @@ export default function App({ Component, pageProps, router }) {
 						<Icon icon="github" className="github" />
 					</a>
 				</header>
-				<main>
+				<main className={isPlayRoute && 'play'}>
 					<Component {...pageProps} />
-					<Footer compact={router.route.includes('play')} />
+					<Footer compact={isPlayRoute} />
 				</main>
 			</MDXProvider>
 		</RadixProvider>

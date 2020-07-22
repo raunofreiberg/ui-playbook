@@ -43,7 +43,6 @@
 @media (min-width: 675px) {
   .wrapper.compact {
     margin: 32px auto auto auto;
-    max-width: 560px;
     flex-wrap: nowrap;
     align-items: center;
 
@@ -53,11 +52,4 @@
       }
     }
   }
-}
-
-
-.hr {
-  max-width: unset;
-  width: 100%;
-  margin: 0;
 }

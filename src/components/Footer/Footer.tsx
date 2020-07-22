@@ -1,8 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
-import { Button } from '..';
+import { Button, TextField } from '..';
 import styles from './Footer.module.scss';
-import inputStyles from '../TextField/TextField.module.scss';
 
 export default function Footer({ compact = false }: { compact: boolean }) {
 	const [email, setEmail] = React.useState('');
@@ -35,8 +34,7 @@ export default function Footer({ compact = false }: { compact: boolean }) {
 			</div>
 			<div className={styles.subscribe}>
 				<form onSubmit={(e) => e.preventDefault()}>
-					<input
-						className={inputStyles.input}
+					<TextField
 						type="email"
 						placeholder="joe.doe@gmail.com"
 						value={email}

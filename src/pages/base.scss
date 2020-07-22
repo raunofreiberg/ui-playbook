@@ -136,6 +136,10 @@ main {
   max-width: 1024px;
   margin: 0 auto;
   padding: 32px;
+
+  &.play {
+    max-width: calc(560px + 64px);
+  }
 }
 
 @keyframes fadeIn {
@@ -151,8 +155,6 @@ main {
 
 article {
   width: 100%;
-  max-width: 560px;
-  margin: 0 auto;
   animation: fadeIn 0.5s var(--bezier-swift) forwards;
 
   svg {
