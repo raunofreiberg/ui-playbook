@@ -5,6 +5,7 @@
   justify-content: space-between;
   align-items: flex-end;
   flex-wrap: wrap;
+  margin-top: 32px;
 
   .info {
     h3 {
@@ -38,7 +39,6 @@
 
 @media (min-width: 675px) {
   .wrapper.compact {
-    margin: 32px auto auto auto;
     flex-wrap: nowrap;
     align-items: center;
 
