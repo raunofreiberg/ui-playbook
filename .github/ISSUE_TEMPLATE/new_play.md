@@ -1,7 +1,7 @@
 ---
 name: 📖  New play
 about: Propose a new component for UI Playbook
-title: ''
+title: Component name
 labels: play
 assignees: ''
 
