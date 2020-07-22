@@ -4,7 +4,7 @@
 
 A great way to start contributing is to extend (or correct) the existing plays with additional examples or information.
 
-You can do so by either cloning the repository, and developing locally, or by editing markdown directly in GitHub. Every page has a edit button for this purpose:
+You can do so by either cloning the repository, and [developing locally](#development), or by editing markdown directly in GitHub. Every page has a edit button for this purpose:
 
 ![image](https://user-images.githubusercontent.com/23662329/88210127-5dbdd180-cc5c-11ea-80fa-b814a4adc782.png)
 
