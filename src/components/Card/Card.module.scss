@@ -9,20 +9,17 @@
   transition-timing-function: var(--bezier-snappy);
   transition-property: transform, box-shadow;
 
-  &:hover, &:focus {
-    transform: scale(1.05);
-    box-shadow: var(--box-shadow-hover);
+  &:not(.teaser) {
+    &:hover, &:focus {
+      transform: scale(1.05);
+      box-shadow: var(--box-shadow-hover);
+    }
   }
 
   &.teaser {
     cursor: not-allowed;
     user-select: none;
     opacity: 0.5;
-
-    &:hover, &:focus {
-      transform: none;
-      box-shadow: none;
-    }
   }
 }
 
