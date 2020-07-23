@@ -40,6 +40,8 @@
   --bezier-swift: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   --bezier-snappy: cubic-bezier(.2, .8, .4, 1);
   --font-primary: 'GT-Walsheim';
+  --box-shadow: 0 0 1px 0 rgba(189, 192, 207, 0.06), 0 16px 16px -1px rgba(189, 192, 207, 0.2);
+  --box-shadow-hover: 0 0 1px 0 rgba(189, 192, 207, 0.06), 0 16px 16px -1px rgba(189, 192, 207, 0.3);
 }
 
 ::selection {

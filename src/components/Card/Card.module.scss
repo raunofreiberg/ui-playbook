@@ -2,13 +2,16 @@
   height: 200px;
   background: white;
   border-radius: 4px;
-  box-shadow: 0 4px 8px 0 rgba(189, 192, 207, .08);
+  box-shadow: var(--box-shadow);
   border: 1px solid var(--color-base-100);
   cursor: pointer;
-  transition: transform 0.4s cubic-bezier(.2, .8, .4, 1);
+  transition-duration: 0.4s;
+  transition-timing-function: var(--bezier-snappy);
+  transition-property: transform, box-shadow;
 
   &:hover, &:focus {
     transform: scale(1.05);
+    box-shadow: var(--box-shadow-hover);
   }
 
   &.teaser {
@@ -18,6 +21,7 @@
 
     &:hover, &:focus {
       transform: none;
+      box-shadow: none;
     }
   }
 }
