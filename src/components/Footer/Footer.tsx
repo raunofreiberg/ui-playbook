@@ -53,20 +53,34 @@ export default function Footer({ compact = false }: { compact: boolean }) {
 				<TextField
 					type="email"
 					placeholder="joe.doe@gmail.com"
-					className={status === SUCCESS ? styles.hide : undefined}
+					style={{
+						opacity: status === SUCCESS ? 0 : 1,
+						transform: `scale(${status === SUCCESS ? 0 : 1})`,
+					}}
 					disabled={status === SUBMITTING}
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
 				/>
 				<Button
 					type="submit"
-					className={status === SUCCESS ? styles.hide : undefined}
+					style={{
+						opacity: status === SUCCESS ? 0 : 1,
+						transform: `scale(${status === SUCCESS ? 0 : 1})`,
+					}}
 					disabled={status === SUBMITTING}
 					onClick={subscribe}
 				>
 					Submit
 				</Button>
-				<p className={cn(styles.success, status === SUCCESS && styles.show)}>Subscribed to newsletter 🥳</p>
+				<p
+					className={styles.success}
+					style={{
+						opacity: status === SUCCESS ? 1 : 0,
+						transform: `scale(${status === SUCCESS ? 1 : 0})`,
+					}}
+				>
+					Subscribed to newsletter 🥳
+				</p>
 			</form>
 		</footer>
 	);

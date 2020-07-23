@@ -29,18 +29,13 @@
     }
 
     button, input {
-      opacity: 0;
-      transform: scale(0);
+      opacity: 1;
+      transform: scale(1);
       transition-duration: 0.4s;
       transition-timing-function: var(--bezier-snappy);
       transition-property: opacity, transform;
     }
   }
-}
-
-.show {
-  opacity: 1;
-  transform: scale(1);
 }
 
 .success {
