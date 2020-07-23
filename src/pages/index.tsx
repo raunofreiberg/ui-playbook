@@ -33,6 +33,7 @@ export default function Home() {
 			<div className={styles.inputWrapper}>
 				<h1>The documented collection of UI components</h1>
 				<input
+					aria-label="Search for a component"
 					className={inputStyles.input}
 					placeholder="Find a component...️‍"
 					value={query}

@@ -18,7 +18,15 @@ function getPreview(name: string) {
 		case 'button':
 			return <Button />;
 		case 'TextField':
-			return <TextField teaser placeholder="Placeholder" readOnly tabIndex={-1} />;
+			return (
+				<TextField
+					teaser
+					readOnly
+					aria-label="Preview TextField component"
+					placeholder="Placeholder"
+					tabIndex={-1}
+				/>
+			);
 		default:
 			return <Icon icon={name as any} style={name === 'tooltip' ? { marginTop: -27 } : undefined} />;
 	}
@@ -30,7 +38,7 @@ export default function Card({ name, teaser = false }: CardProps) {
 			<li className={styles.ribbonWrapper}>
 				<div className={cn(styles.wrapper, styles.teaser)}>
 					<div className={styles.heading}>
-						<h3>{name}</h3>
+						<h2>{name}</h2>
 					</div>
 					<div className={styles.body}>{getPreview(name)}</div>
 				</div>
@@ -46,7 +54,7 @@ export default function Card({ name, teaser = false }: CardProps) {
 			<a className={styles.link}>
 				<li className={styles.wrapper}>
 					<div className={styles.heading}>
-						<h3>{name}</h3>
+						<h2>{name}</h2>
 					</div>
 					<div className={styles.body}>{getPreview(name)}</div>
 				</li>

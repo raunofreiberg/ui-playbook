@@ -52,6 +52,7 @@ export default function Footer({ compact = false }: { compact: boolean }) {
 			<form className={styles.form} onSubmit={(e) => e.preventDefault()}>
 				<TextField
 					type="email"
+					aria-label="Type your email"
 					placeholder="joe.doe@gmail.com"
 					style={{
 						opacity: status === SUCCESS ? 0 : 1,
