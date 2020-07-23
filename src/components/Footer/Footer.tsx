@@ -53,22 +53,20 @@ export default function Footer({ compact = false }: { compact: boolean }) {
 				<TextField
 					type="email"
 					placeholder="joe.doe@gmail.com"
-					className={status === SUCCESS ? styles.hide : styles.show}
+					className={status === SUCCESS ? styles.hide : undefined}
 					disabled={status === SUBMITTING}
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
 				/>
 				<Button
 					type="submit"
-					className={status === SUCCESS ? styles.hide : styles.show}
+					className={status === SUCCESS ? styles.hide : undefined}
 					disabled={status === SUBMITTING}
 					onClick={subscribe}
 				>
 					Submit
 				</Button>
-				<p className={cn(styles.success, status === SUCCESS ? styles.show : styles.hide)}>
-					Subscribed to newsletter 🥳
-				</p>
+				<p className={cn(styles.success, status === SUCCESS && styles.show)}>Subscribed to newsletter 🥳</p>
 			</form>
 		</footer>
 	);

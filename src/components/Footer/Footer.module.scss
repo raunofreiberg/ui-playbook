@@ -29,16 +29,13 @@
     }
 
     button, input {
+      opacity: 0;
+      transform: scale(0);
       transition-duration: 0.4s;
       transition-timing-function: var(--bezier-snappy);
       transition-property: opacity, transform;
     }
   }
-}
-
-.hide {
-  opacity: 0;
-  transform: scale(0);
 }
 
 .show {
@@ -53,6 +50,8 @@
   border-radius: 4px;
   font-size: 14px;
   position: absolute;
+  opacity: 0;
+  transform: scale(0);
   transition-duration: 0.4s;
   transition-timing-function: var(--bezier-snappy);
   transition-property: opacity, transform;
