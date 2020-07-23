@@ -15,17 +15,25 @@
   background: var(--color-black);
   color: white;
   transition-duration: 0.4s;
-  transition-timing-function: cubic-bezier(.2, .8, .4, 1);
+  transition-timing-function: var(--bezier-snappy);
   transition-property: background-color, color, border-color, box-shadow;
   cursor: pointer;
 
-  &:hover, &:focus {
-    background: lighten(#222328, 5%);
-    box-shadow: 0 2px 4px 0 rgba(#222328, 0.24);
+  &:enabled {
+    &:hover, &:focus {
+      background: lighten(#222328, 5%);
+      box-shadow: 0 2px 4px 0 rgba(#222328, 0.24);
+    }
+
+    &:active {
+      background: darken(#222328, 5%);
+      box-shadow: none;
+    }
   }
 
-  &:active {
-    background: darken(#222328, 5%);
-    box-shadow: none;
+  &:disabled {
+    cursor: not-allowed;
+    background-color: var(--color-base-100);
+    color: var(--color-base-200);
   }
 }

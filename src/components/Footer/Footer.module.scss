@@ -13,9 +13,10 @@
     }
   }
 
-  .subscribe {
+  .form {
     display: flex;
     align-items: center;
+    position: relative;
 
     input {
       margin-right: 8px;
@@ -26,7 +27,35 @@
     button {
       min-width: 80px;
     }
+
+    button, input {
+      transition-duration: 0.4s;
+      transition-timing-function: var(--bezier-snappy);
+      transition-property: opacity, transform;
+    }
   }
+}
+
+.hide {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.success {
+  background: var(--color-primary);
+  padding: 8px 16px;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+  position: absolute;
+  transition-duration: 0.4s;
+  transition-timing-function: var(--bezier-snappy);
+  transition-property: opacity, transform;
 }
 
 @media (max-width: 675px) {
@@ -42,7 +71,7 @@
     flex-wrap: nowrap;
     align-items: center;
 
-    .subscribe {
+    .form {
       input {
         width: 160px;
       }
