@@ -173,7 +173,7 @@ article {
     margin-bottom: 32px;
   }
 
-  h1, h2, h3, h4, p {
+  h1, h2, h3, h4, p:not(:last-child) {
     margin-bottom: 24px;
   }
 
@@ -181,6 +181,10 @@ article {
     list-style-type: '• ';
     padding-left: 18px;
     margin: 24px 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     li {
       color: var(--color-paragraph);
@@ -207,6 +211,10 @@ article {
     max-width: 80px;
     border: none;
     margin: 32px 0;
+  }
+
+  blockquote:last-child {
+    margin-bottom: 0;
   }
 }
 
