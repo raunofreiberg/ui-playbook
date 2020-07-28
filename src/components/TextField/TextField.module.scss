@@ -1,16 +1,17 @@
 .teaser {
-  background: var(--color-base-100);
-  border: 0;
+  background: white;
+  border: 1px solid var(--color-base-100);
   border-radius: 4px;
   height: 40px;
   padding: 8px 16px;
-  min-width: 279px;
+  width: 270px;
   font-family: var(--font-primary);
+  box-shadow: 0 5px 25px -5px rgba(30, 16, 84, .1);
   color: var(--color-black);
   font-size: 14px;
 
   &::placeholder {
-    color: var(--color-black);
+    color: var(--color-base-200);
   }
 
   &:read-only {

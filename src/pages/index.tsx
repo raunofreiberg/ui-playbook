@@ -22,7 +22,7 @@ const components = [
 	},
 	{
 		name: 'TextField',
-		teaser: true,
+		teaser: false,
 	},
 ];
 

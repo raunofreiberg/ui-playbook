@@ -50,7 +50,7 @@ export default function Card({ name, teaser = false }: CardProps) {
 	}
 
 	return (
-		<Link href={`play/${name}`}>
+		<Link href={`play/${name.toLowerCase()}`}>
 			<a className={styles.link}>
 				<li className={styles.wrapper}>
 					<div className={styles.heading}>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const ICONS = {
 	tooltip: (
-		<svg width="283" height="100" viewBox="0 0 283 100">
+		<svg width="270" height="100" viewBox="0 0 283 100">
 			<defs>
 				<clipPath id="clip-path">
 					<rect id="Rectangle_2" data-name="Rectangle 2" width="32" height="32" />
@@ -157,7 +157,7 @@ const ICONS = {
 		</svg>
 	),
 	select: (
-		<svg width="279" height="40" viewBox="0 0 279 40">
+		<svg width="270" height="40" viewBox="0 0 279 40">
 			<g id="Group_1" transform="translate(-150 -135)">
 				<rect
 					id="Rectangle_1"
@@ -192,6 +192,11 @@ const ICONS = {
 				d="M4 16.667V20h3.333l9.83-9.83-3.333-3.333L4 16.667zm15.74-9.074a.885.885 0 0 0 0-1.253l-2.08-2.08a.885.885 0 0 0-1.253 0l-1.626 1.626 3.333 3.333 1.626-1.626z"
 				fill="currentColor"
 			/>
+		</svg>
+	),
+	expand: (
+		<svg viewBox="0 0 24 24">
+			<path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" fill="currentColor" />
 		</svg>
 	),
 };
