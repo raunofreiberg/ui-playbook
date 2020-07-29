@@ -9,6 +9,7 @@
   box-shadow: 0 5px 25px -5px rgba(30, 16, 84, .1);
   color: var(--color-black);
   font-size: 14px;
+  -webkit-appearance: none;
 
   &::placeholder {
     color: var(--color-base-200);

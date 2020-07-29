@@ -14,7 +14,7 @@ interface CardProps {
 function getPreview(name: string) {
 	switch (name) {
 		case 'notification':
-			return <Notification />;
+			return <Notification style={{ pointerEvents: 'none' }} />;
 		case 'button':
 			return <Button />;
 		case 'TextField':
