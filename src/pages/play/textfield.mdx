@@ -51,7 +51,7 @@ Usually, this is used when the user has already submitted the form but can still
 
 Indicates that the data entered into the input is not valid.
 
-The input should visually change color, and be associated with an error label to announce the message to screen readers.
+The input should visually change color, and be associated with an error message.
 
 ### Icon support
 
@@ -72,7 +72,7 @@ Or, an autocomplete input could provide a button with a cross icon to clear the 
 When the input is empty, show a placeholder value with a relevant example.
 This helps nudge users towards entering correctly formatted data.
 
-For example, prefer "rauno@freiberg.com" instead of "Your e-mail address" for an email input.
+For example, prefer "joe.doe@gmail.com" instead of "Your e-mail address" for an email input.
 
 ### Associate a label with the input
 
@@ -91,9 +91,9 @@ However, if most of the fields are required in the given form, marking the rest 
 
 When validating input, be mindful of when the user is finished interacting with the field.
 
-For complex input such as passwords, instant inline validation will prevent users from guesswork and reduce the amount of errors.
+For complex input such as new passwords, instant inline validation will prevent users from guesswork and reduce the amount of errors.
 
-Whereas for simpler input where the expected data is more obvious (such as email), avoid showing the error until the user has finished typing.
+Whereas for simpler input such as email, where the expected data is more obvious, avoid showing the error until the user has finished typing.
 
 </article>
 
@@ -127,7 +127,7 @@ This is a common technique to implicitly associate the `<label>` with the `<inpu
 </label>
 ```
 
-However, this can produce unexpected results such as activating the input while clicking on empty space or any other elements nested inside the `label`.
+However, this can produce unexpected results such as activating the input while clicking on empty space or any other elements nested inside the `<label>`.
 
 In most cases, you would probably explicitly associate the elements.
 Besides, you can abstract the generation of id's away inside the component, so that anyone using it does not have to think about it!
