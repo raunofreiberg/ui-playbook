@@ -1,0 +1,24 @@
+.popover {
+  background: white;
+  border: 1px solid var(--color-base-100);
+  padding: 8px 16px;
+  border-radius: 4px;
+  box-shadow: var(--box-shadow);
+  position: absolute;
+  top: -42px;
+  font-size: 14px;
+  right: 0;
+  color: var(--color-black);
+}
+
+.wrapper {
+  position: relative;
+}
+
+.trigger {
+  width: 270px;
+  background: var(--color-base-100);
+  border-radius: 4px;
+  padding: 8px 16px;
+  height: 40px;
+}

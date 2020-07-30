@@ -18,7 +18,7 @@ TextField is an input field that users can type into.
 
 ## Functionality
 
-This component should use the HTML [`<input>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) element under the hood.
+This component should use the [HTML `<input>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) under the hood.
 
 ### Hover state
 
@@ -55,9 +55,9 @@ The input should visually change color, and be associated with an error message.
 
 ### Icon support
 
-Icons can be useful to either describe the intent of the input, or provide additional functionality.
+Icons can be useful to either describe the purpose of the input, or provide additional functionality.
 
-For example, a search input could come with a magnifying glass icon to indicate searchability.
+For example, a search input could have a magnifying glass icon to indicate searchability.
 
 Or, an autocomplete input could provide a button with a cross icon to clear the current value.
 
@@ -72,7 +72,7 @@ Or, an autocomplete input could provide a button with a cross icon to clear the 
 When the input is empty, show a placeholder value with a relevant example.
 This helps nudge users towards entering correctly formatted data.
 
-For example, prefer "joe.doe@gmail.com" instead of "Your e-mail address" for an email input.
+For example, prefer <span>"joe.doe@gmail.com"</span> instead of "Your e-mail address" for an email input.
 
 ### Associate a label with the input
 
@@ -82,7 +82,7 @@ Placeholders aren't visible to the user once the field has been filled in, nor a
 
 ### Indicate required fields
 
-A common pattern to indicate required fields would be to use the HTML [`required`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required) attribute
+A common pattern to indicate required fields would be to use the [HTML `required` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required)
 along with an asterisk (*).
 
 However, if most of the fields are required in the given form, marking the rest of the fields as optional can be visually less cluttering.
@@ -108,7 +108,7 @@ To accept numeric inputs, you would commonly use `<input type="number">`.
 This has some non-trivial drawbacks related to the input not being fully accessible, certain browsers rounding or converting very large numbers,
 and generally having a sub-optimal user experience.
 
-Instead, consider using a text input with the [`pattern`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern) attribute like so:
+Instead, consider using a text input with the [HTML `pattern` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern) like so:
 
 ```html
 <input type="text" inputmode="numeric" pattern="[0-9]*">

@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import Link from 'next/link';
-import { Icon, Notification, Button, TextField } from '..';
+import { Icon, Notification, Button, TextField, Popover } from '..';
 import styles from './Card.module.scss';
 
 interface CardProps {
@@ -27,6 +27,8 @@ function getPreview(name: string) {
 					tabIndex={-1}
 				/>
 			);
+		case 'popover':
+			return <Popover teaser />;
 		default:
 			return <Icon icon={name as any} style={name === 'tooltip' ? { marginTop: -27 } : undefined} />;
 	}

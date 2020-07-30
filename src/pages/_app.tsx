@@ -46,7 +46,9 @@ function capitalize(string: string) {
 
 export default function App({ Component, pageProps, router }) {
 	const [, componentName] = router.route.split('/play/');
-	const title = componentName ? `UI Playbook — ${capitalize(componentName)}` : 'UI Playbook';
+	const title = componentName
+		? `UI Playbook — ${componentName === 'textfield' ? 'TextField' : capitalize(componentName)}`
+		: 'UI Playbook';
 	const isPlayRoute = router.route.includes('play');
 
 	React.useEffect(() => {
