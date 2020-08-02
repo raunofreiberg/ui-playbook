@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import Link from 'next/link';
-import { Icon, Notification, Button, TextField } from '..';
+import { Icon, Notification, Button, TextField, Popover } from '..';
 import styles from './Card.module.scss';
 
 interface CardProps {
@@ -14,7 +14,7 @@ interface CardProps {
 function getPreview(name: string) {
 	switch (name) {
 		case 'notification':
-			return <Notification />;
+			return <Notification style={{ pointerEvents: 'none' }} />;
 		case 'button':
 			return <Button />;
 		case 'TextField':
@@ -25,8 +25,12 @@ function getPreview(name: string) {
 					aria-label="Preview TextField component"
 					placeholder="Placeholder"
 					tabIndex={-1}
+					label="Field label"
+					hint="Hint label"
 				/>
 			);
+		case 'popover':
+			return <Popover teaser />;
 		default:
 			return <Icon icon={name as any} style={name === 'tooltip' ? { marginTop: -27 } : undefined} />;
 	}
@@ -50,7 +54,7 @@ export default function Card({ name, teaser = false }: CardProps) {
 	}
 
 	return (
-		<Link href={`play/${name}`}>
+		<Link href={`play/${name.toLowerCase()}`}>
 			<a className={styles.link}>
 				<li className={styles.wrapper}>
 					<div className={styles.heading}>

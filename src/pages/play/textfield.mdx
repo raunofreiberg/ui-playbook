@@ -1,0 +1,215 @@
+import { TextField } from '../../components';
+
+<article>
+
+<Title>
+  TextField
+</Title>
+
+TextField is an input field that users can type into.
+
+<div className="center">
+  <TextField label="Field label" placeholder="Placeholder" hint="Hint label" />
+</div>
+
+</article>
+
+<article>
+
+## Functionality
+
+This component should use the [HTML `<input>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) under the hood.
+
+### Hover state
+
+Indicates that the input is interactive when hovered with the mouse.
+
+### Active state
+
+Indicates that the input is currently being activated.
+
+### Focus state
+
+Indicates that the focus in the document is currently on the input.
+
+> For the sake of aesthetics, it can be tempting to remove default browser focus styles with `outline: 0;` <br /><br />
+> Do not do this before adding your own custom focus styles!
+
+### Disabled state
+
+Indicates that the input is not interactive.
+
+If necessary, used in combination with a <Link href="/play/tooltip">Tooltip</Link> to provide a brief explanation on hover.
+
+### Read-only state
+
+Indicates that the input cannot be modified. However, the user can still tab to it, highlight it, and copy text from it.
+
+Usually, this is used when the user has already submitted the form but can still view it as read-only.
+
+### Error state
+
+Indicates that the data entered into the input is not valid.
+
+The input should visually change color, and be associated with an error message.
+
+### Icon support
+
+Icons can be useful to either describe the purpose of the input, or provide additional functionality.
+
+For example, a search input could have a magnifying glass icon to indicate searchability.
+
+Or, an autocomplete input could provide a button with a cross icon to clear the current value.
+
+### Labelling
+
+There are three types of labels commonly used along with the input: field label, hint label, and error label.
+
+Field labels appear above the input, and are used to describe the purpose of the input.
+
+Hint labels appear below the input, and provide additional instructions or context that the field label may not convey.
+
+Error labels appear below the input, replacing the hint label, and provide feedback about the entered user input.
+
+</article>
+
+<article>
+
+## Best practices
+
+### Provide a placeholder
+
+When the input is empty, show a placeholder value with a relevant example.
+This helps nudge users towards entering correctly formatted data.
+
+For example, prefer "joe.doe@gmail.com" instead of "Your e-mail address" for an email input.
+
+### Associate the input with a field label
+
+While placeholders provide valuable guidance for users, they are not a replacement for field labels.
+
+Placeholders aren't visible to the user once the field has been filled in, nor are they announced by screen readers.
+
+### Use a hint label for clarification
+
+In most cases, a field label is enough for the user to understand the purpose of the input. However,
+hint labels can be used to address concerns that users may have, or provide additional context.
+
+For example, an e-mail input can provide a hint label to clarify usage of the e-mail: "This e-mail will not appear publicly or be used for newsletters."
+
+### Validate input
+
+When validating input, be mindful of when the user is finished interacting with the field before displaying an error message.
+
+For complex input such as new passwords, instant inline validation will prevent users from guesswork and reduce the amount of errors.
+
+Whereas for simpler input such as email, where the expected data is more obvious, avoid showing the error until the user has finished typing.
+
+### Indicate required fields
+
+A common pattern to indicate required fields would be to use the [HTML `required` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required)
+along with an asterisk (*).
+
+However, if most of the fields are required in the given form, marking the rest of the fields as optional can be visually less cluttering.
+
+</article>
+
+<article>
+
+## Implementation
+
+### Numeric inputs
+
+To accept numeric inputs, you would commonly use `<input type="number">`.
+
+This has some non-trivial drawbacks related to the input not being fully accessible, certain browsers rounding or converting very large numbers,
+and generally having a sub-optimal user experience.
+
+Instead, consider using a text input with the [HTML `pattern` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/pattern) like so:
+
+```html
+<input type="text" inputmode="numeric" pattern="[0-9]*">
+```
+
+For additional context, you can read [why the GOV.UK design system team changed the input type for numbers](https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/).
+
+### Wrapping `<input>` with a `<label>`
+
+This is a common technique to implicitly associate the `<label>` with the `<input>` without using the HTML `for` attribute.
+
+```html
+<label>
+  <input type="email" />
+  Email
+</label>
+```
+
+However, this can produce unexpected results such as activating the input while clicking on empty space or any other elements nested inside the `<label>`.
+
+In most cases, you would probably explicitly associate the elements.
+Besides, you can abstract the generation of id's away inside the component, so that anyone using it does not have to think about it!
+
+</article>
+
+<article>
+
+## Accessibility
+
+### Provide a [`<label>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label) element
+
+A `<label>` element should be associated with the `<input>` element so that:
+
+- Clicking on the `<label>` element will focus on the input, providing a larger hit area for mobile users.
+- Screen readers will read out the label when the input is focused, making it easier for an assistive technology user to understand what data should be entered.
+
+```html
+<label for="email">Email</label>
+<input type="email" name="email" id="email" />
+```
+
+In some cases, the purpose of the input may be clear enough on its own.
+If so, [the label can be hidden visually](https://www.w3.org/WAI/tutorials/forms/labels/#hiding-label-text), but needs to remain accessible for users using assistive technologies.
+
+### Announce the error to screen readers
+
+In addition to visually notifying about the error, make sure to provide feedback to users using assistive technologies.
+
+If an error is displayed, you should:
+
+- Associate the error with the `<input>` element via the [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-describedby_attribute) attribute.
+- Set [`aria-invalid`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-invalid_attribute) to `true` on the `<input>` element.
+
+```html
+<label for="password">Password</label>
+<input
+  type="password"
+  name="password"
+  id="password"
+  aria-describedby="error"
+  aria-invalid="true"
+/>
+<small id="error">Password must include a uppercase letter.</small>
+```
+
+This will ensure that the error message is announced by screen readers.
+
+### Input zooming on iOS devices
+
+iOS devices will slightly zoom into the input when the font size is less than `16px`.
+
+If this turns out to be a problem, you may want to increase the font size of the input on mobile devices.
+
+</article>
+
+<article>
+
+## Resources
+
+- [W3 — Using `aria-invalid` To Indicate An Error Field](https://www.w3.org/WAI/WCAG21/Techniques/aria/ARIA21.html)
+- [W3 — Form Instructions](https://www.w3.org/WAI/tutorials/forms/instructions/)
+- [Shopify Polaris — TextField](https://polaris.shopify.com/components/forms/text-field)
+- [How to Report Errors in Forms: 10 Design Guidelines](https://www.nngroup.com/articles/errors-forms-design-guidelines/)
+- [Marking Required Fields in Forms](https://www.nngroup.com/articles/required-fields/)
+- [Why the GOV.UK Design System team changed the input type for numbers](https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/)
+
+</article>

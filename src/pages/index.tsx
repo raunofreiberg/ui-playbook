@@ -22,6 +22,10 @@ const components = [
 	},
 	{
 		name: 'TextField',
+		teaser: false,
+	},
+	{
+		name: 'popover',
 		teaser: true,
 	},
 ];
