@@ -25,6 +25,8 @@ function getPreview(name: string) {
 					aria-label="Preview TextField component"
 					placeholder="Placeholder"
 					tabIndex={-1}
+					label="Field label"
+					hint="Hint label"
 				/>
 			);
 		case 'popover':

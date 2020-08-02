@@ -9,7 +9,7 @@ import { TextField } from '../../components';
 TextField is an input field that users can type into.
 
 <div className="center">
-  <TextField placeholder="Placeholder" style={{ width: 270, margin: '32px 0' }} />
+  <TextField label="Field label" placeholder="Placeholder" hint="Hint label" />
 </div>
 
 </article>
@@ -61,6 +61,16 @@ For example, a search input could have a magnifying glass icon to indicate searc
 
 Or, an autocomplete input could provide a button with a cross icon to clear the current value.
 
+### Labelling
+
+There are three types of labels commonly used along with the input: field label, hint label, and error label.
+
+Field labels appear above the input, and are used to describe the purpose of the input.
+
+Hint labels appear below the input, and provide additional instructions or context that the field label may not convey.
+
+Error labels appear below the input, replacing the hint label, and provide feedback about the entered user input.
+
 </article>
 
 <article>
@@ -74,11 +84,26 @@ This helps nudge users towards entering correctly formatted data.
 
 For example, prefer "joe.doe@gmail.com" instead of "Your e-mail address" for an email input.
 
-### Associate the input with a label
+### Associate the input with a field label
 
-While placeholders provide valuable guidance for users, they are not a replacement for labels.
+While placeholders provide valuable guidance for users, they are not a replacement for field labels.
 
 Placeholders aren't visible to the user once the field has been filled in, nor are they announced by screen readers.
+
+### Use a hint label for clarification
+
+In most cases, a field label is enough for the user to understand the purpose of the input. However,
+hint labels can be used to address concerns that users may have, or provide additional context.
+
+For example, an e-mail input can clarify usage of the e-mail by saying: "This e-mail will not appear publicly or be used for newsletters."
+
+### Validate input
+
+When validating input, be mindful of when the user is finished interacting with the field before displaying an error message.
+
+For complex input such as new passwords, instant inline validation will prevent users from guesswork and reduce the amount of errors.
+
+Whereas for simpler input such as email, where the expected data is more obvious, avoid showing the error until the user has finished typing.
 
 ### Indicate required fields
 
@@ -86,14 +111,6 @@ A common pattern to indicate required fields would be to use the [HTML `required
 along with an asterisk (*).
 
 However, if most of the fields are required in the given form, marking the rest of the fields as optional can be visually less cluttering.
-
-### Validate input
-
-When validating input, be mindful of when the user is finished interacting with the field.
-
-For complex input such as new passwords, instant inline validation will prevent users from guesswork and reduce the amount of errors.
-
-Whereas for simpler input such as email, where the expected data is more obvious, avoid showing the error until the user has finished typing.
 
 </article>
 
