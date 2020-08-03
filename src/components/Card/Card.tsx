@@ -16,7 +16,7 @@ function getPreview(name: string) {
 		case 'notification':
 			return <Notification style={{ pointerEvents: 'none' }} />;
 		case 'button':
-			return <Button />;
+			return <Button tabIndex={-1} />;
 		case 'TextField':
 			return (
 				<TextField
