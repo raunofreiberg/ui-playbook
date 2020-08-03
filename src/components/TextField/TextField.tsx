@@ -10,12 +10,14 @@ interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 export default function TextField({ label, hint, teaser = false, className, ...rest }: TextFieldProps) {
-	const id = useId();
+	const inputId = useId();
+	const hintId = useId();
 	return (
 		<div className={styles.wrapper}>
-			{label && <label htmlFor={id}>{label}</label>}
+			{label && <label htmlFor={inputId}>{label}</label>}
 			<input
-				id={id}
+				id={inputId}
+				aria-describedby={hintId}
 				className={cn(
 					{
 						[styles.teaser]: teaser,
@@ -25,7 +27,7 @@ export default function TextField({ label, hint, teaser = false, className, ...r
 				)}
 				{...rest}
 			/>
-			{hint && <small>{hint}</small>}
+			{hint && <small id={hintId}>{hint}</small>}
 		</div>
 	);
 }

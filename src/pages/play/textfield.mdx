@@ -193,6 +193,24 @@ If an error is displayed, you should:
 
 This will ensure that the error message is announced by screen readers.
 
+### Announce the hint to screen readers
+
+If an hint label is displayed along with the input,
+make sure to associate the hint with the `<input>` element:
+
+```html
+<label for="email">Email</label>
+<input
+  type="email"
+  name="email"
+  id="email"
+  aria-describedby="hint"
+/>
+<small id="hint">This e-mail won't appear publicly.</small>
+```
+
+Similar to an error, this will provide feedback to users using assistive technologies.
+
 ### Input zooming on iOS devices
 
 iOS devices will slightly zoom into the input when the font size is less than `16px`.
