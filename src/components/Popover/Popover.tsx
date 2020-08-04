@@ -1,5 +1,6 @@
 import * as React from 'react';
 import styles from './Popover.module.scss';
+import { TextField } from '../index';
 
 interface PopoverProps {
 	teaser?: boolean;

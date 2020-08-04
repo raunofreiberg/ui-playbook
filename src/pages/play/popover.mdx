@@ -1,0 +1,88 @@
+import { Popover, Button } from '../../components';
+
+<article>
+
+<Title>
+    Popover
+</Title>
+
+Popover is an interactive contextual overlay that provides additional content or actions.
+
+<div className="center">
+    <Popover teaser />
+</div>
+
+> If you're looking to display content on hover, refer to <Link href="/play/tooltip">Tooltip</Link>.
+
+</article>
+
+<article>
+
+## Functionality
+
+- Opens via keyboard or when the trigger element is clicked by the mouse.
+- Dismissed with the `Escape` key or by navigating outside.
+- Traps focus inside the popover, and restores it when dismissed.
+- Has pre-defined positioning options, but should adjust itself dynamically based on collisions and available space.
+
+</article>
+
+<article>
+
+## Best practices
+
+### Avoid for primary actions or content
+
+A popover should not be used simply due to poor design or lack of space in layout. The content inside a popover should not be critical to the user's primary task on the page.
+
+Aim to use a popover for secondary actions or supplementary information, such as filters or keyboard shortcuts.
+
+### Indicate additional content
+
+The appearance of a popover should not come as a surprise to the user. Strive to hint that there's additional content to be displayed from the trigger element.
+
+A clear and predictable label, such as "Actions" or "Select item", along with an icon, can help convey the expectation of additional content.
+
+### Position aside the trigger element
+
+A popover should be non-disruptive and appear contextually in relation to the element that it opens from.
+
+Avoid using a popover for a full screen overlay. Instead, consider using a Modal.
+
+</article>
+
+<article>
+
+## Implementation
+
+### Positioning
+
+To avoid parent containers possibly clipping the popover and its content, render the popover outside the DOM hierarchy of its parent component.
+
+For React, a common mechanism for this is a [Portal](https://reactjs.org/docs/portals.html).
+
+### Trigger element
+
+In most cases, a `<button>` element is used for the trigger by the consumer. However, in the case of a string or a non-interactive element, make sure to fall back to
+
+</article>
+
+<article>
+
+## Accessibility
+
+### Keyboard interaction and focus
+
+- Opens via the `Enter` or `Space` keys or by clicking the trigger element.
+- Focus moves into the popover container to navigate elements inside with the `Tab` key.
+- Dismissed by tabbing out of the popover, pressing the `Escape` key, or clicking outside.
+- When dismissed, focus returns to the trigger element.
+
+### ARIA attributes
+
+- The trigger element has [`aria-expanded`](https://www.w3.org/TR/wai-aria/#aria-expanded) set to `true` or `false` based on the open state.
+- The trigger element has [`aria-controls`](https://www.w3.org/TR/wai-aria/#aria-controls) set to the `id` of the popover element.
+- The trigger element has [`aria-haspopup`](https://www.w3.org/TR/wai-aria/#aria-haspopup) set to the suitable `role` attribute of the popover, depending on the type of content.
+
+
+</article>

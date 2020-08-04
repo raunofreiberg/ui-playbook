@@ -38,7 +38,7 @@ const components = [
 	},
 	{
 		name: 'popover',
-		teaser: true,
+		teaser: false,
 	},
 	{
 		name: 'radio',
