@@ -6,12 +6,16 @@ import { Avatar } from '../../components';
     Avatar
 </Title>
 
-Avatar is a visual representation of an individual or business in the interface.
+Avatar is an visual representation of a user in the interface.
 
 <div className="center">
     <Avatar
-        name="Rauno Freiberg"
-        src="https://avatars2.githubusercontent.com/u/23662329?s=460&u=36a57df2205eb37b9e2f221a12df10d5f4387786&v=4"
+      name="Rauno Freiberg"
+      src="https://avatars2.githubusercontent.com/u/23662329?s=460&u=36a57df2205eb37b9e2f221a12df10d5f4387786&v=4"
+      style={{ marginRight: 8 }}
+    />
+    <Avatar
+      name="Rauno Freiberg"
     />
 </div>
 
@@ -21,9 +25,9 @@ Avatar is a visual representation of an individual or business in the interface.
 
 ## Functionality
 
-- Displays a thumbnail representation of the user.
-- Provides a fallback for missing thumbnails.
-- Accessible to users using assistive technologies.
+- Displays an image representation of the user.
+- Provides a unique fallback for unavailable images.
+- Describes the image in alternate text.
 
 </article>
 
@@ -31,18 +35,18 @@ Avatar is a visual representation of an individual or business in the interface.
 
 ## Best practices
 
-### Provide a image
+### Provide an image
 
-Whenever possible, try to use a thumbnail image of the user instead of a boring, default human silhouette placeholder.
+Whenever possible, try to use a thumbnail image of a user instead of a dull, default human silhouette placeholder.
 
 Not only does this give an additional humanizing touch to the interface,
 but it can help to visually organize, remember, and make sense of sections with multiple users.
 
 ### Generate a unique image fallback
 
-If the image does not load or is unavailable — consider alternatives that are unique to the user.
+If the image does not load or is unavailable — consider alternatives that are unique to a user.
 
-For example, you could display initials with an unique background image that is based on the username:
+For example, you could display initials with a unique background image that is based on the user's name:
 
 <Avatar name="Rauno Freiberg" style={{ marginRight: 8 }} />
 <Avatar name="Joe Doe" style={{ marginRight: 8 }} />
@@ -53,9 +57,20 @@ This way the identity of the user will always be unique and pure!
 ### Expose multiple sizes
 
 A single size avatar does not work for every use case.
-Due to inherent constraints, tables usually require a smaller variant, whereas profile cards can accommodate a larger one.
+For example, due to inherent layout constraints, tables, usually require a smaller variant, whereas profile cards can accommodate a larger one.
 
-At the very least, consider exposing two sizes for an avatar — small and large.
+At the very least, consider exposing two sizes — small and large.
+
+<Avatar
+  name="Rauno Freiberg"
+  src="https://avatars2.githubusercontent.com/u/23662329?s=460&u=36a57df2205eb37b9e2f221a12df10d5f4387786&v=4"
+  size="large"
+  style={{ marginRight: 8 }}
+/>
+<Avatar
+  name="Rauno Freiberg"
+  src="https://avatars2.githubusercontent.com/u/23662329?s=460&u=36a57df2205eb37b9e2f221a12df10d5f4387786&v=4"
+/>
 
 </article>
 
@@ -63,19 +78,21 @@ At the very least, consider exposing two sizes for an avatar — small and large
 
 ## Implementation
 
-### Use the `<img>` element
+### Use the [`<img>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) element
 
-To ensure that the image of the avatar is accessible to users with screen readers, use the `<img>` element along with the `alt` attribute.
+To ensure that the image of the avatar is accessible to users with screen readers, use the `<img>` element along with the `alt` attribute set to the user's name.
 
-> Additionally, you may want to use [`object-fit: cover`](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit) on the `<img>` element to accommodate larger images.
+Additionally, you may want to use the CSS property [`object-fit: cover`](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit) on the `<img>` element to accommodate larger images.
 
 ### Generating unique fallbacks
 
-There are lots of ways you could generate unique fallback images.
+There are lots of ways to generate unique fallback images.
 
-I've used an awesome microservice called [Avatar](https://github.com/tobiaslins/avatar) which you can use as an API and receive an image: https://avatar.tobi.sh/raunofreiberg
+> For users to have unique identities, use the full name instead of initials to generate the image.
 
-If this does not work for your use case, there are open source implementations of a similar algorithm:
+The examples above use an awesome micro-service called [avatar](https://github.com/tobiaslins/avatar) which you can use as an API to receive an image: https://avatar.tobi.sh/raunofreiberg.
+
+If you'd like to generate a similar image without the service, there are open source implementations of a similar algorithm:
 
 - [hash-avatar](https://github.com/bukinoshita/hash-avatar)
 - [random-gradient](https://github.com/bukinoshita/random-gradient)
@@ -86,5 +103,25 @@ If this does not work for your use case, there are open source implementations o
 
 ## Accessibility
 
+By using the `<img>` element for the image, a lot of the accessibility requirements for this component are met.
+
+However, if you want to use a placeholder like an `<svg>` or `background-color` for the fallback, make sure to add the following attributes:
+
+- Set [`role="img"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Role_Img) on the placeholder element
+- Set [`aria-label`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) to the user's name on the placeholder element
+
+```html
+<svg role="img" aria-label="Rauno Freiberg">
+  <!-- Contents of SVG -->
+</svg>
+```
+
+</article>
+
+<article>
+
+## Resources
+
+[MDN — The Image Embed Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)
 
 </article>

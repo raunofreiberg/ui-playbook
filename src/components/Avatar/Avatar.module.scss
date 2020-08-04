@@ -3,13 +3,17 @@
   position: relative;
 
   &.small {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
   }
 
   &.large {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
+
+    .initials {
+      font-size: 20px;
+    }
   }
 
   img {
@@ -19,7 +23,7 @@
     border-radius: 50%;
   }
 
-  p {
+  .initials {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -27,5 +31,7 @@
     color: white;
     font-weight: 600;
     font-size: 14px;
+    pointer-events: none;
+    letter-spacing: 0.5px;
   }
 }

@@ -33,10 +33,14 @@ function getPreview(name: string) {
 			return <Popover teaser />;
 		case 'avatar':
 			return (
-				<Avatar
-					name="Rauno"
-					src="https://avatars2.githubusercontent.com/u/23662329?s=460&u=36a57df2205eb37b9e2f221a12df10d5f4387786&v=4"
-				/>
+				<div>
+					<Avatar
+						name="Rauno"
+						src="https://avatars2.githubusercontent.com/u/23662329?s=460&u=36a57df2205eb37b9e2f221a12df10d5f4387786&v=4"
+						style={{ marginRight: 8 }}
+					/>
+					<Avatar name="Rauno Freiberg" />
+				</div>
 			);
 		default:
 			return <Icon icon={name as any} style={name === 'tooltip' ? { marginTop: -27 } : undefined} />;

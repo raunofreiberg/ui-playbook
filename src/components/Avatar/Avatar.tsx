@@ -2,9 +2,9 @@ import React from 'react';
 import cn from 'classnames';
 import styles from './Avatar.module.scss';
 
-interface AvatarProps {
+interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> {
+	name: string;
 	src?: string;
-	name?: string;
 	size?: 'small' | 'large';
 }
 
@@ -13,7 +13,7 @@ function getInitials(name: string) {
 	return firstName && lastName ? `${firstName.charAt(0)}${lastName.charAt(0)}` : firstName.charAt(0);
 }
 
-export default function Avatar({ src, name, size = 'large', ...rest }: AvatarProps) {
+export default function Avatar({ name, src, size = 'small', ...rest }: AvatarProps) {
 	return (
 		<div
 			className={cn(styles.wrapper, {
@@ -23,7 +23,7 @@ export default function Avatar({ src, name, size = 'large', ...rest }: AvatarPro
 			{...rest}
 		>
 			<img src={src ? src : `https://avatar.tobi.sh/${name}`} alt={name} />
-			{name && !src && <p>{getInitials(name)}</p>}
+			{name && !src && <p className={styles.initials}>{getInitials(name)}</p>}
 		</div>
 	);
 }
