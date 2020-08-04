@@ -1,0 +1,90 @@
+import { Avatar } from '../../components';
+
+<article>
+
+<Title>
+    Avatar
+</Title>
+
+Avatar is a visual representation of an individual or business in the interface.
+
+<div className="center">
+    <Avatar
+        name="Rauno Freiberg"
+        src="https://avatars2.githubusercontent.com/u/23662329?s=460&u=36a57df2205eb37b9e2f221a12df10d5f4387786&v=4"
+    />
+</div>
+
+</article>
+
+<article>
+
+## Functionality
+
+- Displays a thumbnail representation of the user.
+- Provides a fallback for missing thumbnails.
+- Accessible to users using assistive technologies.
+
+</article>
+
+<article>
+
+## Best practices
+
+### Provide a image
+
+Whenever possible, try to use a thumbnail image of the user instead of a boring, default human silhouette placeholder.
+
+Not only does this give an additional humanizing touch to the interface,
+but it can help to visually organize, remember, and make sense of sections with multiple users.
+
+### Generate a unique image fallback
+
+If the image does not load or is unavailable — consider alternatives that are unique to the user.
+
+For example, you could display initials with an unique background image that is based on the username:
+
+<Avatar name="Rauno Freiberg" style={{ marginRight: 8 }} />
+<Avatar name="Joe Doe" style={{ marginRight: 8 }} />
+<Avatar name="Michael Jordan" style={{ marginBottom: 24 }} />
+
+This way the identity of the user will always be unique and pure!
+
+### Expose multiple sizes
+
+A single size avatar does not work for every use case.
+Due to inherent constraints, tables usually require a smaller variant, whereas profile cards can accommodate a larger one.
+
+At the very least, consider exposing two sizes for an avatar — small and large.
+
+</article>
+
+<article>
+
+## Implementation
+
+### Use the `<img>` element
+
+To ensure that the image of the avatar is accessible to users with screen readers, use the `<img>` element along with the `alt` attribute.
+
+> Additionally, you may want to use [`object-fit: cover`](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit) on the `<img>` element to accommodate larger images.
+
+### Generating unique fallbacks
+
+There are lots of ways you could generate unique fallback images.
+
+I've used an awesome microservice called [Avatar](https://github.com/tobiaslins/avatar) which you can use as an API and receive an image: https://avatar.tobi.sh/raunofreiberg
+
+If this does not work for your use case, there are open source implementations of a similar algorithm:
+
+- [hash-avatar](https://github.com/bukinoshita/hash-avatar)
+- [random-gradient](https://github.com/bukinoshita/random-gradient)
+
+</article>
+
+<article>
+
+## Accessibility
+
+
+</article>

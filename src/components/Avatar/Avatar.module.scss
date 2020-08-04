@@ -1,0 +1,31 @@
+.wrapper {
+  display: inline-block;
+  position: relative;
+
+  &.small {
+    width: 20px;
+    height: 20px;
+  }
+
+  &.large {
+    width: 40px;
+    height: 40px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  p {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+  }
+}
