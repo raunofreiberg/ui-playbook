@@ -39,7 +39,7 @@ function getPreview(name: string) {
 						src="https://avatars2.githubusercontent.com/u/23662329?s=460&u=36a57df2205eb37b9e2f221a12df10d5f4387786&v=4"
 						style={{ marginRight: 8 }}
 					/>
-					<Avatar name="Rauno Freiberg" />
+					<Avatar name="Rauno Freiberg M" />
 				</div>
 			);
 		default:
