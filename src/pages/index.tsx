@@ -25,6 +25,10 @@ const components = [
 		teaser: false,
 	},
 	{
+		name: 'avatar',
+		teaser: false,
+	},
+	{
 		name: 'popover',
 		teaser: true,
 	},

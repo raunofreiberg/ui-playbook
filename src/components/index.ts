@@ -6,3 +6,4 @@ export { default as Title } from './Title/Title';
 export { default as TextField } from './TextField/TextField';
 export { default as Footer } from './Footer/Footer';
 export { default as Popover } from './Popover/Popover';
+export { default as Avatar, AvatarFallbackExample } from './Avatar/Avatar';

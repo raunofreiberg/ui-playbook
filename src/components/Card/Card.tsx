@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import Link from 'next/link';
-import { Icon, Notification, Button, TextField, Popover } from '..';
+import { Icon, Notification, Button, TextField, Popover, Avatar } from '..';
 import styles from './Card.module.scss';
 
 interface CardProps {
@@ -31,6 +31,17 @@ function getPreview(name: string) {
 			);
 		case 'popover':
 			return <Popover teaser />;
+		case 'avatar':
+			return (
+				<div>
+					<Avatar
+						name="Rauno Freiberg"
+						src="https://avatars2.githubusercontent.com/u/23662329?s=460&u=36a57df2205eb37b9e2f221a12df10d5f4387786&v=4"
+						style={{ marginRight: 8 }}
+					/>
+					<Avatar name="Rauno Freiberg M" />
+				</div>
+			);
 		default:
 			return <Icon icon={name as any} style={name === 'tooltip' ? { marginTop: -27 } : undefined} />;
 	}

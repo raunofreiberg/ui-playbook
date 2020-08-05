@@ -1,0 +1,47 @@
+.wrapper {
+  display: inline-block;
+  position: relative;
+
+  &.small {
+    width: 40px;
+    height: 40px;
+  }
+
+  &.large {
+    width: 60px;
+    height: 60px;
+
+    .initials {
+      font-size: 20px;
+    }
+  }
+
+  img, svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .initials {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    pointer-events: none;
+    letter-spacing: 0.5px;
+  }
+}
+
+.example {
+  display: flex;
+  margin-bottom: 24px;
+
+  svg {
+    width: initial;
+    margin-right: 8px;
+  }
+}

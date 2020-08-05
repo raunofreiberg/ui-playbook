@@ -1,0 +1,173 @@
+import { Avatar, AvatarFallbackExample } from '../../components';
+
+<article>
+
+<Title>
+    Avatar
+</Title>
+
+Avatar is an visual representation of a user in the interface.
+
+<div className="center">
+    <Avatar
+      name="Rauno Freiberg"
+      src="https://avatars2.githubusercontent.com/u/23662329?s=460&u=36a57df2205eb37b9e2f221a12df10d5f4387786&v=4"
+      style={{ marginRight: 8 }}
+    />
+    <Avatar
+      name="Rauno Freiberg M"
+    />
+</div>
+
+</article>
+
+<article>
+
+## Functionality
+
+- Displays an image representation of the user.
+- Provides a unique fallback for unavailable images.
+- Describes the image in alternate text.
+
+</article>
+
+<article>
+
+## Best practices
+
+### Provide an image
+
+Whenever possible, try to use a thumbnail image of a user instead of a dull, default human silhouette placeholder.
+
+Not only does this give an additional humanizing touch to the interface,
+but it can help to visually organize, remember, and make sense of sections with multiple users.
+
+### Generate a unique image fallback
+
+If the image does not load or is unavailable — consider alternatives that are unique to a user.
+
+For example, you could display initials with a unique background image that is based on the user's name:
+
+<Avatar name="Thomas Shelby" style={{ marginRight: 8 }} />
+<Avatar name="Joe Doe" style={{ marginRight: 8 }} />
+<Avatar name="Michael Jordan" style={{ marginBottom: 24 }} />
+
+This way the identity of the user will always be unique and pure!
+
+### Expose multiple sizes
+
+A single size avatar does not work for every use case.
+For example, due to inherent layout constraints, tables, usually require a smaller variant, whereas profile cards can accommodate a larger one.
+
+At the very least, consider exposing two sizes — large and small.
+
+<Avatar
+  name="Rauno Freiberg"
+  src="https://avatars2.githubusercontent.com/u/23662329?s=460&u=36a57df2205eb37b9e2f221a12df10d5f4387786&v=4"
+  size="large"
+  style={{ marginRight: 8 }}
+/>
+<Avatar
+  name="Rauno Freiberg"
+  src="https://avatars2.githubusercontent.com/u/23662329?s=460&u=36a57df2205eb37b9e2f221a12df10d5f4387786&v=4"
+/>
+
+</article>
+
+<article>
+
+## Implementation
+
+### Use the [`<img>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) element
+
+To ensure that the image of the avatar is accessible to users with screen readers, use the `<img>` element along with the `alt` attribute set to the user's name.
+
+Additionally, you may want to use the CSS property [`object-fit: cover`](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit) on the `<img>` element to accommodate larger images.
+
+### Generating unique fallbacks
+
+There are lots of ways to generate unique fallback images.
+
+> For users to have unique identities, use the full name instead of initials to generate the image.
+
+The examples above use an awesome micro-service called [avatar](https://github.com/tobiaslins/avatar) which you can use as an API to receive an image: https://avatar.tobi.sh/raunofreiberg.
+
+Or, if you'd like to generate a similar image without the service, a [simple hash algorithm](https://github.com/bukinoshita/hash-avatar) would do the trick:
+
+<AvatarFallbackExample />
+
+```tsx
+import React from 'react';
+import hash from 'string-hash';
+import color from 'tinycolor2';
+
+function Fallback({ name }) {
+  const hashed = hash(name);
+  const color = color({ h: n % 360, s: 0.95, l: 0.5 });
+  const color1 = color.toHexString();
+  const c2 = c1.triad()[1].toHexString();
+  return (
+    <svg
+      role="img"
+      aria-label={name}
+      width="40"
+      height="40"
+      viewBox="0 0 80 80"
+    >
+      <defs>
+        <linearGradient
+          x1="0%"
+          y1="0%"
+          x2="100%"
+          y2="100%"
+          id={name}
+        >
+          <stop stopColor={c1_} offset="0%" />
+          <stop stopColor={c2} offset="100%" />
+        </linearGradient>
+      </defs>
+      <g stroke="none" strokeWidth="1" fill="none">
+        <rect
+          fill={`url(#${name})`}
+          x="0"
+          y="0"
+          width="100%"
+          height="100%"
+        />
+      </g>
+    </svg>
+  );
+}
+```
+
+</article>
+
+<article>
+
+## Accessibility
+
+By using the `<img>` element for the image, a lot of the accessibility requirements for this component are met.
+
+However, if you want to use a placeholder like an `<svg>` or `background-color` for the fallback, make sure to add the following attributes:
+
+- Set [`role="img"`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Role_Img) on the placeholder element
+- Set [`aria-label`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute) to the user's name on the placeholder element
+
+```html
+<svg role="img" aria-label="Rauno Freiberg">
+  <!-- Contents of SVG -->
+</svg>
+```
+
+This will help screen readers detect the element as an image and announce the text description.
+
+</article>
+
+<article>
+
+## Resources
+
+- [MDN — The Image Embed Element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img)
+- [@rauchg — 2016 in Review: Beautiful Default Avatars](https://rauchg.com/2017/2016-in-review#avatars)
+
+</article>
