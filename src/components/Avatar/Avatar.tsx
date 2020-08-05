@@ -49,7 +49,12 @@ export function AvatarFallbackExample() {
 	return (
 		<div className={styles.example}>
 			<Fallback name={name ? name : 'undefined'} width={40} height={40} />
-			<TextField placeholder="Type your name" value={name} onChange={(e) => setName(e.target.value)} />
+			<TextField
+				aria-label="Type your name"
+				placeholder="Type your name"
+				value={name}
+				onChange={(e) => setName(e.target.value)}
+			/>
 		</div>
 	);
 }
