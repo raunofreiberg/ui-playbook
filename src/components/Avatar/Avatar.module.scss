@@ -16,7 +16,7 @@
     }
   }
 
-  img {
+  img, svg {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -33,5 +33,15 @@
     font-size: 14px;
     pointer-events: none;
     letter-spacing: 0.5px;
+  }
+}
+
+.example {
+  display: flex;
+  margin-bottom: 24px;
+
+  svg {
+    width: initial;
+    margin-right: 8px;
   }
 }
