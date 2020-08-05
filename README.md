@@ -23,6 +23,7 @@ UI Playbook is an attempt to spec common UI components based on learnings regard
 - [Select](https://uiplaybook.dev/play/select)
 - [Notification](https://uiplaybook.dev/play/notification)
 - [TextField](https://uiplaybook.dev/play/textfield)
+- [Avatar](https://uiplaybook.dev/play/avatar)
 
 ## Contributing 
 
