@@ -19,9 +19,9 @@ function getInitials(name: string) {
 function Fallback({ name, width, height }: { name: string; width: number; height: number }) {
 	const parsedName = name.replace(/\s/g, '');
 	const n = hash(parsedName);
-	const c1 = color({ h: n % 360, s: 0.95, l: 0.5 });
-	const c1_ = c1.toHexString();
-	const c2 = c1.triad()[1].toHexString();
+	const c = color({ h: n % 360, s: 0.95, l: 0.5 });
+	const c1 = c.toHexString();
+	const c2 = c.triad()[1].toHexString();
 	return (
 		<svg
 			role="img"
@@ -33,7 +33,7 @@ function Fallback({ name, width, height }: { name: string; width: number; height
 		>
 			<defs>
 				<linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id={parsedName}>
-					<stop stopColor={c1_} offset="0%" />
+					<stop stopColor={c1} offset="0%" />
 					<stop stopColor={c2} offset="100%" />
 				</linearGradient>
 			</defs>

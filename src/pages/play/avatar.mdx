@@ -103,9 +103,9 @@ import color from 'tinycolor2';
 
 function Fallback({ name }) {
   const hashed = hash(name);
-  const color = color({ h: n % 360, s: 0.95, l: 0.5 });
-  const color1 = color.toHexString();
-  const c2 = c1.triad()[1].toHexString();
+  const c = color({ h: n % 360, s: 0.95, l: 0.5 });
+  const c1 = c.toHexString();
+  const c2 = c.triad()[1].toHexString();
   return (
     <svg
       role="img"
@@ -122,7 +122,7 @@ function Fallback({ name }) {
           y2="100%"
           id={name}
         >
-          <stop stopColor={c1_} offset="0%" />
+          <stop stopColor={c1} offset="0%" />
           <stop stopColor={c2} offset="100%" />
         </linearGradient>
       </defs>
