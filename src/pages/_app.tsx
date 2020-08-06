@@ -70,7 +70,10 @@ export default function App({ Component, pageProps, router }) {
 			<MDXProvider components={{ Icon, Link, code: Code, Title, NextSeo }}>
 				<Head>
 					<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92206389-5" />
-					<meta name="keywords" content="ui, playbook, documented collection, components, guideline" />
+					<meta
+						name="keywords"
+						content="ui playbook, ui, playbook, documented collection, ui components, react ui components, react, react ui, ui guideline, ux patterns, ui designs, ui inspiration, website ui design, ui components"
+					/>
 					<link rel="shortcut icon" href="/static/favicon.ico" />
 					<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
 					<meta name="msapplication-TileColor" content="#6469FF" />
