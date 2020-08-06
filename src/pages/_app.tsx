@@ -72,7 +72,7 @@ export default function App({ Component, pageProps, router }) {
 					<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92206389-5" />
 					<meta
 						name="keywords"
-						content="ui playbook, ui, playbook, documented collection, ui components, react ui components, react, react ui, ui guideline, ux patterns, ui designs, ui inspiration, website ui design, ui components"
+						content="ui playbook, ui, playbook, documented collection, ui components, react ui components, ui guideline, ux patterns, ui inspiration, ui components"
 					/>
 					<link rel="shortcut icon" href="/static/favicon.ico" />
 					<link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
