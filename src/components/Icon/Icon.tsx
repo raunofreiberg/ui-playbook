@@ -199,6 +199,13 @@ const ICONS = {
 			<path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z" fill="currentColor" />
 		</svg>
 	),
+	check: (
+		<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+			 stroke="currentColor"
+			 strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+			<polyline points="20 6 9 17 4 12" />
+		</svg>
+	)
 };
 
 interface IconProps extends React.HTMLAttributes<SVGElement> {

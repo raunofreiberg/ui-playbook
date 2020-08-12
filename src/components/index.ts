@@ -7,3 +7,4 @@ export { default as TextField } from './TextField/TextField';
 export { default as Footer } from './Footer/Footer';
 export { default as Popover } from './Popover/Popover';
 export { default as Avatar, AvatarFallbackExample } from './Avatar/Avatar';
+export { default as Checkbox } from './Checkbox/Checkbox';

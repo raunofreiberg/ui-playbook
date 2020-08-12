@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import Link from 'next/link';
-import { Icon, Notification, Button, TextField, Popover, Avatar } from '..';
+import { Icon, Notification, Button, TextField, Popover, Avatar, Checkbox } from '..';
 import styles from './Card.module.scss';
 
 interface CardProps {
@@ -42,6 +42,10 @@ function getPreview(name: string) {
 					<Avatar name="Rauno Freiberg M" />
 				</div>
 			);
+		case 'checkbox':
+			return (
+				<Checkbox  checked label="Checkbox label" />
+			)
 		default:
 			return <Icon icon={name as any} style={name === 'tooltip' ? { marginTop: -27 } : undefined} />;
 	}

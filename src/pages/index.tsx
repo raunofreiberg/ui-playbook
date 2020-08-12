@@ -29,6 +29,10 @@ const components = [
 		teaser: false,
 	},
 	{
+		name: 'checkbox',
+		teaser: true,
+	},
+	{
 		name: 'popover',
 		teaser: true,
 	},
