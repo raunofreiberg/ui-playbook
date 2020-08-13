@@ -43,7 +43,11 @@ function getPreview(name: string) {
 				</div>
 			);
 		case 'checkbox':
-			return <Checkbox checked label="Checkbox label" tabIndex={-1} />;
+			return (
+				<Checkbox checked tabIndex={-1}>
+					Checkbox label
+				</Checkbox>
+			);
 		default:
 			return <Icon icon={name as any} style={name === 'tooltip' ? { marginTop: -27 } : undefined} />;
 	}

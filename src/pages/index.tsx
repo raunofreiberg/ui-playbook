@@ -30,7 +30,7 @@ const components = [
 	},
 	{
 		name: 'checkbox',
-		teaser: true,
+		teaser: false,
 	},
 	{
 		name: 'popover',
