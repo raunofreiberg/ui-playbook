@@ -103,7 +103,7 @@ hint labels can be used to address concerns that users may have, or provide addi
 
 For example, an e-mail input can provide a hint label to clarify usage of the e-mail:
 
-<TextField value="joe@doe.com" hint="Your e-mail will not be used for newsletters." inline />
+<TextField type="email" value="joe@doe.com" hint="Your e-mail will not be used for newsletters." inline />
 
 ### Validate input
 
@@ -218,7 +218,7 @@ make sure to associate the hint with the `<input>` element:
   id="email"
   aria-describedby="hint"
 />
-<small id="hint">This e-mail won't appear publicly.</small>
+<small id="hint">Your e-mail won't appear publicly.</small>
 ```
 
 Similar to an error, this will provide feedback to users using assistive technologies.
