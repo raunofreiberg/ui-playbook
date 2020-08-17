@@ -17,7 +17,7 @@
     align-items: center;
     margin-bottom: 8px;
     font-size: 14px;
-    color: #666;
+    color: var(--color-base-400);
     font-weight: 500;
   }
 
@@ -25,7 +25,7 @@
     display: inline-block;
     margin-top: 8px;
     font-size: 12px;
-    color: #666;
+    color: var(--color-base-400);
     font-weight: 500;
   }
 }
@@ -93,7 +93,7 @@
       right: 16px;
       width: 16px;
       height: 16px;
-      color: var(--color-black);
+      color: var(--color-base-400);
     }
   }
 
