@@ -9,7 +9,7 @@ import { MDXProvider } from '@mdx-js/react';
 import { RadixProvider } from '@modulz/radix';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/github';
-import { Icon, Title, Footer } from '../components';
+import { Icon, Title, Footer, AnchorHeading, AnchorHeadingProps } from '../components';
 
 function Code({ children, className }) {
 	const language = className.replace(/language-/, '');
@@ -67,7 +67,17 @@ export default function App({ Component, pageProps, router }) {
 
 	return (
 		<RadixProvider>
-			<MDXProvider components={{ Icon, Link, code: Code, Title, NextSeo }}>
+			<MDXProvider
+				components={{
+					Icon,
+					Link,
+					code: Code,
+					Title,
+					NextSeo,
+					h2: (props: AnchorHeadingProps) => <AnchorHeading as="h2" {...props} />,
+					h3: (props: AnchorHeadingProps) => <AnchorHeading as="h3" {...props} />,
+				}}
+			>
 				<Head>
 					<script async src="https://www.googletagmanager.com/gtag/js?id=UA-92206389-5" />
 					<meta
