@@ -15,18 +15,20 @@ function slugify(string: string) {
 		.replace(/[^\w-]+/g, '');
 }
 
-// We will traverse the children until we find a string.
 function getStringFromChildren(children: string | React.ReactElement) {
+	// If it's a string, return it!
 	if (typeof children === 'string') {
 		return children;
 	}
 
 	let current = children;
 
+	// Otherwise, we will traverse the children until we find a string.
 	while (typeof current.props.children !== 'string') {
 		current = current.props.children;
 	}
 
+	// Found it! ✌️
 	return current.props.children;
 }
 
