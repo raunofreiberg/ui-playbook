@@ -1,6 +1,7 @@
 import React from 'react';
 import { useId } from '@reach/auto-id';
 import cn from 'classnames';
+import Icon, { Icons } from '../Icon/Icon';
 import styles from './TextField.module.scss';
 
 interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -8,9 +9,9 @@ interface TextFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	hint?: string;
 	error?: string;
 	teaser?: boolean;
-	focused?: boolean;
 	inline?: boolean;
 	optional?: boolean;
+	icon?: Icons;
 }
 
 export default function TextField({
@@ -18,10 +19,10 @@ export default function TextField({
 	hint,
 	error,
 	teaser = false,
-	focused = false,
 	inline = false,
 	required = false,
 	optional = false,
+	icon,
 	className,
 	...rest
 }: TextFieldProps) {
@@ -48,14 +49,15 @@ export default function TextField({
 					{
 						[styles.teaser]: teaser,
 						[styles.input]: !teaser,
-						[styles.focused]: focused,
 						[styles.error]: error,
+						[styles.icon]: icon,
 					},
 					className,
 				)}
 				required={required && !optional}
 				{...rest}
 			/>
+			{icon && <Icon icon={icon} className={styles.icon} />}
 			{(hint || error) && <small id={metaId}>{error || hint}</small>}
 		</div>
 	);
