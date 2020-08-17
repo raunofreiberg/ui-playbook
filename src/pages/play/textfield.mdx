@@ -67,9 +67,15 @@ There are three types of labels commonly used along with the input: field label,
 
 Field labels appear above the input, and are used to describe the purpose of the input.
 
+<TextField placeholder="Placeholder" label="Field label" inline />
+
 Hint labels appear below the input, and provide additional instructions or context that the field label may not convey.
 
+<TextField placeholder="Placeholder" hint="Hint label" inline />
+
 Error labels appear below the input, replacing the hint label, and provide feedback about the entered user input.
+
+<TextField placeholder="Placeholder" error="Error label" inline />
 
 </article>
 
@@ -95,7 +101,9 @@ Placeholders aren't visible to the user once the field has been filled in, nor a
 In most cases, a field label is enough for the user to understand the purpose of the input. However,
 hint labels can be used to address concerns that users may have, or provide additional context.
 
-For example, an e-mail input can provide a hint label to clarify usage of the e-mail: "This e-mail will not appear publicly or be used for newsletters."
+For example, an e-mail input can provide a hint label to clarify usage of the e-mail:
+
+<TextField value="joe@doe.com" hint="Your e-mail will not be used for newsletters." inline />
 
 ### Validate input
 
@@ -110,7 +118,11 @@ Whereas for simpler input such as email, where the expected data is more obvious
 A common pattern to indicate required fields would be to use the [HTML `required` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required)
 along with an asterisk (*).
 
+<TextField placeholder="Placeholder" label="Field label" inline required />
+
 However, if most of the fields are required in the given form, marking the rest of the fields as optional can be visually less cluttering.
+
+<TextField placeholder="Placeholder" label="Field label" inline optional />
 
 </article>
 

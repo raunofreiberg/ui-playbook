@@ -1,4 +1,15 @@
 .wrapper {
+  display: inline-flex;
+  flex-direction: column;
+
+  &.inline {
+    width: 270px;
+
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
   label {
     display: inline-block;
     margin-bottom: 8px;
@@ -15,7 +26,6 @@
     font-weight: 500;
   }
 }
-
 
 .teaser {
   background: white;
@@ -57,8 +67,22 @@
     color: var(--color-base-300);
   }
 
-  &:focus, &:hover {
+  &:focus, &:hover, &.focused {
     box-shadow: var(--box-shadow-hover);
+  }
+
+  &.focused {
+    outline: -webkit-focus-ring-color auto 1px;
+    outline-offset: 0px;
+    outline-color: var(--color-primary);
+  }
+
+  &.error {
+    border-color: var(--color-error);
+
+    ~ small {
+      color: var(--color-error);
+    }
   }
 
   &:disabled {
@@ -67,4 +91,16 @@
     background-color: var(--color-base-100);
     box-shadow: none;
   }
+}
+
+.required {
+  color: var(--color-error);
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+.optional {
+  font-size: 12px;
+  font-style: italic;
+  margin-left: 4px;
 }
