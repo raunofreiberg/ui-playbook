@@ -1,4 +1,5 @@
 import React from 'react';
+import { useId } from '@reach/auto-id';
 import cn from 'classnames';
 import { Icon } from '..';
 import styles from './Checkbox.module.scss';
@@ -29,6 +30,8 @@ export default function Checkbox({ className, children, indeterminate, checked, 
 
 export function Checkboxes() {
 	const [checkedItems, setCheckedItems] = React.useState([true, false]);
+	const firstCheckboxId = useId();
+	const secondCheckboxId = useId();
 
 	const allChecked = checkedItems.every(Boolean);
 	const indeterminate = checkedItems.some(Boolean) && !allChecked;
@@ -36,6 +39,7 @@ export function Checkboxes() {
 	return (
 		<div>
 			<Checkbox
+				aria-controls={`${firstCheckboxId} ${secondCheckboxId}`}
 				checked={allChecked}
 				indeterminate={indeterminate}
 				onChange={(e) => setCheckedItems([e.target.checked, e.target.checked])}
@@ -52,12 +56,14 @@ export function Checkboxes() {
 				}}
 			>
 				<Checkbox
+					id={firstCheckboxId}
 					checked={checkedItems[0]}
 					onChange={(e) => setCheckedItems([e.target.checked, checkedItems[1]])}
 				>
 					Child checkbox 1
 				</Checkbox>
 				<Checkbox
+					id={secondCheckboxId}
 					checked={checkedItems[1]}
 					onChange={(e) => setCheckedItems([checkedItems[0], e.target.checked])}
 				>

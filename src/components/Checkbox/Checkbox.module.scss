@@ -1,4 +1,5 @@
 .wrapper {
+  width: auto;
   display: inline-flex;
   align-items: center;
   position: relative;
@@ -48,7 +49,6 @@
     cursor: pointer;
     border-color: var(--color-base-300);
   }
-
 
   &:checked, &.indeterminate {
     background-color: var(--color-primary);

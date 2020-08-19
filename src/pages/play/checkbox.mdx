@@ -47,9 +47,7 @@ Indicates whether the checkbox has been selected.
 
 ### Indeterminate state
 
-Indicates that the checkbox is partially selected.
-
-This can be useful for nested checkboxes where not all of the sub-checkboxes are selected.
+Indicates that the checkbox is partially selected and controls a set of sub-checkboxes.
 
 <Checkboxes />
 
@@ -61,14 +59,12 @@ This can be useful for nested checkboxes where not all of the sub-checkboxes are
 
 ### Provide a label
 
-A standalone checkbox without a label does not indicate its function. Make sure to associate the checkbox with a visible label.
-
-Not only does this provide context and a larger hit area for toggling the checkbox, but screen readers will announce the label when the checkbox is focused.
+A standalone checkbox without a label does not describe its function. Make sure to associate the checkbox with a visible and [accessible label](#provide-a-label-element).
 
 ### Do not trigger actions
 
 Checkboxes should not be used to trigger immediate actions like enabling or disabling a feature.
-Instead, request confirmation from the user before making changes.
+Instead, request confirmation from the user before applying the changes.
 
 A more suitable alternative for toggling options would be the Toggle component.
 
@@ -78,7 +74,88 @@ A more suitable alternative for toggling options would be the Toggle component.
 
 ## Implementation
 
-- How to make a nice checkbox with CSS?
+### Styling HTML checkboxes
+
+HTML checkboxes used to be notoriously tricky to style. Not to mention the fact that each browser has its own appearance for the element, making it look and feel different across platforms.
+
+To implement accessible checkboxes with custom styling, there are two options:
+
+> Do not use `display: none` to hide the native checkbox. This will prevent it from receiving focus and being keyboard navigable.
+
+1. Re-implement the native checkbox with all of its [keyboard interactions and ARIA roles](https://www.w3.org/TR/wai-aria-practices/#checkbox).
+2. Remove the native _styling_ from the checkbox and apply custom styles.
+
+
+In most cases, you will probably use the second option like so:
+
+<label class="checkboxExample">
+  <input type="checkbox" checked />
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={2.5}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <polyline points="20 6 9 17 4 12" />
+  </svg>
+</label>
+
+```html
+<label class="label">
+  <input type="checkbox" class="checkbox" checked />
+  <svg
+    class="check"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="20 6 9 17 4 12" />
+  </svg>
+</label>
+```
+
+```scss
+.label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.checkbox {
+  // Remove the native styling.
+  appearance: none;
+  // Style the checkbox.
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 #6469ff4d;
+}
+
+.checkbox:checked {
+  background: #6469FF;
+}
+
+.check {
+  position: absolute;
+  color: white;
+  width: 16px;
+  height: 16px;
+}
+```
+
+Now it's just a matter of wiring up events, styling the relevant states, and sprinkling some fancy animations on top! ✨
 
 - https://dev.to/lkopacz/create-custom-keyboard-accessible-checkboxes-2036
 
@@ -88,10 +165,32 @@ A more suitable alternative for toggling options would be the Toggle component.
 
 ## Accessibility
 
-By using the native checkbox element, you get a lot of the accessibility features out of the box.
+Strive to always use the native checkbox element. By doing so, you get proper keyboard navigation and ARIA roles out of the box.
 
-- Mention `aria-checked="mixed"`
-- Links to WAI-ARIA Checkbox
+If for some reason that's not possible, refer to the [WAI-ARIA Practices for Checkbox](https://www.w3.org/TR/wai-aria-practices/#checkbox) for accessibility implementation details:
+
+- [Keyboard Interaction](https://www.w3.org/TR/wai-aria-practices/#keyboard-interaction-5)
+- [WAI-ARIA Roles, States, and Properties](https://www.w3.org/TR/wai-aria-practices/#wai-aria-roles-states-and-properties-5)
+
+### Provide a [`<label>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label) element
+
+A `<label>` element should be associated with the checkbox so that:
+
+- Clicking on the `<label>` will toggle the checkbox, providing a larger hit area for mobile users.
+- Screen readers will read out the label when the checkbox is focused, making it easier for an assistive technology user to understand the function of the checkbox.
+
+### Mixed checkbox
+
+If a mixed checkbox is indeterminate and it's descendants are not checked, convey the state by placing `aria-checked="mixed"` on it.
+
+Additionally, use [`aria-controls`](https://www.w3.org/WAI/PF/aria-1.1/states_and_properties#aria-controls) to
+identify the set of checkboxes controlled by the mixed checkbox.
+
+```html
+<input type="checkbox" aria-checked="mixed" aria-controls="1 2" />
+<input id="1" type="checkbox" checked />
+<input id="2" type="checkbox" />
+```
 
 </article>
 
@@ -102,5 +201,6 @@ By using the native checkbox element, you get a lot of the accessibility feature
 - https://www.nngroup.com/articles/checkboxes-vs-radio-buttons/
 - https://www.nngroup.com/videos/checkboxes-vs-switches-forms/
 - https://www.gerireid.com/forms.html
+- [WAI ARIA Practices — Checkbox Example (Mixed State)](https://www.w3.org/TR/wai-aria-practices/examples/checkbox/checkbox-2/checkbox-2.html)
 
 </article>
