@@ -1,5 +1,5 @@
 .wrapper {
-  width: auto;
+  width: auto !important;
   display: inline-flex;
   align-items: center;
   position: relative;
@@ -112,4 +112,15 @@
   left: 7px;
   pointer-events: none;
   transition: all 0.4s var(--bezier-snappy);
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  padding-left: 16px;
+  margin-top: 8px;
+
+  > .wrapper:not(:first-of-type) {
+    margin-top: 8px;
+  }
 }
