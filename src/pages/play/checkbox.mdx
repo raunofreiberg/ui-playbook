@@ -63,7 +63,15 @@ Based on the [W3 Success Criterion for Target Size](https://www.w3.org/TR/WCAG21
 
 ### Provide a label
 
-A standalone checkbox without a label does not describe its function. Make sure to associate the checkbox with a visible and [accessible label](#provide-a-label-element).
+A standalone checkbox without a label does not describe its purpose. Make sure to associate the checkbox with a visible and [accessible label](#provide-a-label-element).
+
+Additionally, remember to [label groups of related checkboxes](#grouped-checkboxes).
+
+### Use positive and clear wording
+
+Use active voice for the label to minimize ambiguity about the purpose of the checkbox.
+
+For example, prefer "Disable notifications" over "Don't send me notifications".
 
 ### Do not trigger actions
 
@@ -80,16 +88,16 @@ A more suitable alternative for toggling options would be the Toggle component.
 
 ### Styling HTML checkboxes
 
-HTML checkboxes used to be notoriously tricky to style. Not to mention the fact that each browser has its own appearance for the element, making it look and feel different across platforms.
+HTML checkboxes used to be notoriously tricky to style. Not to mention that each browser has its own appearance for the element, making it look and feel different across platforms.
 
 To implement accessible checkboxes with custom styling, there are two options:
-
-> Do not use `display: none` to hide the native checkbox. This will prevent it from receiving focus and being keyboard navigable.
 
 1. Re-implement the native checkbox with all of its [keyboard interactions and ARIA roles](https://www.w3.org/TR/wai-aria-practices/#checkbox).
 2. Remove the native _styling_ from the checkbox and apply custom styles.
 
-In most cases, you will probably use the second option like so:
+> Do not use `display: none` to hide the native checkbox. This will prevent it from receiving focus and being keyboard navigable.
+
+In most cases, you would use the second option like so:
 
 <label className="checkboxExample">
   <input type="checkbox" defaultChecked />
@@ -178,7 +186,7 @@ If for some reason that's not possible, refer to the [WAI-ARIA Practices for Che
 A `<label>` element should be associated with the checkbox so that:
 
 - Clicking on the `<label>` will toggle the checkbox, providing a larger hit area for mobile users.
-- Screen readers will read out the label when the checkbox is focused, making it easier for an assistive technology user to understand the function of the checkbox.
+- Screen readers will read out the label when the checkbox is focused, making it easier for an assistive technology user to understand the purpose of the checkbox.
 
 ```html
 <input type="checkbox" id="tomato" />
