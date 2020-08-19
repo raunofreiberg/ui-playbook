@@ -43,11 +43,22 @@ If necessary, used in combination with a <Link href="/play/tooltip">Tooltip</Lin
 
 ### Checked state
 
-Indicates whether the checkbox has been selected.
+Indicates whether the checkbox has been checked.
 
 ### Indeterminate state
 
-Indicates that the checkbox is partially selected and controls a set of sub-checkboxes.
+Indicates that the checkbox is partially checked and controls a set of sub-checkboxes.
+
+### Mixed-state checkbox
+
+A mixed-state checkbox represents the state of a set of checkboxes.
+
+If none of the checkboxes in the set are checked, the mixed state checkbox is not checked,
+and if all members of the set are checked, the mixed state checkbox is checked. _Oof, how's that for a tongue twister?_
+
+If the set contains both checked _and_ unchecked checkboxes, the mixed state checkbox is partially checked.
+
+In this case, "All ingredients" is a mixed-state checkbox:
 
 <Checkboxes style={{ marginBottom: 24 }} />
 
@@ -75,10 +86,10 @@ For example, prefer "Disable notifications" over "Don't send me notifications".
 
 ### Do not trigger actions
 
-Checkboxes should not be used to trigger immediate actions like enabling or disabling a feature.
-Instead, request confirmation from the user before applying the changes.
+Checkboxes should not be used to trigger immediate actions such as enabling or disabling a feature.
+Rather, request confirmation from the user before applying the changes.
 
-A more suitable alternative for toggling options would be the Toggle component.
+A more suitable alternative for triggering actions would be the Toggle component.
 
 </article>
 
@@ -218,17 +229,19 @@ and [`<legend>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/legen
 
 Now, when navigating through the form, a screen reader will announce the instructions before it announces the first checkbox.
 
-### Mixed checkbox
+As a bonus, setting the [`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled) attribute on `<fieldset>` will disable all descendant form controls.
 
-If a mixed checkbox is indeterminate and it's descendants are not checked, convey the state by placing `aria-checked="mixed"` on it.
+### Mixed-state checkbox
+
+If a checkbox is indeterminate and it's descendants are not checked, convey the mixed state by placing `aria-checked="mixed"` on it.
 
 Additionally, use [`aria-controls`](https://www.w3.org/WAI/PF/aria-1.1/states_and_properties#aria-controls) to
 identify the set of checkboxes controlled by the mixed checkbox.
 
 ```html
 <input type="checkbox" aria-checked="mixed" aria-controls="1 2" />
-<input id="1" type="checkbox" checked />
-<input id="2" type="checkbox" />
+<input type="checkbox" id="1" checked />
+<input type="checkbox" id="2" />
 ```
 
 </article>
@@ -237,7 +250,7 @@ identify the set of checkboxes controlled by the mixed checkbox.
 
 ## Resources
 
-- [WAI ARIA Practices — Checkbox Example (Mixed State)](https://www.w3.org/TR/wai-aria-practices/examples/checkbox/checkbox-2/checkbox-2.html)
+- [WAI-ARIA Practices — Checkbox Example (Mixed State)](https://www.w3.org/TR/wai-aria-practices/examples/checkbox/checkbox-2/checkbox-2.html)
 - [GOV.UK — Using the fieldset and legend elements](https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/)
 
 </article>
