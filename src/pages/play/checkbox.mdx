@@ -49,7 +49,11 @@ Indicates whether the checkbox has been selected.
 
 Indicates that the checkbox is partially selected and controls a set of sub-checkboxes.
 
-<Checkboxes />
+<Checkboxes style={{ marginBottom: 24 }} />
+
+### Responsive
+
+Based on the [W3 Success Criterion for Target Size](https://www.w3.org/TR/WCAG21/#target-size), checkboxes should adapt to pointer inputs by expanding in size to a minimum of `44px`.
 
 </article>
 
@@ -85,11 +89,10 @@ To implement accessible checkboxes with custom styling, there are two options:
 1. Re-implement the native checkbox with all of its [keyboard interactions and ARIA roles](https://www.w3.org/TR/wai-aria-practices/#checkbox).
 2. Remove the native _styling_ from the checkbox and apply custom styles.
 
-
 In most cases, you will probably use the second option like so:
 
-<label class="checkboxExample">
-  <input type="checkbox" checked />
+<label className="checkboxExample">
+  <input type="checkbox" defaultChecked />
   <svg
     width="24"
     height="24"
@@ -157,8 +160,6 @@ In most cases, you will probably use the second option like so:
 
 Now it's just a matter of wiring up events, styling the relevant states, and sprinkling some fancy animations on top! ✨
 
-- https://dev.to/lkopacz/create-custom-keyboard-accessible-checkboxes-2036
-
 </article>
 
 <article>
@@ -179,6 +180,36 @@ A `<label>` element should be associated with the checkbox so that:
 - Clicking on the `<label>` will toggle the checkbox, providing a larger hit area for mobile users.
 - Screen readers will read out the label when the checkbox is focused, making it easier for an assistive technology user to understand the function of the checkbox.
 
+```html
+<input type="checkbox" id="tomato" />
+<label for="tomato">Tomato</label>
+```
+
+### Grouped checkboxes
+
+Use the [`<fieldset>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset)
+and [`<legend>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/legend) HTML elements to group checkboxes and provide both visual and auditory feedback to users.
+
+```html
+<fieldset>
+  <legend>Choose ingredients</legend>
+  <label>
+    <input type="checkbox" value="tomato" />
+    Tomato
+  </label>
+  <label>
+    <input type="checkbox" value="lettuce" />
+    Lettuce
+  </label>
+  <label>
+    <input type="checkbox" value="cucumber" />
+    Cucumber
+  </label>
+</fieldset>
+```
+
+Now, when navigating through the form, a screen reader will announce the instructions before it announces the first checkbox.
+
 ### Mixed checkbox
 
 If a mixed checkbox is indeterminate and it's descendants are not checked, convey the state by placing `aria-checked="mixed"` on it.
@@ -198,9 +229,7 @@ identify the set of checkboxes controlled by the mixed checkbox.
 
 ## Resources
 
-- https://www.nngroup.com/articles/checkboxes-vs-radio-buttons/
-- https://www.nngroup.com/videos/checkboxes-vs-switches-forms/
-- https://www.gerireid.com/forms.html
 - [WAI ARIA Practices — Checkbox Example (Mixed State)](https://www.w3.org/TR/wai-aria-practices/examples/checkbox/checkbox-2/checkbox-2.html)
+- [GOV.UK — Using the fieldset and legend elements](https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/)
 
 </article>
