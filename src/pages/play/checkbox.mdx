@@ -20,8 +20,38 @@ Checkbox is an input control that lets users select one or more options from a l
 
 This component should use the [HTML `<input type="checkbox" />` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox) under the hood.
 
-- Is either checked or unchecked.
-- Can be indeterminate to indicate a partially checked state.
+### Hover state
+
+Indicates that the checkbox is interactive when hovered with the mouse.
+
+### Active state
+
+Indicates that the checkbox is currently being activated.
+
+### Focus state
+
+Indicates that the focus in the document is currently on the checkbox.
+
+> For the sake of aesthetics, it can be tempting to remove default browser focus styles with `outline: 0;` <br /><br />
+> Do not do this before adding your own custom focus styles!
+
+### Disabled state
+
+Indicates that the checkbox is not interactive.
+
+If necessary, used in combination with a <Link href="/play/tooltip">Tooltip</Link> to provide a brief explanation on hover.
+
+### Checked state
+
+Indicates whether the checkbox has been selected.
+
+### Indeterminate state
+
+Indicates that the checkbox is partially selected.
+
+This can be useful for nested checkboxes where not all of the sub-checkboxes are selected.
+
+<Checkboxes />
 
 </article>
 
@@ -29,8 +59,18 @@ This component should use the [HTML `<input type="checkbox" />` element](https:/
 
 ## Best practices
 
-- When to use this component?
-- Provide a label
+### Provide a label
+
+A standalone checkbox without a label does not indicate its function. Make sure to associate the checkbox with a visible label.
+
+Not only does this provide context and a larger hit area for toggling the checkbox, but screen readers will announce the label when the checkbox is focused.
+
+### Do not trigger actions
+
+Checkboxes should not be used to trigger immediate actions like enabling or disabling a feature.
+Instead, request confirmation from the user before making changes.
+
+A more suitable alternative for toggling options would be the Toggle component.
 
 </article>
 
@@ -40,11 +80,15 @@ This component should use the [HTML `<input type="checkbox" />` element](https:/
 
 - How to make a nice checkbox with CSS?
 
+- https://dev.to/lkopacz/create-custom-keyboard-accessible-checkboxes-2036
+
 </article>
 
 <article>
 
 ## Accessibility
+
+By using the native checkbox element, you get a lot of the accessibility features out of the box.
 
 - Mention `aria-checked="mixed"`
 - Links to WAI-ARIA Checkbox

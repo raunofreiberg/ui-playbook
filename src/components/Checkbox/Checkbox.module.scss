@@ -49,19 +49,37 @@
     border-color: var(--color-base-300);
   }
 
+
   &:checked, &.indeterminate {
     background-color: var(--color-primary);
     border-color: var(--color-primary);
     box-shadow: 0 2px 4px 0 rgba(#6469FF, 0.3);
 
-    ~ .check, ~ .line {
+    ~ .label {
+      color: var(--color-black);
+    }
+  }
+
+  &:checked {
+    ~ .check {
       opacity: 1;
       pointer-events: auto;
       transform: rotate(0deg);
     }
 
-    ~ .label {
-      color: var(--color-black);
+  }
+
+  &.indeterminate {
+    ~ .line {
+      opacity: 1;
+      pointer-events: auto;
+      transform: rotate(0deg);
+    }
+
+    ~ .check {
+      opacity: 0;
+      transform: rotate(90deg);
+      pointer-events: none;
     }
   }
 

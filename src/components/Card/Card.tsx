@@ -44,7 +44,7 @@ function getPreview(name: string) {
 			);
 		case 'checkbox':
 			return (
-				<Checkbox checked tabIndex={-1}>
+				<Checkbox defaultChecked tabIndex={-1}>
 					Checkbox label
 				</Checkbox>
 			);
