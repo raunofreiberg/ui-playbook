@@ -179,8 +179,7 @@ article {
     margin-bottom: 24px;
   }
 
-  ul {
-    list-style-type: '• ';
+  ul, ol {
     padding-left: 18px;
     margin: 24px 0;
 
@@ -196,6 +195,10 @@ article {
         margin-bottom: 8px;
       }
     }
+  }
+
+  ul {
+    list-style-type: '• ';
   }
 
   code {
@@ -248,3 +251,47 @@ pre {
   }
 }
 
+.checkboxExample {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 24px;
+
+  input {
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    appearance: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px 0 rgba(#6469FF, 0.3);
+
+    &:checked {
+      background: var(--color-primary);
+
+      ~ svg {
+        opacity: 1;
+      }
+    }
+  }
+
+  svg {
+    position: absolute;
+    color: white;
+    width: 16px;
+    height: 16px;
+    opacity: 0;
+  }
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+
+  legend {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+}

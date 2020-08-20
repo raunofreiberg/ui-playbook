@@ -1,4 +1,5 @@
 .wrapper {
+  width: auto !important;
   display: inline-flex;
   align-items: center;
   position: relative;
@@ -46,22 +47,39 @@
 
   &:hover {
     cursor: pointer;
-    border-color: var(--genoma-color-base-200);
+    border-color: var(--color-base-300);
+  }
+
+  &:checked, &.indeterminate {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    box-shadow: 0 2px 4px 0 rgba(#6469FF, 0.3);
+
+    ~ .label {
+      color: var(--color-black);
+    }
   }
 
   &:checked {
-    background-color: var(--color-primary);
-    border-color: var(--color-primary);
-    box-shadow: 0 2px 4px 0 rgba(34, 35, 40, 0.16);
-
     ~ .check {
       opacity: 1;
       pointer-events: auto;
       transform: rotate(0deg);
     }
 
-    ~ .label {
-      color: var(--color-black);
+  }
+
+  &.indeterminate {
+    ~ .line {
+      opacity: 1;
+      pointer-events: auto;
+      transform: rotate(0deg);
+    }
+
+    ~ .check {
+      opacity: 0;
+      transform: rotate(90deg);
+      pointer-events: none;
     }
   }
 
@@ -80,5 +98,29 @@
       cursor: not-allowed;
       color: var(--color-base-300);
     }
+  }
+}
+
+.line {
+  background: white;
+  width: 10px;
+  height: 2px;
+  border-radius: 4px;
+  position: absolute;
+  transform: rotate(90deg);
+  opacity: 0;
+  left: 7px;
+  pointer-events: none;
+  transition: all 0.4s var(--bezier-snappy);
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  padding-left: 16px;
+  margin-top: 8px;
+
+  > .wrapper:not(:first-of-type) {
+    margin-top: 8px;
   }
 }

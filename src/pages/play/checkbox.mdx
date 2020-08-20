@@ -1,0 +1,256 @@
+import { Checkbox, Checkboxes } from '../../components';
+
+<article>
+
+<Title>
+    Checkbox
+</Title>
+
+Checkbox is an input control that lets users select one or more options from a list of options.
+
+<div className="center">
+  <Checkbox defaultChecked>Checkbox label</Checkbox>
+</div>
+
+</article>
+
+<article>
+
+## Functionality
+
+This component should use the [HTML `<input type="checkbox" />` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox) under the hood.
+
+### Hover state
+
+Indicates that the checkbox is interactive when hovered with the mouse.
+
+### Active state
+
+Indicates that the checkbox is currently being activated.
+
+### Focus state
+
+Indicates that the focus in the document is currently on the checkbox.
+
+> For the sake of aesthetics, it can be tempting to remove default browser focus styles with `outline: 0;` <br /><br />
+> Do not do this before adding your own custom focus styles!
+
+### Disabled state
+
+Indicates that the checkbox is not interactive.
+
+If necessary, used in combination with a <Link href="/play/tooltip">Tooltip</Link> to provide a brief explanation on hover.
+
+### Checked state
+
+Indicates whether the checkbox has been checked.
+
+### Indeterminate state
+
+Indicates that the checkbox is partially checked and controls a set of sub-checkboxes.
+
+### Mixed-state checkbox
+
+A mixed-state checkbox represents the state of a set of checkboxes.
+
+If none of the checkboxes in the set are checked, the mixed state checkbox is not checked,
+and if all members of the set are checked, the mixed state checkbox is checked. _Oof, how's that for a tongue twister?_
+
+If the set contains both checked _and_ unchecked checkboxes, the mixed state checkbox is partially checked.
+
+In this case, "All ingredients" is a mixed-state checkbox:
+
+<Checkboxes style={{ marginBottom: 24 }} />
+
+### Responsive
+
+Based on the [W3 Success Criterion for Target Size](https://www.w3.org/TR/WCAG21/#target-size), checkboxes should adapt to pointer inputs by expanding in size to a minimum of `44px`.
+
+</article>
+
+<article>
+
+## Best practices
+
+### Provide a label
+
+A standalone checkbox without a label does not describe its purpose. Make sure to associate the checkbox with a visible and [accessible label](#provide-a-label-element).
+
+Additionally, remember to [label groups of related checkboxes](#grouped-checkboxes).
+
+### Use positive and clear wording
+
+Use active voice for the label to minimize ambiguity about the purpose of the checkbox.
+
+For example, prefer "Disable notifications" over "Don't send me notifications".
+
+### Do not trigger actions
+
+Checkboxes should not be used to trigger immediate actions such as enabling or disabling a feature.
+Rather, request confirmation from the user before applying the changes.
+
+A more suitable alternative for triggering actions would be the Toggle component.
+
+</article>
+
+<article>
+
+## Implementation
+
+### Styling HTML checkboxes
+
+HTML checkboxes used to be notoriously tricky to style. Not to mention that each browser has its own appearance for the element, making it look and feel different across platforms.
+
+To implement accessible checkboxes with custom styling, there are two options:
+
+1. Re-implement the native checkbox with all of its [keyboard interactions and ARIA roles](https://www.w3.org/TR/wai-aria-practices/#checkbox).
+2. Remove the native _styling_ from the checkbox and apply custom styles.
+
+> Do not use `display: none` to hide the native checkbox. This will prevent it from receiving focus and being keyboard navigable.
+
+In most cases, you would use the second option like so:
+
+<label className="checkboxExample">
+  <input type="checkbox" defaultChecked />
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={2.5}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <polyline points="20 6 9 17 4 12" />
+  </svg>
+</label>
+
+```html
+<label class="label">
+  <input type="checkbox" class="checkbox" checked />
+  <svg
+    class="check"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="20 6 9 17 4 12" />
+  </svg>
+</label>
+```
+
+```scss
+.label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.checkbox {
+  // Remove the native styling.
+  appearance: none;
+  // Style the checkbox.
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 #6469ff4d;
+}
+
+.checkbox:checked {
+  background: #6469FF;
+}
+
+.check {
+  position: absolute;
+  color: white;
+  width: 16px;
+  height: 16px;
+}
+```
+
+Now it's just a matter of wiring up events, styling the relevant states, and sprinkling some fancy animations on top! ✨
+
+</article>
+
+<article>
+
+## Accessibility
+
+Strive to always use the native checkbox element. By doing so, you get proper keyboard navigation and ARIA roles out of the box.
+
+If for some reason that's not possible, refer to the [WAI-ARIA Practices for Checkbox](https://www.w3.org/TR/wai-aria-practices/#checkbox) for accessibility implementation details:
+
+- [Keyboard Interaction](https://www.w3.org/TR/wai-aria-practices/#keyboard-interaction-5)
+- [WAI-ARIA Roles, States, and Properties](https://www.w3.org/TR/wai-aria-practices/#wai-aria-roles-states-and-properties-5)
+
+### Provide a [`<label>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label) element
+
+A `<label>` element should be associated with the checkbox so that:
+
+- Clicking on the `<label>` will toggle the checkbox, providing a larger hit area for mobile users.
+- Screen readers will read out the label when the checkbox is focused, making it easier for an assistive technology user to understand the purpose of the checkbox.
+
+```html
+<input type="checkbox" id="tomato" />
+<label for="tomato">Tomato</label>
+```
+
+### Grouped checkboxes
+
+Use the [`<fieldset>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset)
+and [`<legend>`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/legend) HTML elements to group checkboxes and provide both visual and auditory feedback to users.
+
+```html
+<fieldset>
+  <legend>Choose ingredients</legend>
+  <label>
+    <input type="checkbox" value="tomato" />
+    Tomato
+  </label>
+  <label>
+    <input type="checkbox" value="lettuce" />
+    Lettuce
+  </label>
+  <label>
+    <input type="checkbox" value="cucumber" />
+    Cucumber
+  </label>
+</fieldset>
+```
+
+Now, when navigating through the form, a screen reader will announce the instructions before it announces the first checkbox.
+
+As a bonus, setting the [`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled) attribute on `<fieldset>` will disable all descendant form controls.
+
+### Mixed-state checkbox
+
+If a checkbox is indeterminate and it's descendants are not checked, convey the mixed state by placing `aria-checked="mixed"` on it.
+
+Additionally, use [`aria-controls`](https://www.w3.org/WAI/PF/aria-1.1/states_and_properties#aria-controls) to
+identify the set of checkboxes controlled by the mixed checkbox.
+
+```html
+<input type="checkbox" aria-checked="mixed" aria-controls="1 2" />
+<input type="checkbox" id="1" checked />
+<input type="checkbox" id="2" />
+```
+
+</article>
+
+<article>
+
+## Resources
+
+- [WAI-ARIA Practices — Checkbox Example (Mixed State)](https://www.w3.org/TR/wai-aria-practices/examples/checkbox/checkbox-2/checkbox-2.html)
+- [GOV.UK — Using the fieldset and legend elements](https://accessibility.blog.gov.uk/2016/07/22/using-the-fieldset-and-legend-elements/)
+
+</article>
