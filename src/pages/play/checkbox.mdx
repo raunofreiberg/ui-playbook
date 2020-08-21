@@ -49,16 +49,16 @@ Indicates whether the checkbox has been checked.
 
 Indicates that the checkbox is partially checked and controls a set of sub-checkboxes.
 
-### Mixed-state checkbox
+### Mixed state checkbox
 
-A mixed-state checkbox represents the state of a set of checkboxes.
+A mixed state checkbox represents the state of a set of checkboxes.
 
 If none of the checkboxes in the set are checked, the mixed state checkbox is not checked,
 and if all members of the set are checked, the mixed state checkbox is checked. _Oof, how's that for a tongue twister?_
 
 If the set contains both checked _and_ unchecked checkboxes, the mixed state checkbox is partially checked.
 
-In this case, "All ingredients" is a mixed-state checkbox:
+In this case, "All ingredients" is a mixed state checkbox:
 
 <Checkboxes style={{ marginBottom: 24 }} />
 
@@ -231,7 +231,7 @@ Now, when navigating through the form, a screen reader will announce the instruc
 
 As a bonus, setting the [`disabled`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/disabled) attribute on `<fieldset>` will disable all descendant form controls.
 
-### Mixed-state checkbox
+### Mixed state checkbox
 
 If a checkbox is indeterminate and it's descendants are not checked, convey the mixed state by placing `aria-checked="mixed"` on it.
 
