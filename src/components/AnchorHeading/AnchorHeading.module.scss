@@ -14,5 +14,10 @@
     padding-right: 8px;
     font-size: inherit;
     text-decoration: none;
+
+    &:focus {
+      opacity: 1;
+      padding-right: 0;
+    }
   }
 }
