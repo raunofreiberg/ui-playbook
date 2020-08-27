@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import Link from 'next/link';
-import { Icon, Notification, Button, TextField, Popover, Avatar, Checkbox } from '..';
+import { Icon, Notification, Button, TextField, Popover, Avatar, Checkbox, Motion } from '..';
 import styles from './Card.module.scss';
 
 interface CardProps {
@@ -48,6 +48,8 @@ function getPreview(name: string) {
 					Checkbox label
 				</Checkbox>
 			);
+		case 'motion':
+			return <Motion />;
 		default:
 			return <Icon icon={name as any} style={name === 'tooltip' ? { marginTop: -27 } : undefined} />;
 	}

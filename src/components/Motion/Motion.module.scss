@@ -1,0 +1,102 @@
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shape {
+  width: 35px;
+  height: 35px;
+  border-radius: 4px;
+  background-color: var(--color-primary);
+  animation-duration: 0.9s;
+  animation-timing-function: var(--bezier-snappy);
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+
+  &.circle {
+    border-radius: 50%;
+    animation-name: circle;
+    background-image: radial-gradient(
+                    circle at top left,
+                    #f8ff00,
+                    rgba(0, 255, 255, 0)
+    ),
+    radial-gradient(
+                    circle at bottom right,
+                    #ff1414,
+                    rgba(255, 20, 146, 0)
+    );
+  }
+
+  &.rectangle {
+    animation-name: rectangle;
+    margin-left: 32px;
+    background-image: radial-gradient(
+                    circle at top right,
+                    hsl(180 100% 50%),
+                    hsl(180 100% 50% / 0%)
+    ),
+    radial-gradient(
+                    circle at bottom left,
+                    hsl(328 100% 54%),
+                    hsl(328 100% 54% / 0%)
+    );
+  }
+
+  &.triangle {
+    animation-name: triangle;
+    background-image: radial-gradient(
+                    circle at top right,
+                    #00ff51,
+                    rgba(0, 255, 255, 0)
+    ),
+    radial-gradient(
+                    circle at top left,
+                    #14ffec,
+                    rgba(255, 20, 146, 0)
+    );
+    margin-left: 32px;
+    border-radius: 50% 50% 4px 4px;
+  }
+}
+
+@keyframes rectangle {
+  0% {
+    border-radius: 4px;
+    transform: scale(1);
+    box-shadow: 0 4px 16px -1px rgba(#bda1ff, 0.5);
+  }
+  100% {
+    border-radius: 20%;
+    transform: scale(1.4);
+    box-shadow: 0 8px 16px -1px rgba(#bda1ff, 0.7);
+  }
+}
+
+
+@keyframes circle {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 16px -1px rgba(255, 161, 161, 0.5);
+  }
+  100% {
+    transform: scale(1.4);
+    box-shadow: 0 8px 16px -1px rgba(255, 161, 161, 0.7);
+  }
+}
+
+
+@keyframes triangle {
+  0% {
+    transform: scale(1);
+    border-radius: 50% 50% 4px 4px;
+    box-shadow: 0 4px 16px -1px rgba(93, 224, 255, 0.5);
+  }
+  100% {
+    transform: scale(1.4);
+    box-shadow: 0 8px 16px -1px rgba(93, 224, 255, 0.7);
+  }
+}

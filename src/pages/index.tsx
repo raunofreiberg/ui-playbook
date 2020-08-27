@@ -33,6 +33,10 @@ const components = [
 		teaser: false,
 	},
 	{
+		name: 'motion',
+		teaser: true,
+	},
+	{
 		name: 'popover',
 		teaser: true,
 	},
