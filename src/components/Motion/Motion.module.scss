@@ -10,41 +10,63 @@
   height: 35px;
   border-radius: 4px;
   background-color: var(--color-primary);
-  background-repeat: no-repeat;
+  animation-duration: 0.9s;
+  animation-timing-function: var(--bezier-snappy);
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
 
   &.circle {
     border-radius: 50%;
-    animation: loop2 0.9s var(--bezier-snappy) infinite alternate-reverse;
-    background-image: radial-gradient(circle at top left, #f8ff00, rgba(0, 255, 255, 0)), radial-gradient(circle at bottom right, #ff1414, rgba(255, 20, 146, 0));
+    animation-name: circle;
+    background-image: radial-gradient(
+                    circle at top left,
+                    #f8ff00,
+                    rgba(0, 255, 255, 0)
+    ),
+    radial-gradient(
+                    circle at bottom right,
+                    #ff1414,
+                    rgba(255, 20, 146, 0)
+    );
   }
 
   &.rectangle {
-    animation: loop 0.9s var(--bezier-snappy) infinite alternate-reverse;
+    animation-name: rectangle;
     margin-left: 32px;
     background-image: radial-gradient(
                     circle at top right,
-                    hsl(180 100% 50%), hsl(180 100% 50% / 0%)
+                    hsl(180 100% 50%),
+                    hsl(180 100% 50% / 0%)
     ),
     radial-gradient(
                     circle at bottom left,
-                    hsl(328 100% 54%), hsl(328 100% 54% / 0%)
+                    hsl(328 100% 54%),
+                    hsl(328 100% 54% / 0%)
     );
   }
 
   &.triangle {
-    animation: loop3 0.9s var(--bezier-snappy) infinite alternate-reverse;
-    background-image: radial-gradient(circle at top right, #00ff51, rgba(0, 255, 255, 0)), radial-gradient(circle at top left, #14ffec, rgba(255, 20, 146, 0));
-
+    animation-name: triangle;
+    background-image: radial-gradient(
+                    circle at top right,
+                    #00ff51,
+                    rgba(0, 255, 255, 0)
+    ),
+    radial-gradient(
+                    circle at top left,
+                    #14ffec,
+                    rgba(255, 20, 146, 0)
+    );
     margin-left: 32px;
     border-radius: 50% 50% 4px 4px;
   }
 }
 
-@keyframes loop {
+@keyframes rectangle {
   0% {
     border-radius: 4px;
     transform: scale(1);
-    box-shadow: none;
+    box-shadow: 0 4px 16px -1px rgba(#bda1ff, 0.5);
   }
   100% {
     border-radius: 20%;
@@ -54,10 +76,10 @@
 }
 
 
-@keyframes loop2 {
+@keyframes circle {
   0% {
     transform: scale(1);
-    box-shadow: none;
+    box-shadow: 0 4px 16px -1px rgba(#ffcca1, 0.5);
   }
   100% {
     transform: scale(1.4);
@@ -66,13 +88,14 @@
 }
 
 
-@keyframes loop3 {
+@keyframes triangle {
   0% {
     transform: scale(1);
-    box-shadow: none;
+    border-radius: 50% 50% 4px 4px;
+    box-shadow: 0 4px 16px -1px rgba(93, 224, 255, 0.5);
   }
   100% {
     transform: scale(1.4);
-    box-shadow: 0 8px 16px -1px rgb(93 224 255 / 70%);
+    box-shadow: 0 8px 16px -1px rgba(93, 224, 255, 0.7);
   }
 }
