@@ -5,7 +5,8 @@
   justify-content: center;
   align-items: center;
 }
-.motion {
+
+.shape {
   width: 35px;
   height: 35px;
   border-radius: 4px;
@@ -79,11 +80,11 @@
 @keyframes circle {
   0% {
     transform: scale(1);
-    box-shadow: 0 4px 16px -1px rgba(#ffcca1, 0.5);
+    box-shadow: 0 4px 16px -1px rgba(255, 161, 161, 0.5);
   }
   100% {
     transform: scale(1.4);
-    box-shadow: 0 8px 16px -1px rgba(#ffcca1, 0.7);
+    box-shadow: 0 8px 16px -1px rgba(255, 161, 161, 0.7);
   }
 }
 

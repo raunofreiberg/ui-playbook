@@ -34,7 +34,7 @@ const components = [
 	},
 	{
 		name: 'motion',
-		teaser: false,
+		teaser: true,
 	},
 	{
 		name: 'popover',
