@@ -1,0 +1,122 @@
+import { Motion, CheckboxExample, Notifications } from '../../components';
+
+<article>
+
+<Title>
+    Motion
+</Title>
+
+Motion brings meaning and a sense of life to the experience.
+<!--It should be purposeful, intuitive, and seamless. It should help users be more productive and never slow them down. -->
+
+<div className="center">
+    <Motion />
+</div>
+
+</article>
+
+<article>
+
+## Principles
+
+The principles of motion can vary, depending on the brand and style of an interface.
+However, there are a few generally applicable fundamentals to take into consideration.
+
+## Be predictable
+
+Imagine throwing a ball into a hoop, and instead of it falling through — it just disappears!
+
+As humans, we make sense of the world through interactions and observations around us.
+In real life, objects enter and leave our perception in a symmetrical and fluid movement.
+
+Therefore, aim to maintain a consistent [spatial understanding](https://en.wikipedia.org/wiki/Spatial_ability#Spatial_perception) throughout the experience, similar to the real world.
+
+<!-- example (fade elements in and out) -->
+
+## Be purposeful
+
+Strive to apply motion with an informative purpose by highlighting connections between items,
+providing a focal point, or responding to an interaction with feedback.
+
+Not only does this make the interface feel responsive and alive,
+but with the combination of predictable and purposeful motion, we can start to make sense of an interface and develop an intuition for future interactions.
+
+## Be playful
+
+We've all experienced this one interaction that you can't stop playing with because it just _feels_ right.
+
+Motion can introduce a certain level of character and playfulness to seemingly common interactions and [delight the user in an unexpected way](https://www.youtube.com/watch?v=Z2d9rw9RwyE).
+
+For example, applying motion to an empty state, loading indicator, or a success screen is a great way to delight your users and celebrate their journey.
+
+</article>
+
+<article>
+
+## Implementation
+
+We can separate motion into three tiers:
+
+### Tier A
+
+The first tier of motion are CSS transitions triggered by a user interaction via hover, touch, or click. These are mostly trivial to implement.
+
+<CheckboxExample />
+
+Foo.
+
+### Tier B
+
+The second tier of motion includes CSS animations and slightly more complicated entrance and exit animations.
+
+<Notifications />
+
+### Tier C
+
+SVG?
+
+</article>
+
+<article>
+
+## Accessibility
+
+However playful and enjoyable an interaction may be, be mindful of the fact that not everybody can feel the same way.
+
+Some people may not consider motion to be an important part of their experience, or in extreme cases it can even trigger physical reactions such as nausea and dizziness.
+
+In most operating systems, users may opt out of motion from their accessibility settings. As a result, all of the native animations are disabled.
+
+When implementing animations on the web, it is crucial to respect the choice of the user. We can use the [`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) media query to do so:
+
+```css
+.button {
+    width: 100px;
+    height: 40px;
+    transform: scale(1);
+}
+
+.button:hover {
+    transform: scale(1.2);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .button {
+    transition: transform 300ms;
+  }
+}
+```
+
+Instead of removing animations in the media query, we will default to no animations and add them for users who haven't explicitly opted out.
+This also means that if the browser does not support the query, it will just ignore it and not provide animations.
+
+</article>
+
+<article>
+
+## Resources
+
+- [Accessible Animations in React](https://joshwcomeau.com/react/prefers-reduced-motion/)
+- [WWDC 2018 — Designing Fluid Interfaces](https://developer.apple.com/videos/play/wwdc2018/803)
+
+</article>
