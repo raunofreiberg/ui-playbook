@@ -1,4 +1,4 @@
-import { Motion, CheckboxExample, Notifications } from '../../components';
+import { Motion, ButtonExample, NotificationExample, StatusExample, SVGExample } from '../../components';
 
 <article>
 
@@ -39,7 +39,7 @@ Strive to apply motion with an informative purpose by highlighting connections b
 providing a focal point, or responding to an interaction with feedback.
 
 Not only does this make the interface feel responsive and alive,
-but with the combination of predictable and purposeful motion, we can start to make sense of an interface and develop an intuition for future interactions.
+but with the combination of predictable and purposeful motion, users can start to make sense of an interface and develop an intuition for future interactions.
 
 ## Be playful
 
@@ -55,25 +55,38 @@ For example, applying motion to an empty state, loading indicator, or a success 
 
 ## Implementation
 
-We can separate motion into three tiers:
+We can think of motion in three separate tiers:
 
 ### Tier A
 
-The first tier of motion are CSS transitions triggered by a user interaction via hover, touch, or click. These are mostly trivial to implement.
+The first tier of motion are primitive CSS transitions and animations.
+These are _mostly_ trivial to implement and don't require external animation libraries.
 
-<CheckboxExample />
+For example, a pulsing status indicator can be used to indicate an element that requires attention.
 
-Foo.
+<StatusExample />
+
+Or, you could anticipate an action by responding to a hover interaction with a visual transition.
+
+<ButtonExample />
 
 ### Tier B
 
-The second tier of motion includes CSS animations and slightly more complicated entrance and exit animations.
+The second tier of motion includes slightly more complicated entrance and exit animations.
 
-<Notifications />
+<NotificationExample />
+
+For the most part, you can get pretty far with CSS animations.
+However, if you're using React and wish to have exit animations for components,
+you'll have to [defer unmounting](https://github.com/reactjs/rfcs/issues/128) the component to finish the animation.
+
+Look into [`react-spring`](https://www.react-spring.io/) or [`framer-motion`](https://www.framer.com/motion/) for a convenient API to animate React components.
 
 ### Tier C
 
-SVG?
+The third tier of motion includes SVG animations and whimsical 
+
+<SVGExample />
 
 </article>
 
