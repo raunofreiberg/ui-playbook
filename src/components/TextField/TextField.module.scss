@@ -65,7 +65,7 @@
   background-color: white;
   box-shadow: 0 5px 25px -5px rgba(30, 16, 84, .1);
   -webkit-appearance: none;
-  transition: box-shadow 0.4s var(--bezier-snappy);
+  transition: box-shadow 0.2s var(--bezier-snappy);
 
   &::placeholder {
     color: var(--color-base-300);

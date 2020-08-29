@@ -59,13 +59,17 @@ export function AvatarFallbackExample() {
 	);
 }
 
-export default function Avatar({ name, src, size = 'small', ...rest }: AvatarProps) {
+export default function Avatar({ name, src, size = 'small', className, ...rest }: AvatarProps) {
 	return (
 		<div
-			className={cn(styles.wrapper, {
-				[styles.large]: size === 'large',
-				[styles.small]: size === 'small',
-			})}
+			className={cn(
+				styles.wrapper,
+				{
+					[styles.large]: size === 'large',
+					[styles.small]: size === 'small',
+				},
+				className,
+			)}
 			{...rest}
 		>
 			<img src={src ? src : `https://avatar.tobi.sh/${name}`} alt={name} />

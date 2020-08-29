@@ -1,4 +1,4 @@
-import { Motion, ButtonExample, NotificationExample, StatusExample, SVGExample } from '../../components';
+import { Motion, ButtonExample, NotificationExample, StatusExample, SVGExample, TextFieldExample, SkeletonExample } from '../../components';
 
 <article>
 
@@ -35,7 +35,7 @@ Therefore, aim to maintain a consistent [spatial understanding](https://en.wikip
 
 ## Be purposeful
 
-Strive to apply motion with an informative purpose by highlighting connections between items,
+Strive to apply motion with an informative purpose by highlighting connections between elements,
 providing a focal point, or responding to an interaction with feedback.
 
 Not only does this make the interface feel responsive and alive,
@@ -62,17 +62,30 @@ We can think of motion in three separate tiers:
 The first tier of motion are primitive CSS transitions and animations.
 These are _mostly_ trivial to implement and don't require external animation libraries.
 
-For example, a pulsing status indicator can be used to indicate an element that requires attention.
+By responding to a hover interaction with a visual transition, users can anticipate an action.
+
+<ButtonExample />
+
+A pulsing status indicator can be used to indicate an element that requires attention.
 
 <StatusExample />
 
-Or, you could anticipate an action by responding to a hover interaction with a visual transition.
+Responding to user input with a shake animation,
+referencing the physical gesture of someone shaking their head, can be an effective way to give feedback and provide focus.
 
-<ButtonExample />
+<TextFieldExample />
 
 ### Tier B
 
 The second tier of motion includes slightly more complicated entrance and exit animations.
+
+Introducing motion for showing elements on the screen is an excellent way to provide reassurance and meaning to interactions.
+
+Elements appearing or disappearing instantly in response to an interaction create a visually and psychologically jarring experience.
+
+<NotificationExample animate={false} />
+
+It's a lot more pleasing, informative, and comforting to see the result in motion.
 
 <NotificationExample />
 
@@ -80,13 +93,45 @@ For the most part, you can get pretty far with CSS animations.
 However, if you're using React and wish to have exit animations for components,
 you'll have to [defer unmounting](https://github.com/reactjs/rfcs/issues/128) the component to finish the animation.
 
-Look into [`react-spring`](https://www.react-spring.io/) or [`framer-motion`](https://www.framer.com/motion/) for a convenient API to animate React components.
+In this case, [`react-spring`](https://www.react-spring.io/) or [`framer-motion`](https://www.framer.com/motion/) are great [spring-physics](#spring-animations) based libraries for animating React components.
 
 ### Tier C
 
-The third tier of motion includes SVG animations and whimsical 
+The third tier of motion includes SVG animations, loading indicators, and generally playful celebrations.
+
+Using an animated SVG of your brand's logo is a fantastic way to express character and keep the user interested while loading content.
 
 <SVGExample />
+
+Skeleton loaders can be used to progressively load content while keeping the layout from jumping and the user engaged during slower connections.
+
+<SkeletonExample />
+
+### Animation duration
+
+The duration of an animation can make the difference between a visually jarring and pleasant animation. Too fast, and it's distracting, too slow, and it feels like a delay.
+
+In general, the duration should be in the range of **100-500ms**, depending on the travel distance and how big the change is.
+
+Responding to smaller changes, such as a checkbox toggle or button hover, should be roughly **100ms** in duration.
+This [feels almost immediate](https://www.nngroup.com/articles/response-times-3-important-limits/) while still maintaining the feel of the motion.
+
+For bigger changes, such as notifications or modals, where elements are entering or exiting the screen, a duration of **200-300ms** is suitable.
+
+### Spring animations
+
+> If you're using React, we recommend checking out [`react-spring`](https://www.react-spring.io/) or [`framer-motion`](https://www.framer.com/motion/) for a spring-physics based animation library.
+
+When working with CSS animations, you're probably used to thinking of motion in durations and curves.
+
+However, motion in general does not adhere to the concept of durations and curves, but rather physical properties such as mass and tension.
+
+Think about it — if you'd be jumping on a trampoline with a specified duration of 500ms for each jump, but the jump gets interrupted half-way through, should the duration of the fall also be 500ms?
+
+Moreover, working with spring animations means less tinkering with durations and curves. Just let physics take care of it.
+
+Though, you don't have to use spring animations for every interaction.
+CSS works great for small interactions, such as hovers and toggles, where springs would likely mean additional complexity for little value.
 
 </article>
 
@@ -100,7 +145,7 @@ Some people may not consider motion to be an important part of their experience,
 
 In most operating systems, users may opt out of motion from their accessibility settings. As a result, all of the native animations are disabled.
 
-When implementing animations on the web, it is crucial to respect the choice of the user. We can use the [`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) media query to do so:
+When implementing animations on the web, it is crucial to respect the choice of the user. The [`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion) media query works great for this:
 
 ```css
 .button {
@@ -120,8 +165,19 @@ When implementing animations on the web, it is crucial to respect the choice of 
 }
 ```
 
-Instead of removing animations in the media query, we will default to no animations and add them for users who haven't explicitly opted out.
+Instead of removing animations in the media query, default to no animations and add them for users who haven't explicitly opted out.
 This also means that if the browser does not support the query, it will just ignore it and not provide animations.
+
+For Canvas and JS based animations, you can use [`window.matchMedia`](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) to detect the user's preference:
+
+```js
+const query = '(prefers-reduced-motion: no-preference)';
+const prefersReducedMotion = !window.matchMedia(query).matches;
+
+if (!prefersReducedMotion) {
+    // Add animations!
+}
+```
 
 </article>
 
@@ -131,5 +187,7 @@ This also means that if the browser does not support the query, it will just ign
 
 - [Accessible Animations in React](https://joshwcomeau.com/react/prefers-reduced-motion/)
 - [WWDC 2018 — Designing Fluid Interfaces](https://developer.apple.com/videos/play/wwdc2018/803)
+- [Executing UX Animations: Duration and Motion Characteristics](https://www.nngroup.com/articles/animation-duration/)
+- [Response Times: The 3 Important Limits](https://www.nngroup.com/articles/response-times-3-important-limits/)
 
 </article>

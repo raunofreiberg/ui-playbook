@@ -6,18 +6,24 @@ interface NotificationProps extends React.HTMLAttributes<HTMLDivElement> {
 	children?: string;
 	onAction?: () => void;
 	actionLabel?: string;
+	iconClassName?: string;
 }
 
 export default function Notification({
 	children = 'Notification message',
 	onAction,
 	actionLabel,
+	iconClassName,
 	...rest
 }: NotificationProps) {
 	return (
 		<div className={styles.wrapper} role="status" {...rest}>
 			{children}
-			{onAction && actionLabel ? <span className={styles.action}>{actionLabel}</span> : <Icon icon="close" />}
+			{onAction && actionLabel ? (
+				<span className={styles.action}>{actionLabel}</span>
+			) : (
+				<Icon icon="close" className={iconClassName} />
+			)}
 		</div>
 	);
 }

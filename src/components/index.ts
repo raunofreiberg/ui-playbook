@@ -9,4 +9,6 @@ export { default as Popover } from './Popover/Popover';
 export { default as Avatar, AvatarFallbackExample } from './Avatar/Avatar';
 export { default as Checkbox, Checkboxes } from './Checkbox/Checkbox';
 export * from './AnchorHeading/AnchorHeading';
-export { default as Motion, ButtonExample, NotificationExample, StatusExample, SVGExample } from './Motion/Motion';
+export { default as Motion } from './Motion/Motion';
+export * from './Motion/examples';
+export * from './Skeleton/Skeleton';
