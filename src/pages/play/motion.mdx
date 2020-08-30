@@ -67,7 +67,7 @@ We can think of motion in three separate tiers:
 
 ### Tier A
 
-The first tier of motion is primitive CSS transitions and animations.
+The first tier of motion includes primitive CSS transitions and animations.
 These are _mostly_ trivial to implement and don't require external animation libraries.
 
 By responding to a hover interaction with a visual transition, users can anticipate an action.
@@ -182,7 +182,7 @@ When implementing animations on the web, it is crucial to respect the choice of 
 Instead of removing animations in the media query, default to no animations and add them for users who haven't explicitly opted out.
 This also means that if the browser does not support the query, it will just ignore it and not provide animations.
 
-For Canvas and JS based animations, you can use [`window.matchMedia`](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) to detect the user's preference:
+For [Canvas](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API) and JS based animations, you can use [`window.matchMedia`](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) to detect the user's preference:
 
 ```js
 const query = '(prefers-reduced-motion: no-preference)';

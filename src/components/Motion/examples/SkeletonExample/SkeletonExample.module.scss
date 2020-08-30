@@ -20,6 +20,8 @@
   .meta {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    height: 40px;
     margin-left: 16px;
 
     > :first-of-type {
@@ -37,14 +39,5 @@
       font-size: 12px;
       color: var(--color-base-400);
     }
-  }
-}
-
-@keyframes fade {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
   }
 }

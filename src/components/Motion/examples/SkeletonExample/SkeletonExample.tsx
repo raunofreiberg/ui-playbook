@@ -3,7 +3,7 @@ import cn from 'classnames';
 import { Skeleton, Avatar } from '../../..';
 import styles from './SkeletonExample.module.scss';
 
-function SkeletonUser({ name, date, loading }: { name: string; date: string; loading: boolean }) {
+function SkeletonUser({ name, date, loading = false }: { name: string; date: string; loading?: boolean }) {
 	return (
 		<div className={styles.user}>
 			{loading && <Skeleton width={40} height={40} variant="circular" />}
@@ -49,6 +49,7 @@ export function SkeletonExample() {
 	React.useEffect(() => {
 		let current = 0;
 
+		// This code is just... blah 🙄.
 		const id = setInterval(() => {
 			setUsers((prevUsers) => {
 				if (prevUsers.every((user) => !user.loading)) {
