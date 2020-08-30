@@ -1,6 +1,4 @@
-import React from 'react';
-import { animated, config, useTransition } from 'react-spring';
-import { Button, TextField, Notification, Icon, Skeleton } from '..';
+import * as React from 'react';
 import cn from 'classnames';
 import styles from './Motion.module.scss';
 

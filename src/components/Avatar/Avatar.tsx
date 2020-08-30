@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import hash from 'string-hash';
 import color from 'tinycolor2';
 import cn from 'classnames';

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Card } from '../components';
 import styles from './index.module.scss';
 import inputStyles from '../components/TextField/TextField.module.scss';

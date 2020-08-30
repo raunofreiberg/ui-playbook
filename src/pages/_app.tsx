@@ -1,7 +1,7 @@
 import '@reach/listbox/styles.css';
 import '@reach/tooltip/styles.css';
 import './base.scss';
-import React from 'react';
+import * as React from 'react';
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 import Head from 'next/head';

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import styles from './SVGExample.module.scss';
 
 export function SVGExample() {

@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import cn from 'classnames';
 import { animated, config, useTransition } from 'react-spring';
 import { Notification } from '../../..';

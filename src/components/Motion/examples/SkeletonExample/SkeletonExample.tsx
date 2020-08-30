@@ -1,5 +1,4 @@
-import React from 'react';
-import cn from 'classnames';
+import * as React from 'react';
 import { Skeleton, Avatar } from '../../..';
 import styles from './SkeletonExample.module.scss';
 

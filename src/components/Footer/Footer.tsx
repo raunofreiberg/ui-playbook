@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import cn from 'classnames';
 import { Button, TextField } from '..';
 import styles from './Footer.module.scss';

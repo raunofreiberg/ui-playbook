@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { Icon } from '../../..';
 import styles from './StatusExample.module.scss';
 
