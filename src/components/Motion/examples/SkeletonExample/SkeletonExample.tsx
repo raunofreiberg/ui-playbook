@@ -75,8 +75,6 @@ export function SkeletonExample() {
 		};
 	}, []);
 
-	console.log(users);
-
 	return (
 		<div className={styles.wrapper}>
 			{users.map((user) => (

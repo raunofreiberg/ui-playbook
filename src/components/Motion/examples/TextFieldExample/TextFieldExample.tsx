@@ -36,6 +36,7 @@ export function TextFieldExample() {
 	return (
 		<div className={styles.wrapper}>
 			<TextField
+				tabIndex={-1}
 				label="Email"
 				placeholder="joe@doe.com"
 				value={value}

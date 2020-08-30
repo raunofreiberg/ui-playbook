@@ -1,4 +1,13 @@
-import { Motion, ButtonExample, NotificationExample, StatusExample, SVGExample, TextFieldExample, SkeletonExample } from '../../components';
+import {
+  Motion,
+  ButtonExample,
+  NotificationExample,
+  StatusExample,
+  SVGExample,
+  TextFieldExample,
+  SkeletonExample,
+  CartExample,
+} from '../../components';
 
 <article>
 
@@ -7,7 +16,6 @@ import { Motion, ButtonExample, NotificationExample, StatusExample, SVGExample, 
 </Title>
 
 Motion brings meaning and a sense of life to the experience.
-<!--It should be purposeful, intuitive, and seamless. It should help users be more productive and never slow them down. -->
 
 <div className="center">
     <Motion />
@@ -79,7 +87,7 @@ referencing the physical gesture of someone shaking their head, can be an effect
 
 The second tier of motion includes slightly more complicated entrance and exit animations.
 
-Introducing motion for showing elements on the screen is an excellent way to provide reassurance and meaning to interactions.
+Introducing motion for displaying elements on the screen is an excellent way to provide reassurance and meaning to interactions.
 
 Elements appearing or disappearing instantly in response to an interaction create a visually and psychologically jarring experience.
 
@@ -88,6 +96,11 @@ Elements appearing or disappearing instantly in response to an interaction creat
 It's a lot more pleasing, informative, and comforting to see the result in motion.
 
 <NotificationExample />
+
+In addition to reinforcing the outcome of an action, motion can also establish a relationship between elements that are visually disconnected.
+Besides, it just looks _cool!_
+
+<CartExample />
 
 For the most part, you can get pretty far with CSS animations.
 However, if you're using React and wish to have exit animations for components,
@@ -114,7 +127,7 @@ The duration of an animation can make the difference between a visually jarring 
 In general, the duration should be in the range of **100-500ms**, depending on the travel distance and how big the change is.
 
 Responding to smaller changes, such as a checkbox toggle or button hover, should be roughly **100ms** in duration.
-This [feels almost immediate](https://www.nngroup.com/articles/response-times-3-important-limits/) while still maintaining the feel of the motion.
+This [feels almost immediate](https://www.nngroup.com/articles/response-times-3-important-limits/) while still maintaining the sense of motion.
 
 For bigger changes, such as notifications or modals, where elements are entering or exiting the screen, a duration of **200-300ms** is suitable.
 
@@ -189,5 +202,6 @@ if (!prefersReducedMotion) {
 - [WWDC 2018 — Designing Fluid Interfaces](https://developer.apple.com/videos/play/wwdc2018/803)
 - [Executing UX Animations: Duration and Motion Characteristics](https://www.nngroup.com/articles/animation-duration/)
 - [Response Times: The 3 Important Limits](https://www.nngroup.com/articles/response-times-3-important-limits/)
+- [The importance of good animation in UX](https://www.invisionapp.com/inside-design/importance-good-animation-ux/)
 
 </article>

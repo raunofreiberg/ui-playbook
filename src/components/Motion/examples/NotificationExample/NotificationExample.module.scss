@@ -6,7 +6,7 @@
     border-radius: 50%;
 
     &.ripple {
-      animation-name: clickPulse;
+      animation-name: ripple;
       animation-duration: 1s;
       animation-timing-function: var(--bezier-snappy);
       animation-iteration-count: infinite;
@@ -16,7 +16,7 @@
   }
 }
 
-@keyframes clickPulse {
+@keyframes ripple {
   0% {
     background-color: rgba(#FAFAFC, 0.5);
     box-shadow: 0 0 0 0 rgba(#FAFAFC, 0.5);
@@ -26,7 +26,7 @@
     box-shadow: 0 0 0 10px rgba(#FAFAFC, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(#FAFAFC, 0);
     background-color: rgba(#FAFAFC, 0);
+    box-shadow: 0 0 0 0 rgba(#FAFAFC, 0);
   }
 }
