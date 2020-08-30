@@ -76,6 +76,12 @@ export default function App({ Component, pageProps, router }) {
 					NextSeo,
 					h2: (props: AnchorHeadingProps) => <AnchorHeading as="h2" {...props} />,
 					h3: (props: AnchorHeadingProps) => <AnchorHeading as="h3" {...props} />,
+					a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
+						if (props.href.startsWith('#')) {
+							return <a {...props} />;
+						}
+						return <a target="_blank" rel="noopener noreferrer" {...props} />;
+					},
 				}}
 			>
 				<Head>

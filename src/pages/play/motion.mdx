@@ -67,7 +67,7 @@ We can think of motion in three separate tiers:
 
 ### Tier A
 
-The first tier of motion are primitive CSS transitions and animations.
+The first tier of motion is primitive CSS transitions and animations.
 These are _mostly_ trivial to implement and don't require external animation libraries.
 
 By responding to a hover interaction with a visual transition, users can anticipate an action.
@@ -122,7 +122,8 @@ Skeleton loaders can be used to progressively load content while keeping the lay
 
 ### Animation duration
 
-The duration of an animation can make the difference between a visually jarring and pleasant animation. Too fast, and it's distracting, too slow, and it feels like a delay.
+The duration of an animation can make the difference between a visually jarring animation and a pleasant one.
+Too fast, and it's distracting, too slow, and it feels like a delay.
 
 In general, the duration should be in the range of **100-500ms**, depending on the travel distance and how big the change is.
 
@@ -135,11 +136,11 @@ For bigger changes, such as notifications or modals, where elements are entering
 
 > If you're using React, we recommend checking out [`react-spring`](https://www.react-spring.io/) or [`framer-motion`](https://www.framer.com/motion/) for a spring-physics based animation library.
 
-When working with CSS animations, you're probably used to thinking of motion in durations and curves.
+When working with CSS animations, you're probably used to thinking of motion in terms of durations and curves.
 
 However, motion in general does not adhere to the concept of durations and curves, but rather physical properties such as mass and tension.
 
-Think about it — if you'd be jumping on a trampoline with a specified duration of 500ms for each jump, but the jump gets interrupted half-way through, should the duration of the fall also be 500ms?
+Think about it — if you were jumping on a trampoline with a specified duration of 500ms for each jump, but the jump gets interrupted half-way through, should the duration of the fall also be 500ms?
 
 Moreover, working with spring animations means less tinkering with durations and curves. Just let physics take care of it.
 
@@ -152,9 +153,9 @@ CSS works great for small interactions, such as hovers and toggles, where spring
 
 ## Accessibility
 
-However playful and enjoyable an interaction may be, be mindful of the fact that not everybody can feel the same way.
+However playful and enjoyable an interaction may be, be mindful of the fact that not everybody can experience it the same way.
 
-Some people may not consider motion to be an important part of their experience, or in extreme cases it can even trigger physical reactions such as nausea and dizziness.
+Some people may not consider motion to be an important part of their experience, and in some cases even trigger physical reactions such as nausea and dizziness.
 
 In most operating systems, users may opt out of motion from their accessibility settings. As a result, all of the native animations are disabled.
 
