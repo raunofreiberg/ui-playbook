@@ -1,4 +1,5 @@
 import React from 'react';
+import cn from 'classnames';
 import { Icon } from '..';
 import styles from './Notification.module.scss';
 
@@ -22,7 +23,9 @@ export default function Notification({
 			{onAction && actionLabel ? (
 				<span className={styles.action}>{actionLabel}</span>
 			) : (
-				<Icon icon="close" className={iconClassName} />
+				<span className={cn(styles.icon, iconClassName)}>
+					<Icon icon="close" />
+				</span>
 			)}
 		</div>
 	);
