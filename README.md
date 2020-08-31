@@ -25,6 +25,7 @@ UI Playbook is an attempt to spec common UI components based on learnings regard
 - [TextField](https://uiplaybook.dev/play/textfield)
 - [Avatar](https://uiplaybook.dev/play/avatar)
 - [Checkbox](https://uiplaybook.dev/play/checkbox)
+- [Motion](https://uiplaybook.dev/play/motion)
 
 ## Contributing 
 
