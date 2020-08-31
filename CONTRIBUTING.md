@@ -20,7 +20,7 @@ You can do so by submitting a new issue and following the issue template, which 
 
 - Component name, with visual, and concise description
 - Functionality (describe how the component should behave)
-- Best practices (cover pitfalls, intricacies or any other non-obvious things to keep in mind)
+- Best practices (cover principles, pitfalls, intricacies or any other non-obvious things to keep in mind)
 - Implementation (a bit more technical than the previous chapters, possibly get into framework-specific nuances)
 - Examples (render a few well implemented examples of the component from various design systems)
 - Accessibility (cover relevant accessibility requirements and links to WAI-ARIA docs for the component design pattern, if applicable)
