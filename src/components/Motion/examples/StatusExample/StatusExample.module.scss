@@ -1,0 +1,46 @@
+.status {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin-bottom: 24px;
+
+  svg {
+    width: 40px;
+    height: 40px;
+    background: var(--color-base-200);
+    border-radius: 50%;
+    fill: var(--color-black);
+    padding: 11px;
+  }
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  background-color: var(--color-error);
+  animation-name: pulse;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 91, 91, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 91, 91, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 91, 91, 0);
+  }
+}

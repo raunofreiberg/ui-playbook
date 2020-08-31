@@ -1,0 +1,34 @@
+.wrapper {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 24px;
+
+  path {
+    animation: fill 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) infinite alternate;
+  }
+}
+
+@for $i from 1 through 12 {
+  #triangle-#{$i} {
+    animation-delay: $i * 100ms;
+  }
+}
+
+@keyframes fill {
+  0% {
+    opacity: 0;
+    fill: white;
+    stroke-width: 0.5;
+  }
+  50% {
+    opacity: 0;
+    fill: white;
+    stroke-width: 0.5;
+  }
+  100% {
+    opacity: 1;
+    fill: #282b2e;
+    stroke-width: 0;
+  }
+}

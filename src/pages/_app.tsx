@@ -1,7 +1,7 @@
 import '@reach/listbox/styles.css';
 import '@reach/tooltip/styles.css';
 import './base.scss';
-import React from 'react';
+import * as React from 'react';
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 import Head from 'next/head';
@@ -76,6 +76,12 @@ export default function App({ Component, pageProps, router }) {
 					NextSeo,
 					h2: (props: AnchorHeadingProps) => <AnchorHeading as="h2" {...props} />,
 					h3: (props: AnchorHeadingProps) => <AnchorHeading as="h3" {...props} />,
+					a: (props: React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
+						if (props.href.startsWith('#')) {
+							return <a {...props} />;
+						}
+						return <a target="_blank" rel="noopener noreferrer" {...props} />;
+					},
 				}}
 			>
 				<Head>

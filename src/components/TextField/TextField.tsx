@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { useId } from '@reach/auto-id';
 import cn from 'classnames';
 import Icon, { Icons } from '../Icon/Icon';

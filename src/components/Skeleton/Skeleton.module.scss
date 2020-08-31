@@ -1,0 +1,59 @@
+.wrapper {
+  display: block;
+  background: var(--color-base-200);
+  overflow: hidden;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.04), transparent);
+    transform: translateX(-100%);
+    animation: wave 1.6s linear 0.5s infinite;
+  }
+}
+
+.text {
+  height: auto;
+  transform-origin: 0 55%;
+  transform: scale(1, 0.60);
+  border-radius: 4px;
+
+  &:empty {
+    content: "\00a0";
+  }
+}
+
+.circular {
+  border-radius: 50%;
+}
+
+.withChildren {
+  & > * {
+    visibility: hidden;
+  }
+}
+
+.fitContent {
+  max-width: fit-content;
+}
+
+.heightAuto {
+  height: auto;
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(-100%);
+  }
+  60% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

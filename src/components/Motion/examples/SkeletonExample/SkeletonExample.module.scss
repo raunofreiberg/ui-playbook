@@ -1,0 +1,43 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.user {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  border: 1px solid var(--color-base-200);
+  border-radius: 4px;
+  box-shadow: var(--box-shadow);
+
+  &:not(:first-of-type) {
+    margin-top: 16px;
+  }
+
+  .meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 40px;
+    margin-left: 16px;
+
+    > :first-of-type {
+      margin-bottom: 4px !important;
+    }
+
+    .name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-black);
+      line-height: initial;
+    }
+
+    .date {
+      font-size: 12px;
+      color: var(--color-base-400);
+    }
+  }
+}

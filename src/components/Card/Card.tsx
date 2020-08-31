@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import cn from 'classnames';
 import Link from 'next/link';
 import { Icon, Notification, Button, TextField, Popover, Avatar, Checkbox, Motion } from '..';

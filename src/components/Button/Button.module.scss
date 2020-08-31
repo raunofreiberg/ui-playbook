@@ -14,15 +14,19 @@
   border-radius: 4px;
   background: var(--color-black);
   color: white;
-  transition-duration: 0.4s;
+  transition-duration: 0.2s;
   transition-timing-function: var(--bezier-snappy);
-  transition-property: background-color, color, border-color, box-shadow;
+  transition-property: background-color, color, border-color, box-shadow, transform;
   cursor: pointer;
 
   &:enabled {
-    &:hover, &:focus {
+    &:hover, &:focus, &.hover {
       background: lighten(#222328, 5%);
-      box-shadow: 0 2px 4px 0 rgba(#222328, 0.24);
+      box-shadow: 0 2px 8px 0 rgba(#222328, 0.3);
+    }
+
+    &.hover {
+      transform: translateY(-2px);
     }
 
     &:active {

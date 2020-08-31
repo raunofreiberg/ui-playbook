@@ -1,0 +1,32 @@
+.wrapper {
+  height: 48px;
+  margin-bottom: 24px;
+
+  .close {
+    border-radius: 50%;
+
+    &.ripple {
+      animation-name: ripple;
+      animation-duration: 1s;
+      animation-timing-function: var(--bezier-snappy);
+      animation-iteration-count: infinite;
+      animation-direction: normal;
+      animation-fill-mode: none;
+    }
+  }
+}
+
+@keyframes ripple {
+  0% {
+    background-color: rgba(#FAFAFC, 0.5);
+    box-shadow: 0 0 0 0 rgba(#FAFAFC, 0.5);
+  }
+  70% {
+    background-color: rgba(#FAFAFC, 0);
+    box-shadow: 0 0 0 10px rgba(#FAFAFC, 0);
+  }
+  100% {
+    background-color: rgba(#FAFAFC, 0);
+    box-shadow: 0 0 0 0 rgba(#FAFAFC, 0);
+  }
+}
