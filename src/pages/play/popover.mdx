@@ -47,7 +47,16 @@ A clear and predictable label, such as "Actions" or "Select item", along with an
 
 A popover should be non-disruptive and appear contextually in relation to the element that it opens from.
 
-Avoid using a popover for a full screen overlay. Instead, consider using a Modal.
+For the most part, it should be quite clear which element does the popover correspond to.
+Optionally, consider using an arrow to explicitly identify the associated trigger element.
+
+Avoid using a popover for a full screen overlay. Instead, use a Modal.
+
+### Include rich content
+
+Since a popover remains visible after user interaction, you should only be using it for rich content, such as images, links, and lists.
+
+If the content of a popover is plain text and not meant to be interacted with, consider using a <Link href="/play/tooltip">Tooltip</Link> instead.
 
 </article>
 
@@ -59,11 +68,36 @@ Avoid using a popover for a full screen overlay. Instead, consider using a Modal
 
 To avoid parent containers possibly clipping the popover and its content, render the popover outside the DOM hierarchy of its parent component.
 
-For React, a common mechanism for this is a [Portal](https://reactjs.org/docs/portals.html).
+In React, a common mechanism for this is a [Portal](https://reactjs.org/docs/portals.html).
 
 ### Trigger element
 
-In most cases, a `<button>` element is used for the trigger by the consumer. However, in the case of a string or a non-interactive element, make sure to fall back to
+Consider the following API for a moment:
+
+```tsx
+<Popover content={...}>
+    <Button>Trigger</Button>
+</Popover>
+```
+
+In most cases, a `<button>` element (or a component that renders one) will probably be used for the trigger by the consumer.
+
+However, it is entirely possible to pass in a string or a non-interactive element:
+
+```tsx
+<Popover content={...}>
+    Trigger
+</Popover>
+
+<Popover content={...}>
+    <img src="/image.jpg" alt="Image" />
+</Popover>
+```
+
+In this case, users will not be able to access the popover's content via keyboard or receive relevant feedback when using a screen reader.
+
+To always ensure proper accessibility, provide a warning and implicitly wrap the trigger
+with a `<button>` or custom interactive element with proper ARIA attributes and keyboard support.
 
 </article>
 
@@ -73,8 +107,8 @@ In most cases, a `<button>` element is used for the trigger by the consumer. How
 
 ### Keyboard interaction and focus
 
-- Opens via the `Enter` or `Space` keys or by clicking the trigger element.
-- Focus moves into the popover container to navigate elements inside with the `Tab` key.
+- Opens via the `Enter` or `Space` keys, or by clicking the trigger element.
+- On open, focus moves into the popover container to navigate elements inside with the `Tab` key.
 - Dismissed by tabbing out of the popover, pressing the `Escape` key, or clicking outside.
 - When dismissed, focus returns to the trigger element.
 
