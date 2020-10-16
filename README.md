@@ -31,3 +31,6 @@ UI Playbook is an attempt to document common UI components based on learnings re
 
 Wish to submit a new component for UI Playbook? Read our [contributing guide](./CONTRIBUTING.md) for some ideas on how to do so.
 
+## Support
+
+I work on this project in my spare time, so if you'd like to show support, you can do so by [buying me a coffee 🖤 !](https://www.buymeacoffee.com/rauno)
