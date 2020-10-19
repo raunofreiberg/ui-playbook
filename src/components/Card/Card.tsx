@@ -1,7 +1,7 @@
 import * as React from 'react';
 import cn from 'classnames';
 import Link from 'next/link';
-import { Icon, Notification, Button, TextField, Popover, Avatar, Checkbox, Motion } from '..';
+import { Icon, Notification, Button, TextField, Popover, Avatar, Checkbox, Motion, Radio } from '..';
 import styles from './Card.module.scss';
 
 interface CardProps {
@@ -50,6 +50,12 @@ function getPreview(name: string) {
 			);
 		case 'motion':
 			return <Motion />;
+		case 'radio':
+			return (
+				<Radio checked tabIndex={-1}>
+					Radio label
+				</Radio>
+			);
 		default:
 			return <Icon icon={name as any} style={name === 'tooltip' ? { marginTop: -27 } : undefined} />;
 	}

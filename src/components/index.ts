@@ -13,3 +13,4 @@ export { default as Motion } from './Motion/Motion';
 export * from './Motion/examples';
 export * from './Skeleton/Skeleton';
 export * from './Badge/Badge';
+export * from './Radio/Radio';

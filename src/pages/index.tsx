@@ -40,6 +40,10 @@ const components = [
 		name: 'popover',
 		teaser: true,
 	},
+	{
+		name: 'radio',
+		teaser: true,
+	},
 ];
 
 export default function Home() {
