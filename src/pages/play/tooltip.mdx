@@ -3,9 +3,7 @@ import ReachTooltip from '@reach/tooltip';
 
 <article>
 
-<Title>
-  Tooltip
-</Title>
+<Title>Tooltip</Title>
 
 Tooltip is a non-interactive overlay that briefly explains the function of the trigger element.
 
@@ -21,7 +19,7 @@ Tooltip is a non-interactive overlay that briefly explains the function of the t
 
 - Displayed when the trigger element is hovered by the mouse or when it receives keyboard focus.
 - Focus remains on the trigger element while the tooltip is displayed.
-- Dismissed with the `Escape` key or by a blur/mouseleave event.
+- Dismissed with the `Escape` key or by navigating outside.
 - Has pre-defined positioning options, but should adjust itself dynamically based on collisions and available space.
 
 </article>
@@ -32,9 +30,9 @@ Tooltip is a non-interactive overlay that briefly explains the function of the t
 
 - Do not use a tooltip for information vital to task completion. The action of the element it is attached to should make sense on its own.
 - Make sure to provide a short and succinct label for the tooltip.
-- Avoid interactive content such as buttons and links inside the tooltip. As an alternative, consider Popover.
+- Avoid interactive content such as buttons and links inside the tooltip. As an alternative, consider <Link href="/play/popover">Popover</Link>.
 - Displaying the tooltip too quickly on mouseover can result in accidental activations and creates a jarring user experience.
-It is advisable to add a short delay (~100ms) before displaying it.
+  It is advisable to add a short delay (~100ms) before displaying it.
 - Once a tooltip is visible, interaction with any other tooltip should display immediately without the delay.
 
 </article>
@@ -47,7 +45,7 @@ It is advisable to add a short delay (~100ms) before displaying it.
 
 To avoid parent containers possibly clipping the tooltip and its content, render the tooltip outside the DOM hierarchy of its parent component.
 
-For React, a common mechanism for this is a [Portal](https://reactjs.org/docs/portals.html).
+In React, a common mechanism for this is a [Portal](https://reactjs.org/docs/portals.html).
 
 ### Disabled elements
 
@@ -77,8 +75,10 @@ We recommend using Reach UI's tooltip as a base for your React based implementat
 ### [Modulz, Radix — Tooltip (React)](https://radix.modulz.app/docs/tooltip/)
 
 <RadixTooltip label="You do not have permission to delete this user." side="top" align="center">
-  <span style={{display: 'inline-block'}}>
-    <Button size={1} disabled>Delete user</Button>
+  <span style={{ display: 'inline-block' }}>
+    <Button size={1} disabled>
+      Delete user
+    </Button>
   </span>
 </RadixTooltip>
 
@@ -107,4 +107,3 @@ The accessibility requirements for this component are defined by the [WAI-ARIA P
 - [Timing Guidelines for Exposing Hidden Content](https://www.nngroup.com/articles/timing-exposing-content/)
 
 </article>
-
