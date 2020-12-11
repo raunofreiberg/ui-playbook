@@ -26,6 +26,7 @@ UI Playbook is an attempt to document common UI components based on learnings re
 - [Avatar](https://uiplaybook.dev/play/avatar)
 - [Checkbox](https://uiplaybook.dev/play/checkbox)
 - [Motion](https://uiplaybook.dev/play/motion)
+- [Popover](https://uiplaybook.dev/play/popover)
 
 ## Contributing 
 
