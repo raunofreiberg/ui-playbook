@@ -2,14 +2,12 @@ import { Popover, Button } from '../../components';
 
 <article>
 
-<Title>
-    Popover
-</Title>
+<Title>Popover</Title>
 
 Popover is an interactive contextual overlay that provides additional content or actions.
 
 <div className="center">
-    <Popover teaser />
+  <Popover teaser />
 </div>
 
 > If you're looking to display content on hover, refer to <Link href="/play/tooltip">Tooltip</Link>.
@@ -35,7 +33,7 @@ Popover is an interactive contextual overlay that provides additional content or
 
 A popover should not be used simply due to poor design or lack of space in layout. The content inside a popover should not be critical to the user's primary task on the page.
 
-Aim to use a popover for secondary actions or supplementary information, such as filters or keyboard shortcuts.
+Aim to use a popover for secondary actions or supplementary information, such as filters or descriptions.
 
 ### Indicate additional content
 
@@ -117,6 +115,5 @@ with a `<button>` or custom interactive element with proper ARIA attributes and 
 - The trigger element has [`aria-expanded`](https://www.w3.org/TR/wai-aria/#aria-expanded) set to `true` or `false` based on the open state.
 - The trigger element has [`aria-controls`](https://www.w3.org/TR/wai-aria/#aria-controls) set to the `id` of the popover element.
 - The trigger element has [`aria-haspopup`](https://www.w3.org/TR/wai-aria/#aria-haspopup) set to the suitable `role` attribute of the popover, depending on the type of content.
-
 
 </article>

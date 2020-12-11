@@ -37,12 +37,12 @@ const components = [
     teaser: false,
   },
   {
-    name: 'radio',
+    name: 'popover',
     teaser: false,
   },
   {
-    name: 'popover',
-    teaser: false,
+    name: 'radio',
+    teaser: true,
   },
 ];
 
