@@ -103,7 +103,7 @@ import color from 'tinycolor2';
 
 function Fallback({ name }) {
   const hashed = hash(name);
-  const c = color({ h: n % 360, s: 0.95, l: 0.5 });
+  const c = color({ h: hashed % 360, s: 0.95, l: 0.5 });
   const c1 = c.toHexString();
   const c2 = c.triad()[1].toHexString();
   return (
