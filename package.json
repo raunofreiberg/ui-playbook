@@ -16,6 +16,7 @@
     "@reach/auto-id": "^0.10.5",
     "@reach/listbox": "^0.10.5",
     "@reach/tooltip": "^0.10.5",
+    "@typescript-eslint/parser": "^5.1.0",
     "babel-eslint": "^10.1.0",
     "classnames": "^2.2.6",
     "eslint": "^7.4.0",
