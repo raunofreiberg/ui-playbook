@@ -42,6 +42,7 @@ export function TextFieldExample() {
 				value={value}
 				error={value === text ? 'Please enter an email' : undefined}
 				className={value === text ? styles.shake : undefined}
+				onChange={() => {}}
 			/>
 		</div>
 	);
