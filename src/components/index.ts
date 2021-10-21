@@ -8,6 +8,7 @@ export { default as Footer } from './Footer/Footer';
 export { default as Popover } from './Popover/Popover';
 export { default as Avatar, AvatarFallbackExample } from './Avatar/Avatar';
 export { default as Checkbox, Checkboxes } from './Checkbox/Checkbox';
+export { default as MdxLink } from './MdxLink/MdxLink';
 export * from './AnchorHeading/AnchorHeading';
 export { default as Motion } from './Motion/Motion';
 export * from './Motion/examples';
