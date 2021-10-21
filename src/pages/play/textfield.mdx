@@ -63,7 +63,7 @@ For example, a search input could have a magnifying glass icon to indicate searc
 
 Or, an autocomplete input could provide a button with a cross icon to clear the current value.
 
-<TextField value="Apple" icon="close" inline />
+<TextField value="Apple" onChange={() => {}} icon="close" inline />
 
 ### Labelling
 
@@ -107,7 +107,7 @@ hint labels can be used to address concerns that users may have, or provide addi
 
 For example, an e-mail input can provide a hint label to clarify usage of the e-mail:
 
-<TextField type="email" value="joe@doe.com" hint="Your e-mail will not be used for newsletters." inline />
+<TextField type="email" value="joe@doe.com" onChange={() => {}} hint="Your e-mail will not be used for newsletters." inline />
 
 ### Validate input
 

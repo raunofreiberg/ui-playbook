@@ -52,7 +52,7 @@ function getPreview(name: string) {
 			return <Motion />;
 		case 'radio':
 			return (
-				<Radio checked tabIndex={-1}>
+				<Radio checked readOnly tabIndex={-1}>
 					Radio label
 				</Radio>
 			);
